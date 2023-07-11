@@ -1,0 +1,15 @@
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.csproj.AssemblyReference.cache
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.AssemblyInfoInputs.cache
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.AssemblyInfo.cs
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.csproj.CoreCompileInputs.cache
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\bin\Debug\net7.0\Projeto Integrador.exe
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\bin\Debug\net7.0\Projeto Integrador.deps.json
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\bin\Debug\net7.0\Projeto Integrador.runtimeconfig.json
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\bin\Debug\net7.0\Projeto Integrador.dll
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\bin\Debug\net7.0\Projeto Integrador.pdb
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.dll
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\refint\Projeto Integrador.dll
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.pdb
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\Projeto Integrador.genruntimeconfig.cache
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Projeto Integrador\obj\Debug\net7.0\ref\Projeto Integrador.dll
