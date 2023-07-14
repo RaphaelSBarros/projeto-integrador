@@ -17,24 +17,22 @@ namespace Views {
             labelNome.Location = new System.Drawing.Point(50, 50);
 
             inputNome = new TextBox();
-            inputNome.Location = new System.Drawing.Point(50, 50); 
+            inputNome.Location = new System.Drawing.Point(150, 50); 
             inputNome.Name = "Nome";
-            inputNome.Size = new System.Drawing.Size(200, 20);
 
             labelSenha = new Label();
             labelSenha.Text = "Senha:";
-            labelSenha.Location = new System.Drawing.Point(50, 50);
+            labelSenha.Location = new System.Drawing.Point(50, 100);
 
             inputSenha = new TextBox();
-            inputSenha.Location = new System.Drawing.Point(50, 200); 
+            inputSenha.Location = new System.Drawing.Point(150, 100); 
             inputSenha.Name = "Senha";
             inputSenha.PasswordChar = '*';
-            inputSenha.Size = new System.Drawing.Size(200, 20);
 
             buttonLogar = new Button();
             buttonLogar.Text = "Clique Aqui";
             buttonLogar.Location = new System.Drawing.Point(50, 250);
-            //buttonLogar.Click += ClickLogar;
+            buttonLogar.Click += ClickLogar;
 
             this.Size = new System.Drawing.Size(400, 400);
 
@@ -45,10 +43,20 @@ namespace Views {
             Controls.Add(buttonLogar);
         }
 
-        /*private void ClickLogar(object? sender, EventArgs e) {
-            exemplo = new Exemplo(this);
-            exemplo.Show();
-            this.Hide();
-        }*/
+        private void ClickLogar(object? sender, EventArgs e){
+            if(inputNome.Text != "" && inputSenha.Text != ""){
+                MessageBox.Show(
+                    "Entrando...",
+                    "Sucesso",
+                    MessageBoxButtons.OK
+                );
+            }else{
+                MessageBox.Show(
+                    "Você não preencheu todos os campos necessários",
+                    "Erro",
+                    MessageBoxButtons.OK
+                );
+            }
+        }
     }
 }

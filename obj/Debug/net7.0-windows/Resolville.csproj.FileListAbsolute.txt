@@ -28,3 +28,5 @@ C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Resolville\obj\Deb
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Resolville\obj\Debug\net7.0-windows\Resolville.pdb
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Resolville\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Resolville\obj\Debug\net7.0-windows\ref\Resolville.dll
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Resolville\bin\Debug\net7.0-windows\MySqlConnector.dll
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\Resolville\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete

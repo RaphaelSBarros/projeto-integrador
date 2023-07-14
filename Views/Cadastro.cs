@@ -2,7 +2,8 @@ using System;
 using System.Windows.Forms;
 
 namespace Views {   
-    public class Cadastro : Form {       
+    public class Cadastro : Form {  
+        private Lista lista;     
         private Label labelNome;
         private Label labelNickname;
         private Label labelEmail;
@@ -149,7 +150,7 @@ namespace Views {
             buttonCadastrar.Size = new System.Drawing.Size(400, 30);
             buttonCadastrar.Text = "Cadastrar-se";
             buttonCadastrar.BackColor = Color.LimeGreen;
-            buttonCadastrar.click += buttonCadastrar_Click;
+            buttonCadastrar.Click += buttonCadastrar_Click;
 
             buttonCadastrar.MouseEnter += buttonCadastrar_MouseEnter;
             buttonCadastrar.MouseLeave += buttonCadastrar_MouseLeave;
@@ -184,25 +185,42 @@ namespace Views {
         private void buttonCadastrar_Click(object sender, EventArgs e) {
             string nome, apelido, email, cpf, endereco, telefone, senha;
 
-            nome = inputNome.Text;
-            apelido = inputNickname.Text;
-            email = inputEmail.Text;
-            cpf = inputCPF.Text;
-            endereco = inputLogradouro.Text + ", " + inputBairro.Text + ", nº "+ inputNumeroResidencia.Text;
-            telefone = inputTelefone.Text;
-            senha = inputSenha.Text;
+            if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" &&  inputLogradouro.Text != "" &&  inputBairro.Text != "" &&  inputNumeroResidencia.Text != "" &&  inputTelefone.Text != "" &&  inputSenha.Text != ""){
+                nome = inputNome.Text;
+                apelido = inputNickname.Text;
+                email = inputEmail.Text;
+                cpf = inputCPF.Text;
+                endereco = inputLogradouro.Text + ", " + inputBairro.Text + ", nº "+ inputNumeroResidencia.Text;
+                telefone = inputTelefone.Text;
+                senha = inputSenha.Text;
 
-            Controllers.UsuarioController.addUsuario(nome, apelido, email, cpf, endereco, telefone, senha);
+                Controllers.UsuarioController.addUsuario(nome, apelido, email, cpf, endereco, telefone, senha);
 
-            inputNome.Text = "";
-            inputNickname.Text = "";
-            inputEmail.Text = "";
-            inputCPF.Text = "";
-            inputLogradouro.Text = "";
-            inputBairro.Text = "";
-            inputNumeroResidencia.Text = "";
-            inputTelefone.Text = "";
-            inputSenha.Text = "";
+                inputNome.Text = "";
+                inputNickname.Text = "";
+                inputEmail.Text = "";
+                inputCPF.Text = "";
+                inputLogradouro.Text = "";
+                inputBairro.Text = "";
+                inputNumeroResidencia.Text = "";
+                inputTelefone.Text = "";
+                inputSenha.Text = "";
+
+                MessageBox.Show(
+                    "Cadastro realizado com sucesso!",
+                    "Sucesso",
+                    MessageBoxButtons.OK
+                );
+                lista = new Lista(this);
+                lista.Show();
+                this.Hide();
+            }else{
+                MessageBox.Show(
+                    "Você não preencheu todos os campos necessários",
+                    "Erro",
+                    MessageBoxButtons.OK
+                );
+            }
 
             /*string nome = inputNome.Text;
             if(!IsAlpha(nome)) {

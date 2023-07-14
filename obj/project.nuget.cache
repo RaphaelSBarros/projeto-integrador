@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "imjwU3E9A19JeIXvhS4xELKupYi64ht4mQzbIW2bzz5jSwZMnPUH/NSnmN5BU0JGWtru8zkeogXkSego6ZcCZw==",
+  "dgSpecHash": "s+x5G4KGbtqTyzSQfCT2MWLYVva1UWmO1TdOyBZoO8/MsCTgezqwTsvMHzngTfZBJ4hn1CNHtSl2Qkb38RdxXQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\raphael.barros\\OneDrive - SENAC-SC\\Área de Trabalho\\Resolville\\Resolville.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\raphael.barros\\.nuget\\packages\\mysqlconnector\\2.2.6\\mysqlconnector.2.2.6.nupkg.sha512"
+  ],
   "logs": []
 }
