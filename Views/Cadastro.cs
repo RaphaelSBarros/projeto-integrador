@@ -149,6 +149,7 @@ namespace Views {
             buttonCadastrar.Size = new System.Drawing.Size(400, 30);
             buttonCadastrar.Text = "Cadastrar-se";
             buttonCadastrar.BackColor = Color.LimeGreen;
+            buttonCadastrar.click += buttonCadastrar_Click;
 
             buttonCadastrar.MouseEnter += buttonCadastrar_MouseEnter;
             buttonCadastrar.MouseLeave += buttonCadastrar_MouseLeave;
