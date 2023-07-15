@@ -46,7 +46,7 @@ namespace Views
         }
 
         public static void AlterarUsuario(){
-            Console.WriteLine("Informe o ID do Usuario que deseja alterar: ");
+            Console.WriteLine("Informe o ID do Usuario que deseja alterar:  ");
             int indice = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Informe os dados atualizados: \n");
 
