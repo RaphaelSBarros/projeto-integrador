@@ -50,32 +50,28 @@ namespace Views {
             inputSenha.Location = new System.Drawing.Point(700, 330); 
             inputSenha.Name = "Senha";
             inputSenha.PasswordChar = '•';
-            inputSenha.Size = new System.Drawing.Size(350, 20);
+            inputSenha.Size = new System.Drawing.Size(450, 20);
             inputSenha.MaxLength = 20;
 
             labelNaoTemConta = new Label();
             labelNaoTemConta.Location = new System.Drawing.Point(875, 425);
             labelNaoTemConta.Text = "Não tem uma conta?";
             labelNaoTemConta.Size = new System.Drawing.Size(119, 15);
-            labelNaoTemConta.ForeColor = Color.LimeGreen;
+            labelNaoTemConta.ForeColor = Color.Blue;
 
-            CheckBoxWithImage checkBoxSenha = new CheckBoxWithImage();
+            /*CheckBoxSenha = new CheckBox();
             checkBoxSenha.Image = Image.FromFile("Layout/VerSenha.png");
             checkBoxSenha.Location = new Point(1050, 330);
-            checkBoxSenha.Size = new Size(200, 35);
-
-            /*checkBoxSenha = new CheckBox();
-            checkBoxSenha.Image = Image.FromFile("Layout/VerSenha.png");
-            checkBoxSenha.Location = new System.Drawing.Point(1100, 330);
-            checkBoxSenha.Size = new System.Drawing.Size(35, 35);*/
+            checkBoxSenha.Size = new Size(200, 35);*/
 
             buttonLogar = new Button();
             buttonLogar.Location = new System.Drawing.Point(725, 390);
             buttonLogar.Name = "Login";
             buttonLogar.Size = new System.Drawing.Size(400, 30);  
             buttonLogar.Text = "Entrar";
-            buttonLogar.BackColor = Color.Blue;
+            buttonLogar.BackColor = Color.LimeGreen;
 
+            buttonLogar.Click += buttonLogar_Click;
             buttonLogar.MouseEnter += buttonLogar_MouseEnter;
             buttonLogar.MouseLeave += buttonLogar_MouseLeave;
             labelNaoTemConta.Click += labelNaoTemConta_MouseClick;
@@ -112,16 +108,18 @@ namespace Views {
             inputSenha.UseSystemPasswordChar = !checkBoxSenha.Checked;
         }
 
-        private void buttonCadastrar_Click(object sender, EventArgs e) {
-            
+        private void buttonLogar_Click(object sender, EventArgs e) {
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.Show();
+            this.Hide();
         }
 
         private void buttonLogar_MouseEnter(object sender, EventArgs e) {
-            buttonLogar.BackColor = Color.RoyalBlue;
+            buttonLogar.BackColor = Color.PaleGreen;
         }
 
         private void buttonLogar_MouseLeave(object sender, EventArgs e) {
-            buttonLogar.BackColor = Color.Blue;
+            buttonLogar.BackColor = Color.LimeGreen;
         }
 
         private void labelNaoTemConta_MouseClick(object sender, EventArgs e) {
@@ -131,35 +129,11 @@ namespace Views {
         }
 
         private void labelNaoTemConta_MouseEnter(object sender, EventArgs e) {
-            labelNaoTemConta.ForeColor = Color.PaleGreen;
+            labelNaoTemConta.ForeColor = Color.RoyalBlue;
         }
 
         private void labelNaoTemConta_MouseLeave(object sender, EventArgs e) {
-            labelNaoTemConta.ForeColor = Color.LimeGreen;
-        }
-
-    }
-
-    public class CheckBoxWithImage : CheckBox {
-        private Image image;
-
-        public Image Image {
-            get { return image; }
-            set {image = value; Invalidate();}
-        }
-
-        protected override void OnPaint(PaintEventArgs e) {
-            base.OnPaint(e);
-
-            if (image != null) {
-                int imageWidth = image.Width;
-                int imageHeight = image.Height;
-                int imageTop = (Height - imageHeight) / 2;
-                int imageLeft = 0;
-
-                e.Graphics.DrawImage(image, new Rectangle(imageLeft, imageTop, imageWidth, imageHeight));
-            }
-
+            labelNaoTemConta.ForeColor = Color.Blue;
         }
 
     }

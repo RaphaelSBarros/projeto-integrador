@@ -91,16 +91,6 @@ namespace Views {
             inputSenha.Size = new System.Drawing.Size(450, 20);
             inputSenha.MaxLength = 20;
 
-            labelTelefone = new Label();
-            labelTelefone.Text = "Telefone";
-            labelTelefone.Location = new System.Drawing.Point(700, 490);
-            labelTelefone.Size = new System.Drawing.Size(110, 20);
-
-            labelCPF = new Label();
-            labelCPF.Text = "CPF";
-            labelCPF.Location = new System.Drawing.Point(935, 490);
-            labelCPF.Size = new System.Drawing.Size(110, 20);
-
             /*labelCEP = new Label();
             labelCEP.Text = "CEP";
             labelCEP.Location = new System.Drawing.Point(700, 700);
@@ -144,12 +134,22 @@ namespace Views {
             inputBairro.Size = new System.Drawing.Size(450, 20);
             inputBairro.MaxLength = 50;
 
+            labelTelefone = new Label();
+            labelTelefone.Text = "Telefone";
+            labelTelefone.Location = new System.Drawing.Point(700, 490);
+            labelTelefone.Size = new System.Drawing.Size(220, 20);
+
             inputTelefone = new MaskedTextBox();
             inputTelefone.Location = new System.Drawing.Point(700, 510); 
             inputTelefone.Name = "Telefone";
             inputTelefone.Size = new System.Drawing.Size(220, 20);
             inputTelefone.MaxLength = 15;
             inputTelefone.Mask = "(00) 00000-0000";
+
+            labelCPF = new Label();
+            labelCPF.Text = "CPF";
+            labelCPF.Location = new System.Drawing.Point(935, 490);
+            labelCPF.Size = new System.Drawing.Size(215, 20);
 
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(935, 510); 
@@ -167,7 +167,7 @@ namespace Views {
             labelJaTemConta = new Label();
             labelJaTemConta.Location = new System.Drawing.Point(875, 785);
             labelJaTemConta.Text = "Já tem uma conta?";
-            labelJaTemConta.Size = new System.Drawing.Size(108, 15);
+            labelJaTemConta.Size = new System.Drawing.Size(107, 15);
             labelJaTemConta.ForeColor = Color.Blue;
 
             buttonCadastrar = new Button();
