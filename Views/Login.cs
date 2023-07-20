@@ -78,7 +78,7 @@ namespace Views {
             labelNaoTemConta.MouseEnter += labelNaoTemConta_MouseEnter;
             labelNaoTemConta.MouseLeave += labelNaoTemConta_MouseLeave;
             //checkBoxSenha.CheckedChanged += checkBoxSenha_CheckedChanged;
-
+            //234234234;
             Controls.Add(panel);
             Controls.Add(labelCPF);
             Controls.Add(labelSenha);
