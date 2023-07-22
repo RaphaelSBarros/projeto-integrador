@@ -4,7 +4,9 @@ using System.Drawing;
 
 namespace Views {   
     public class Cadastro : Form {   
-        private Label labelFundo;    
+        private Label labelFundo; 
+        private Label labelDivisao1;
+        private Label labelDivisao2;   
         private Label labelNome;
         private Label labelNickname;
         private Label labelEmail;
@@ -16,7 +18,7 @@ namespace Views {
         private Label labelNumeroResidencia;
         private Label labelBairro;     
         private Label labelJaTemConta;   
-        private Label labelExibeErro;         
+        private Label labelExibeErro; 
         private TextBox inputNome;
         private TextBox inputNickname;
         private TextBox inputEmail;
@@ -39,14 +41,24 @@ namespace Views {
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
 
-            labelFundo = new Label();
+            labelDivisao1 = new Label();
+            labelDivisao1.Location = new System.Drawing.Point(650, 0);
+            labelDivisao1.Size = new System.Drawing.Size(10, 970);
+            labelDivisao1.BackColor = Color.LightGray;
+
+            labelDivisao2 = new Label();
+            labelDivisao2.Location = new System.Drawing.Point(1190, 0);
+            labelDivisao2.Size = new System.Drawing.Size(10, 970);
+            labelDivisao2.BackColor = Color.LightGray;
+
+            /*labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
+            labelFundo.SendToBack();*/
 
             labelNome = new Label();
-            labelNome.Text = "Nome Completo(Nome e Sobrenome)";
+            labelNome.Text = "Nome Completo (Nome e Sobrenome)";
             labelNome.Location = new System.Drawing.Point(700, 250);
             labelNome.Size = new System.Drawing.Size(220, 20);
 
@@ -58,7 +70,7 @@ namespace Views {
             inputNome.ForeColor = Color.Black;
 
             labelNickname = new Label();
-            labelNickname.Text = "Nome de Usuário";
+            labelNickname.Text = "Nome do Usuário";
             labelNickname.Location = new System.Drawing.Point(700, 310);
             labelNickname.Size = new System.Drawing.Size(220, 20);
 
@@ -102,7 +114,7 @@ namespace Views {
             inputCEP.Size = new System.Drawing.Size(450, 20);*/
             
             labelLogradouro = new Label();
-            labelLogradouro.Text = "Logradouro";
+            labelLogradouro.Text = "Logradouro (Rua)";
             labelLogradouro.Location = new System.Drawing.Point(700, 550);
             labelLogradouro.Size = new System.Drawing.Size(220, 20);
 
@@ -174,7 +186,7 @@ namespace Views {
             buttonCadastrar.Location = new System.Drawing.Point(725, 750); 
             buttonCadastrar.Name = "Cadastrar";
             buttonCadastrar.Size = new System.Drawing.Size(400, 30);
-            buttonCadastrar.Text = "Cadastrar-se";
+            buttonCadastrar.Text = "CADASTRAR-SE";
             buttonCadastrar.BackColor = Color.LimeGreen;
 
             buttonCadastrar.Click += buttonCadastrar_Click;
@@ -185,6 +197,8 @@ namespace Views {
             labelJaTemConta.MouseLeave += labelJaTemConta_MouseLeave;
             
             Controls.Add(panel);
+            Controls.Add(labelDivisao1);
+            Controls.Add(labelDivisao2);
             Controls.Add(labelNome);
             Controls.Add(inputNome);
             Controls.Add(labelNickname);

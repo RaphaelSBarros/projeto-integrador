@@ -5,12 +5,13 @@ namespace Views {
 
     public class TelaInicial : Form {
         private Label labelFundo;
+        private Label labelDivisao1;
+        private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
-        private Label labelLinha3;
+        private Label labelFoto;
         private Label labelOla;
         private Label labelNome;
-        private Label labelFoto;
 
         public TelaInicial() {
             this.WindowState = FormWindowState.Maximized;
@@ -22,29 +23,33 @@ namespace Views {
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
 
-            labelFundo = new Label();
+            labelDivisao1 = new Label();
+            labelDivisao1.Location = new System.Drawing.Point(650, 0);
+            labelDivisao1.Size = new System.Drawing.Size(10, 970);
+            labelDivisao1.BackColor = Color.LightGray;
+
+            labelDivisao2 = new Label();
+            labelDivisao2.Location = new System.Drawing.Point(1190, 0);
+            labelDivisao2.Size = new System.Drawing.Size(10, 970);
+            labelDivisao2.BackColor = Color.LightGray;
+
+            /*labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
+            labelFundo.SendToBack();*/
 
             labelLinha1 = new Label();
             labelLinha1.Text = "";
             labelLinha1.Location = new System.Drawing.Point(700, 150);
-            labelLinha1.Size = new System.Drawing.Size(225, 8);
+            labelLinha1.Size = new System.Drawing.Size(450, 8);
             labelLinha1.BackColor = Color.Blue;
 
             labelLinha2 = new Label();
             labelLinha2.Text = "";
-            labelLinha2.Location = new System.Drawing.Point(925, 150);
-            labelLinha2.Size = new System.Drawing.Size(225, 8);
-            labelLinha2.BackColor = Color.LimeGreen;
-
-            labelLinha3 = new Label();
-            labelLinha3.Text = "";
-            labelLinha3.Location = new System.Drawing.Point(700, 800);
-            labelLinha3.Size = new System.Drawing.Size(450, 8);
-            labelLinha3.BackColor = Color.Blue;
+            labelLinha2.Location = new System.Drawing.Point(700, 800);
+            labelLinha2.Size = new System.Drawing.Size(450, 8);
+            labelLinha2.BackColor = Color.Blue;
 
             labelOla = new Label();
             labelOla.Text = "Olá";
@@ -58,7 +63,7 @@ namespace Views {
             labelNome.Text = "";
             labelNome.Location = new System.Drawing.Point(830, 80);
             labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = Color.LimeGreen;
+            labelNome.ForeColor = Color.Blue;
             fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
@@ -67,9 +72,10 @@ namespace Views {
             labelFoto.Size = new System.Drawing.Size(80, 80);
 
             Controls.Add(panel);
+            Controls.Add(labelDivisao1);
+            Controls.Add(labelDivisao2);
             Controls.Add(labelLinha1);
             Controls.Add(labelLinha2);
-            Controls.Add(labelLinha3);
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(labelFoto);

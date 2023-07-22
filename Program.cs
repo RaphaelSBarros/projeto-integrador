@@ -3,7 +3,7 @@ namespace Views;
 static class Program {
     
     static void Main() {
-        Application.Run(new Cadastro());
+        Application.Run(new TelaRelatar());
     }    
     
 }

@@ -5,6 +5,8 @@ namespace Views {
     public class Login : Form {
         //private Exemplo exemplo;
         private Label labelFundo;
+        private Label labelDivisao1;
+        private Label labelDivisao2;
         private Label labelSenha;
         private Label labelCPF;
         private Label labelNaoTemConta; 
@@ -23,11 +25,21 @@ namespace Views {
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
 
-            labelFundo = new Label();
+            labelDivisao1 = new Label();
+            labelDivisao1.Location = new System.Drawing.Point(650, 0);
+            labelDivisao1.Size = new System.Drawing.Size(10, 970);
+            labelDivisao1.BackColor = Color.LightGray;
+
+            labelDivisao2 = new Label();
+            labelDivisao2.Location = new System.Drawing.Point(1190, 0);
+            labelDivisao2.Size = new System.Drawing.Size(10, 970);
+            labelDivisao2.BackColor = Color.LightGray;
+
+            /*labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
+            labelFundo.SendToBack();*/
 
             labelCPF = new Label();
             labelCPF.Text = "CPF";
@@ -54,7 +66,7 @@ namespace Views {
             inputSenha.MaxLength = 20;
 
             labelNaoTemConta = new Label();
-            labelNaoTemConta.Location = new System.Drawing.Point(875, 425);
+            labelNaoTemConta.Location = new System.Drawing.Point(870, 425);
             labelNaoTemConta.Text = "Não tem uma conta?";
             labelNaoTemConta.Size = new System.Drawing.Size(119, 15);
             labelNaoTemConta.ForeColor = Color.Blue;
@@ -68,7 +80,7 @@ namespace Views {
             buttonLogar.Location = new System.Drawing.Point(725, 390);
             buttonLogar.Name = "Login";
             buttonLogar.Size = new System.Drawing.Size(400, 30);  
-            buttonLogar.Text = "Entrar";
+            buttonLogar.Text = "ENTRAR";
             buttonLogar.BackColor = Color.LimeGreen;
 
             buttonLogar.Click += buttonLogar_Click;
@@ -78,8 +90,10 @@ namespace Views {
             labelNaoTemConta.MouseEnter += labelNaoTemConta_MouseEnter;
             labelNaoTemConta.MouseLeave += labelNaoTemConta_MouseLeave;
             //checkBoxSenha.CheckedChanged += checkBoxSenha_CheckedChanged;
-            //234234234;
+
             Controls.Add(panel);
+            Controls.Add(labelDivisao1);
+            Controls.Add(labelDivisao2);
             Controls.Add(labelCPF);
             Controls.Add(labelSenha);
             Controls.Add(labelNaoTemConta);
