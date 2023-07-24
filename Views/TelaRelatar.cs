@@ -182,7 +182,7 @@ namespace Views {
             int linhaAtual = textBoxDescricaoProblema.GetLineFromCharIndex(textBoxDescricaoProblema.TextLength) + 1;
             int linhaHeight = textBoxDescricaoProblema.Font.Height;
             int novaAltura = linhaHeight * linhaAtual + 4;
-            textBoxDescricaoProblema.Height = novaAltura;
+            textBoxDescricaoProblema.Height = novaAltura;           
         }
 
     }

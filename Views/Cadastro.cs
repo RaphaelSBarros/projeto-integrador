@@ -13,20 +13,18 @@ namespace Views {
         private Label labelSenha;
         private Label labelTelefone; 
         private Label labelCPF;   
-        //private Label labelCEP;
-        private Label labelLogradouro;
+        /*private Label labelLogradouro;
         private Label labelNumeroResidencia;
-        private Label labelBairro;     
+        private Label labelBairro;*/     
         private Label labelJaTemConta;   
         private Label labelExibeErro; 
         private TextBox inputNome;
         private TextBox inputNickname;
         private TextBox inputEmail;
         private TextBox inputSenha;
-        //private TextBox inputCEP;
-        private TextBox inputLogradouro;
+        /*private TextBox inputLogradouro;
         private TextBox inputNumeroResidencia;
-        private TextBox inputBairro;  
+        private TextBox inputBairro;*/
         private MaskedTextBox inputTelefone; 
         private MaskedTextBox inputCPF;
         private Button buttonCadastrar;
@@ -103,17 +101,7 @@ namespace Views {
             inputSenha.Size = new System.Drawing.Size(450, 20);
             inputSenha.MaxLength = 20;
 
-            /*labelCEP = new Label();
-            labelCEP.Text = "CEP";
-            labelCEP.Location = new System.Drawing.Point(700, 700);
-            labelCEP.Size = new System.Drawing.Size(220, 20);
-
-            inputCEP = new TextBox();
-            inputCEP.Location = new System.Drawing.Point(700, 700); 
-            inputCEP.Name = "CEP";
-            inputCEP.Size = new System.Drawing.Size(450, 20);*/
-            
-            labelLogradouro = new Label();
+            /*labelLogradouro = new Label();
             labelLogradouro.Text = "Logradouro (Rua)";
             labelLogradouro.Location = new System.Drawing.Point(700, 550);
             labelLogradouro.Size = new System.Drawing.Size(220, 20);
@@ -144,7 +132,7 @@ namespace Views {
             inputBairro.Location = new System.Drawing.Point(700, 690); 
             inputBairro.Name = "Bairro";
             inputBairro.Size = new System.Drawing.Size(450, 20);
-            inputBairro.MaxLength = 50;
+            inputBairro.MaxLength = 50;*/
 
             labelTelefone = new Label();
             labelTelefone.Text = "Telefone";
@@ -211,14 +199,12 @@ namespace Views {
             Controls.Add(inputTelefone);
             Controls.Add(labelCPF);
             Controls.Add(inputCPF);
-            //Controls.Add(labelCEP);
-            //Controls.Add(inputCEP);
-            Controls.Add(labelLogradouro);
+            /*Controls.Add(labelLogradouro);
             Controls.Add(inputLogradouro);
             Controls.Add(labelNumeroResidencia);
             Controls.Add(inputNumeroResidencia);
             Controls.Add(labelBairro);
-            Controls.Add(inputBairro);
+            Controls.Add(inputBairro);*/
             Controls.Add(labelJaTemConta);
             Controls.Add(labelExibeErro);
             Controls.Add(buttonCadastrar);    
