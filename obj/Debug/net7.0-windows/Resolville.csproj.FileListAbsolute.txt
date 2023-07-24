@@ -28,6 +28,14 @@ C:\Users\matheus.cidral\Desktop\clone\Resolville\obj\Debug\net7.0-windows\refint
 C:\Users\matheus.cidral\Desktop\clone\Resolville\obj\Debug\net7.0-windows\Resolville.pdb
 C:\Users\matheus.cidral\Desktop\clone\Resolville\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\matheus.cidral\Desktop\clone\Resolville\obj\Debug\net7.0-windows\ref\Resolville.dll
+<<<<<<< HEAD
+=======
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
+C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+>>>>>>> 12043831db6bad304c6ce6e5a035057499f19e06
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.AssemblyReference.cache
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfoInputs.cache
@@ -36,10 +44,13 @@ C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.dll
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
+<<<<<<< HEAD
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+=======
+>>>>>>> 12043831db6bad304c6ce6e5a035057499f19e06
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
