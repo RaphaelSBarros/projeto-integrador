@@ -255,6 +255,38 @@ namespace Views {
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e) {
+
+            string nome, apelido, email, cpf, logradouro, bairro, numero, telefone, senha;
+            if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" &&  inputLogradouro.Text != "" &&  inputBairro.Text != "" &&  inputNumeroResidencia.Text != "" &&  inputTelefone.Text != "" &&  inputSenha.Text != ""){
+                nome = inputNome.Text;
+                apelido = inputNickname.Text;
+                email = inputEmail.Text;
+                cpf = inputCPF.Text;
+                logradouro = inputLogradouro.Text;
+                bairro = inputBairro.Text;
+                numero =inputNumeroResidencia.Text;
+                telefone = inputTelefone.Text;
+                senha = inputSenha.Text;
+
+                Controllers.UsuarioController.addUsuario(nome, apelido, email, cpf, logradouro, bairro, numero, telefone, senha);
+
+                inputNome.Text = "";
+                inputNickname.Text = "";
+                inputEmail.Text = "";
+                inputCPF.Text = "";
+                inputLogradouro.Text = "";
+                inputBairro.Text = "";
+                inputNumeroResidencia.Text = "";
+                inputTelefone.Text = "";
+                inputSenha.Text = "";
+
+                MessageBox.Show(
+                    "Cadastro realizado com sucesso!",
+                    "Sucesso",
+                    MessageBoxButtons.OK
+                );
+            }
+
             /*string nome = inputNome.Text;
             if(!IsValidName(nome)) {
                 labelExibeErro.Text = "*Preencha os campos corretamente*";
