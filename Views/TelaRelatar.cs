@@ -22,7 +22,7 @@ namespace Views {
         private ComboBox comboBoxTipoProblema;
         private ComboBox comboBoxBairroProblema;
         private PictureBox pictureBoxFotoUsuario;
-        private PictureBox pictureBoxProblema;
+        private Button buttonFotoProblema;
         private Button buttonEnviarRelato;
 
         public TelaRelatar() {
@@ -54,7 +54,7 @@ namespace Views {
             labelOla = new Label();
             labelOla.Text = "Olá";
             labelOla.Location = new System.Drawing.Point(790, 80);
-            labelOla.Size = new System.Drawing.Size(38, 25);
+            labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = Color.Blue;
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
@@ -136,15 +136,12 @@ namespace Views {
             labelFotoProblema.Location = new System.Drawing.Point(725, 600);
             labelFotoProblema.Size = new System.Drawing.Size(400, 20);
 
-            pictureBoxProblema = new PictureBox();
-            pictureBoxProblema.Location = new System.Drawing.Point(725, 620);
-            pictureBoxProblema.Size = new System.Drawing.Size(400, 110);     
-
-            pictureBoxFotoUsuario = new PictureBox();
-            pictureBoxFotoUsuario.Image = Image.FromFile("Layout/FotoUsuario.png");
-            pictureBoxFotoUsuario.Location = new System.Drawing.Point(700, 50);
-            pictureBoxFotoUsuario.Size = new System.Drawing.Size(80, 80);
-            pictureBoxFotoUsuario.SizeMode = PictureBoxSizeMode.StretchImage; 
+            buttonFotoProblema = new Button();
+            buttonFotoProblema.Location = new System.Drawing.Point(725, 620); 
+            buttonFotoProblema.Name = "Selecionar Imagem";
+            buttonFotoProblema.Size = new System.Drawing.Size(400, 30);
+            buttonFotoProblema.Text = "SELECIONAR IMAGEM";
+            buttonFotoProblema.ForeColor = Color.Gray; 
 
             buttonEnviarRelato = new Button();
             buttonEnviarRelato.Text = "ENVIAR RELATO";
@@ -153,6 +150,9 @@ namespace Views {
             buttonEnviarRelato.BackColor = Color.LimeGreen;
 
             textBoxDescricaoProblema.TextChanged += textBoxDescricaoProblema_TextChanged;
+            buttonFotoProblema.Click += buttonFotoProblema_Click;
+            buttonFotoProblema.MouseEnter += buttonFotoProblema_MouseEnter;
+            buttonFotoProblema.MouseLeave += buttonFotoProblema_MouseLeave;
 
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
@@ -172,7 +172,7 @@ namespace Views {
             Controls.Add(comboBoxTipoProblema);
             Controls.Add(comboBoxBairroProblema);
             Controls.Add(pictureBoxFotoUsuario);
-            Controls.Add(pictureBoxProblema);
+            Controls.Add(buttonFotoProblema);
             Controls.Add(buttonEnviarRelato);
             Controls.Add(labelFundo);
             
@@ -182,7 +182,34 @@ namespace Views {
             int linhaAtual = textBoxDescricaoProblema.GetLineFromCharIndex(textBoxDescricaoProblema.TextLength) + 1;
             int linhaHeight = textBoxDescricaoProblema.Font.Height;
             int novaAltura = linhaHeight * linhaAtual + 4;
-            textBoxDescricaoProblema.Height = novaAltura;
+            textBoxDescricaoProblema.Height = novaAltura;           
+        }
+
+        private void buttonFotoProblema_Click(object sender, EventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Arquivos de Imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog.Title = "Selecione uma Imagem";
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                string filePath = openFileDialog.FileName;
+
+                if (File.Exists(filePath)) {
+                    try {
+                        Image imagemSelecionada = Image.FromFile(filePath);
+                        buttonFotoProblema.Image = imagemSelecionada;
+                    } catch (Exception ex) when (ex is OutOfMemoryException || ex is FileNotFoundException) {
+                        MessageBox.Show("Erro ao abrir a imagem: Arquivo inválido ou não é uma imagem suportada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } else {
+                    MessageBox.Show("O arquivo selecionado não existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void buttonFotoProblema_MouseEnter(object sender, EventArgs e ) {
+            buttonFotoProblema.BackColor = Color.LightGray;
+        }
+
+        private void buttonFotoProblema_MouseLeave(object sender, EventArgs e ) {
+            buttonFotoProblema.BackColor = Color.White;
         }
 
     }

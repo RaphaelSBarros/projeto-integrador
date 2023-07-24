@@ -12,23 +12,17 @@ namespace Views {
         private Label labelEmail;
         private Label labelSenha;
         private Label labelTelefone; 
-        private Label labelCPF;   
-        //private Label labelCEP;
-        private Label labelLogradouro;
-        private Label labelNumeroResidencia;
-        private Label labelBairro;     
+        private Label labelCPF;      
         private Label labelJaTemConta;   
         private Label labelExibeErro; 
+        private Label labelFotoUsuario;
         private TextBox inputNome;
         private TextBox inputNickname;
         private TextBox inputEmail;
         private TextBox inputSenha;
-        //private TextBox inputCEP;
-        private TextBox inputLogradouro;
-        private TextBox inputNumeroResidencia;
-        private TextBox inputBairro;  
         private MaskedTextBox inputTelefone; 
         private MaskedTextBox inputCPF;
+        private Button buttonFotoUsuario;
         private Button buttonCadastrar;
         
         public Cadastro() {   
@@ -103,49 +97,6 @@ namespace Views {
             inputSenha.Size = new System.Drawing.Size(450, 20);
             inputSenha.MaxLength = 20;
 
-            /*labelCEP = new Label();
-            labelCEP.Text = "CEP";
-            labelCEP.Location = new System.Drawing.Point(700, 700);
-            labelCEP.Size = new System.Drawing.Size(220, 20);
-
-            inputCEP = new TextBox();
-            inputCEP.Location = new System.Drawing.Point(700, 700); 
-            inputCEP.Name = "CEP";
-            inputCEP.Size = new System.Drawing.Size(450, 20);*/
-            
-            labelLogradouro = new Label();
-            labelLogradouro.Text = "Logradouro (Rua)";
-            labelLogradouro.Location = new System.Drawing.Point(700, 550);
-            labelLogradouro.Size = new System.Drawing.Size(220, 20);
-
-            inputLogradouro = new TextBox();
-            inputLogradouro.Location = new System.Drawing.Point(700, 570); 
-            inputLogradouro.Name = "Logradouro";
-            inputLogradouro.Size = new System.Drawing.Size(450, 20);
-            inputLogradouro.MaxLength = 100;
-
-            labelNumeroResidencia = new Label();
-            labelNumeroResidencia.Text = "Número de Residência";
-            labelNumeroResidencia.Location = new System.Drawing.Point(700, 610);
-            labelNumeroResidencia.Size = new System.Drawing.Size(220, 20);
-
-            inputNumeroResidencia = new TextBox();
-            inputNumeroResidencia.Location = new System.Drawing.Point(700, 630); 
-            inputNumeroResidencia.Name = "NumeroResidencia";
-            inputNumeroResidencia.Size = new System.Drawing.Size(450, 20);
-            inputNumeroResidencia.MaxLength = 10;
-
-            labelBairro = new Label();
-            labelBairro.Text = "Bairro";
-            labelBairro.Location = new System.Drawing.Point(700, 670);
-            labelBairro.Size = new System.Drawing.Size(220, 20);
-
-            inputBairro = new TextBox();
-            inputBairro.Location = new System.Drawing.Point(700, 690); 
-            inputBairro.Name = "Bairro";
-            inputBairro.Size = new System.Drawing.Size(450, 20);
-            inputBairro.MaxLength = 50;
-
             labelTelefone = new Label();
             labelTelefone.Text = "Telefone";
             labelTelefone.Location = new System.Drawing.Point(700, 490);
@@ -170,6 +121,18 @@ namespace Views {
             inputCPF.MaxLength = 14;
             inputCPF.Mask = "000,000,000-00";
 
+            labelFotoUsuario = new Label();
+            labelFotoUsuario.Location = new System.Drawing.Point(700, 550);
+            labelFotoUsuario.Text = "Foto do Perfil do Usuário";
+            labelFotoUsuario.Size = new System.Drawing.Size(220, 20);
+
+            buttonFotoUsuario = new Button();
+            buttonFotoUsuario.Location = new System.Drawing.Point(700, 570); 
+            buttonFotoUsuario.Name = "Selecionar Imagem";
+            buttonFotoUsuario.Size = new System.Drawing.Size(450, 30);
+            buttonFotoUsuario.Text = "SELECIONAR IMAGEM";
+            buttonFotoUsuario.ForeColor = Color.Gray;
+
             /*labelExibeErro = new Label();
             labelExibeErro.Text = "";
             labelExibeErro.Location = new System.Drawing.Point(700, 720);
@@ -177,18 +140,21 @@ namespace Views {
             labelExibeErro.ForeColor = Color.Red;*/
 
             labelJaTemConta = new Label();
-            labelJaTemConta.Location = new System.Drawing.Point(875, 785);
+            labelJaTemConta.Location = new System.Drawing.Point(875, 670);
             labelJaTemConta.Text = "Já tem uma conta?";
             labelJaTemConta.Size = new System.Drawing.Size(107, 15);
             labelJaTemConta.ForeColor = Color.Blue;
-
+           
             buttonCadastrar = new Button();
-            buttonCadastrar.Location = new System.Drawing.Point(725, 750); 
+            buttonCadastrar.Location = new System.Drawing.Point(725, 640); 
             buttonCadastrar.Name = "Cadastrar";
             buttonCadastrar.Size = new System.Drawing.Size(400, 30);
             buttonCadastrar.Text = "CADASTRAR-SE";
             buttonCadastrar.BackColor = Color.LimeGreen;
 
+            buttonFotoUsuario.Click += buttonFotoUsuario_Click;
+            buttonFotoUsuario.MouseEnter += buttonFotoUsuario_MouseEnter;
+            buttonFotoUsuario.MouseLeave += buttonFotoUsuario_MouseLeave;
             buttonCadastrar.Click += buttonCadastrar_Click;
             buttonCadastrar.MouseEnter += buttonCadastrar_MouseEnter;
             buttonCadastrar.MouseLeave += buttonCadastrar_MouseLeave;
@@ -211,16 +177,10 @@ namespace Views {
             Controls.Add(inputTelefone);
             Controls.Add(labelCPF);
             Controls.Add(inputCPF);
-            //Controls.Add(labelCEP);
-            //Controls.Add(inputCEP);
-            Controls.Add(labelLogradouro);
-            Controls.Add(inputLogradouro);
-            Controls.Add(labelNumeroResidencia);
-            Controls.Add(inputNumeroResidencia);
-            Controls.Add(labelBairro);
-            Controls.Add(inputBairro);
             Controls.Add(labelJaTemConta);
             Controls.Add(labelExibeErro);
+            Controls.Add(labelFotoUsuario);
+            Controls.Add(buttonFotoUsuario);
             Controls.Add(buttonCadastrar);    
             Controls.Add(labelFundo);       
         }
@@ -342,9 +302,38 @@ namespace Views {
             return true;
         }
 
-        private bool IsValidLogradouro(string logradouro) {
-            string pattern = @"^[\p{L}\p{M}]+$";
-            return System.Text.RegularExpressions.Regex.IsMatch(logradouro, pattern);
+        private void buttonFotoUsuario_Click(object sender, EventArgs e) {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Arquivos de Imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog.Title = "Selecione uma Imagem";
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                string filePath = openFileDialog.FileName;
+
+                if (File.Exists(filePath))
+                {
+                    try
+                    {
+                        Image imagemSelecionada = Image.FromFile(filePath);
+                        buttonFotoUsuario.Image = imagemSelecionada;
+                    }
+                    catch (Exception ex) when (ex is OutOfMemoryException || ex is FileNotFoundException)
+                    {
+                        MessageBox.Show("Erro ao abrir a imagem: Arquivo inválido ou não é uma imagem suportada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O arquivo selecionado não existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonFotoUsuario_MouseEnter(object sender, EventArgs e ) {
+            buttonFotoUsuario.BackColor = Color.LightGray;
+        }
+
+        private void buttonFotoUsuario_MouseLeave(object sender, EventArgs e ) {
+            buttonFotoUsuario.BackColor = Color.White;
         }
 
         private void buttonCadastrar_MouseEnter(object sender, EventArgs e) {
