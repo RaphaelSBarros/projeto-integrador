@@ -8,23 +8,23 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\matheus.cidral\\.nuget\\packages\\": {},
+    "C:\\Users\\raphael.barros\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
+      "projectUniqueName": "C:\\Users\\raphael.barros\\OneDrive - SENAC-SC\\Área de Trabalho\\projeto-integrador\\Resolville.csproj",
       "projectName": "Resolville",
-      "projectPath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
-      "packagesPath": "C:\\Users\\matheus.cidral\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\obj\\",
+      "projectPath": "C:\\Users\\raphael.barros\\OneDrive - SENAC-SC\\Área de Trabalho\\projeto-integrador\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\raphael.barros\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\raphael.barros\\OneDrive - SENAC-SC\\Área de Trabalho\\projeto-integrador\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\matheus.cidral\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\raphael.barros\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
