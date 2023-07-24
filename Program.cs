@@ -2,8 +2,12 @@ namespace Views;
 
 static class Program {
     
+    [STAThread]
     static void Main() {
-        Application.Run(new Cadastro());
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+
+        Application.Run(new TelaInicial());
     }    
     
 }

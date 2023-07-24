@@ -23,6 +23,20 @@ namespace Views {
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
 
+            image = Image.FromFile("Layout/IconeInicioSelecionado.png");
+            panel = new Panel();
+            panel.Location = new System.Drawing.Point(100, 850);
+            panel.Size = new Size(40, 40);
+            panel.BackgroundImage = image;
+            panel.BackgroundImageLayout = ImageLayout.Zoom;
+
+            //image = Image.FromFile("Layout/IconeRelatar.png");
+            panel = new Panel();
+            panel.Location = new System.Drawing.Point(200, 850);
+            panel.Size = new Size(40, 40);
+            panel.BackgroundImage = image;
+            panel.BackgroundImageLayout = ImageLayout.Zoom;
+
             labelDivisao1 = new Label();
             labelDivisao1.Location = new System.Drawing.Point(650, 0);
             labelDivisao1.Size = new System.Drawing.Size(10, 970);
@@ -54,7 +68,7 @@ namespace Views {
             labelOla = new Label();
             labelOla.Text = "Olá";
             labelOla.Location = new System.Drawing.Point(790, 80);
-            labelOla.Size = new System.Drawing.Size(38, 25);
+            labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = Color.Blue;
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
@@ -70,6 +84,8 @@ namespace Views {
             labelFoto = new Label();
             labelFoto.Location = new System.Drawing.Point(700, 50);
             labelFoto.Size = new System.Drawing.Size(80, 80);
+
+
 
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
