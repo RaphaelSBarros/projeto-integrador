@@ -12,6 +12,11 @@ namespace Views {
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;
+        private Label labelIconeInicioSelecionado;
+        private Label labelIconeInicio;
+        private Label labelIconeRelatarSelecionado;
+        private Label labelIconeRelatar;
+         
 
         public TelaInicial() {
             this.WindowState = FormWindowState.Maximized;
@@ -20,20 +25,6 @@ namespace Views {
             Panel panel = new Panel();
             panel.Location = new System.Drawing.Point(1070, 50);
             panel.Size = new Size(80, 80);
-            panel.BackgroundImage = image;
-            panel.BackgroundImageLayout = ImageLayout.Zoom;
-
-            image = Image.FromFile("Layout/IconeInicioSelecionado.png");
-            panel = new Panel();
-            panel.Location = new System.Drawing.Point(100, 850);
-            panel.Size = new Size(40, 40);
-            panel.BackgroundImage = image;
-            panel.BackgroundImageLayout = ImageLayout.Zoom;
-
-            //image = Image.FromFile("Layout/IconeRelatar.png");
-            panel = new Panel();
-            panel.Location = new System.Drawing.Point(200, 850);
-            panel.Size = new Size(40, 40);
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
 
@@ -81,11 +72,21 @@ namespace Views {
             fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
-            labelFoto = new Label();
-            labelFoto.Location = new System.Drawing.Point(700, 50);
-            labelFoto.Size = new System.Drawing.Size(80, 80);
+            labelIconeInicioSelecionado = new Label();
+            labelIconeInicioSelecionado.Location = new System.Drawing.Point(700, 50);
+            labelIconeInicioSelecionado.Size = new System.Drawing.Size(80, 80);
 
+            labelIconeRelatar = new Label();
+            labelIconeRelatar.Location = new System.Drawing.Point(700, 50);
+            labelIconeRelatar.Size = new System.Drawing.Size(80, 80);
 
+            labelIconeInicio = new Label();
+            labelIconeInicio.Location = new System.Drawing.Point(700, 50);
+            labelIconeInicio.Size = new System.Drawing.Size(80, 80);
+
+            labelIconeRelatarSelecionado = new Label();
+            labelIconeRelatarSelecionado.Location = new System.Drawing.Point(700, 50);
+            labelIconeRelatarSelecionado.Size = new System.Drawing.Size(80, 80);
 
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
@@ -95,6 +96,10 @@ namespace Views {
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(labelFoto);
+            Controls.Add(labelIconeInicioSelecionado);
+            Controls.Add(labelIconeInicio);
+            Controls.Add(labelIconeRelatarSelecionado);
+            Controls.Add(labelIconeRelatar);
             Controls.Add(labelFundo);
         }
 
