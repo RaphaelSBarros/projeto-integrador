@@ -5,6 +5,7 @@ namespace Models
 {
     public class Usuario
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Apelido { get; set; }
         public string Email { get; set; }
@@ -36,7 +37,7 @@ namespace Models
             Telefone = telefone;
             Senha = senha;
 
-            Repositories.UsuarioRepository.addUsuarios(this);
+            Repositories.UsuarioRepository.addUsuarios(this); // tem q add dps lá no repositorio
         }
 
         public static Usuario? GetUsuario(int index){

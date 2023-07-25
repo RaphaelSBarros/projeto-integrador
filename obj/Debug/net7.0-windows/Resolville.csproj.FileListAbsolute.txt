@@ -54,3 +54,10 @@ C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-window
 C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.dll
 C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
 C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
