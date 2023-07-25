@@ -10,13 +10,10 @@ namespace Controllers
             string apelido,
             string email,
             string cpf,
-            string logradouro,
-            string bairro,
-            string numero,
             string telefone,
             string senha
         ){
-            new Models.Usuario(nome, apelido, email, cpf, logradouro, bairro, numero, telefone, senha);
+            new Models.Usuario(nome, apelido, email, cpf, telefone, senha);
         }
 
         public static List<Models.Usuario> ListarUsuarios(){
@@ -27,8 +24,8 @@ namespace Controllers
             return Repositories.UsuarioRepository.GetUsuario(index);
         }
 
-        public static void AlterarUsuarios(int index, string nome, string apelido, string email, string cpf, string logradouro, string bairro, string numero, string telefone, string senha){
-            Repositories.UsuarioRepository.AlterarUsuarios(index, nome, apelido, email, cpf, logradouro, bairro, numero, telefone, senha);
+        public static void AlterarUsuarios(int index, string nome, string apelido, string email, string cpf, string telefone, string senha){
+            Repositories.UsuarioRepository.AlterarUsuarios(index, nome, apelido, email, cpf, telefone, senha);
         }
 
         public static void removeUsuario(int index){

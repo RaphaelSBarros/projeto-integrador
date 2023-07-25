@@ -38,14 +38,11 @@ namespace Repositories
             conexao.Close();
         }
 
-        public static void AlterarUsuarios(int index, string nome, string apelido, string email, string cpf, string logradouro, string bairro, string numero, string telefone, string senha){
+        public static void AlterarUsuarios(int index, string nome, string apelido, string email, string cpf, string telefone, string senha){
             usuarios[index].Nome = nome;
             usuarios[index].Apelido = apelido;
             usuarios[index].Email = email;
             usuarios[index].Cpf = cpf;
-            usuarios[index].Logradouro = logradouro;
-            usuarios[index].Bairro = bairro;
-            usuarios[index].Numero = numero;
             usuarios[index].Telefone = telefone;
             usuarios[index].Senha = senha;
         }
