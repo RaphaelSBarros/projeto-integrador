@@ -115,7 +115,7 @@ namespace Repositories
             InitConexao();
             string query = "DELETE FROM usuario WHERE ID_Usuario = @ID_Usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
-            command.Parameters,AddWithValue("@ID_Usuario", usuarios[index].Id);
+            command.Parameters.AddWithValue("@ID_Usuario", usuarios[index].Id);
             int rowsAffected = command.ExecuteNonQuery();
 
             if(rowsAffected > 0){
