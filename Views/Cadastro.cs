@@ -143,14 +143,14 @@ namespace Views {
             labelJaTemConta.Location = new System.Drawing.Point(875, 670);
             labelJaTemConta.Text = "Já tem uma conta?";
             labelJaTemConta.Size = new System.Drawing.Size(107, 15);
-            labelJaTemConta.ForeColor = Color.Blue;
+            labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
            
             buttonCadastrar = new Button();
             buttonCadastrar.Location = new System.Drawing.Point(725, 640); 
             buttonCadastrar.Name = "Cadastrar";
             buttonCadastrar.Size = new System.Drawing.Size(400, 30);
             buttonCadastrar.Text = "CADASTRAR-SE";
-            buttonCadastrar.BackColor = Color.LimeGreen;
+            buttonCadastrar.BackColor = ColorTranslator.FromHtml("#7ed957");
 
             buttonFotoUsuario.Click += buttonFotoUsuario_Click;
             buttonFotoUsuario.MouseEnter += buttonFotoUsuario_MouseEnter;
@@ -330,7 +330,7 @@ namespace Views {
         }
 
         private void buttonCadastrar_MouseLeave(object sender, EventArgs e) {
-            buttonCadastrar.BackColor = Color.LimeGreen;
+            buttonCadastrar.BackColor = ColorTranslator.FromHtml("#7ed957");
         }
 
         private void labelJaTemConta_MouseClick(object sender, EventArgs e) {
@@ -340,11 +340,11 @@ namespace Views {
         }
 
         private void labelJaTemConta_MouseEnter(object sender, EventArgs e) {
-            labelJaTemConta.ForeColor = Color.RoyalBlue;
+            labelJaTemConta.ForeColor = Color.Blue;
         }
 
         private void labelJaTemConta_MouseLeave(object sender, EventArgs e) {
-            labelJaTemConta.ForeColor = Color.Blue;
+            labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
         }
        
     }

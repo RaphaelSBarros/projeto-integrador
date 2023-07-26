@@ -12,8 +12,8 @@ namespace Views {
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;
-        private Label labelInicio;
-        private Label labelRelatar;
+        private Button buttonInicio;
+        private Button buttonRelatar;
         private PictureBox pictureBoxIconeInicioSelecionado;
         private PictureBox pictureBoxIconeInicio;
         private PictureBox pictureBoxIconeRelatarSelecionado;
@@ -29,6 +29,13 @@ namespace Views {
             panel.Size = new Size(80, 80);
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
+
+            /*Image image1 = Image.FromFile("Layout/BarraInicio.png");
+            Panel panel1 = new Panel();
+            panel1.Location = new System.Drawing.Point(700, 800);
+            panel1.Size = new Size(450, 100);
+            panel1.BackgroundImage = image1;
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;*/
 
             labelDivisao1 = new Label();
             labelDivisao1.Location = new System.Drawing.Point(650, 0);
@@ -50,7 +57,7 @@ namespace Views {
             labelLinha1.Text = "";
             labelLinha1.Location = new System.Drawing.Point(700, 150);
             labelLinha1.Size = new System.Drawing.Size(450, 8);
-            labelLinha1.BackColor = Color.Blue;
+            labelLinha1.BackColor = Color.RoyalBlue;
 
             labelLinha2 = new Label();
             labelLinha2.Text = "";
@@ -74,17 +81,28 @@ namespace Views {
             fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
-            pictureBoxIconeInicioSelecionado = new PictureBox();
-            pictureBoxIconeInicioSelecionado.Image = Image.FromFile("Layout/IconeInicioSelecionado.png");
-            pictureBoxIconeInicioSelecionado.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBoxIconeInicioSelecionado.Location = new System.Drawing.Point(725, 850);
-            pictureBoxIconeInicioSelecionado.Size = new System.Drawing.Size(60, 50);
+            buttonInicio = new Button();
+            buttonInicio.Text = "INÍCIO";
+            buttonInicio.Location = new System.Drawing.Point(700, 808);
+            buttonInicio.Size = new System.Drawing.Size(225, 50);
+            buttonInicio.BackColor = ColorTranslator.FromHtml("#5271FF");
+            buttonInicio.ForeColor = Color.White;
+            fonte = new Font("Arial", 14, FontStyle.Bold);
+            buttonInicio.Font = fonte;
+            buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
+
+            buttonRelatar = new Button();
+            buttonRelatar.Text = "RELATAR";
+            buttonRelatar.Location = new System.Drawing.Point(925, 808);
+            buttonRelatar.BackColor = Color.White;
+            buttonRelatar.Size = new System.Drawing.Size(225, 50);
+            buttonRelatar.ForeColor = ColorTranslator.FromHtml("#5271FF");
+            fonte = new Font("Arial", 14, FontStyle.Bold);
+            buttonRelatar.Font = fonte;
+            buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
+
             
-            pictureBoxIconeRelatar = new PictureBox();
-            pictureBoxIconeRelatar.Image = Image.FromFile("Layout/IconeRelatar.png");
-            pictureBoxIconeRelatar.Location = new System.Drawing.Point(900, 850);
-            pictureBoxIconeRelatar.Size = new System.Drawing.Size(60, 60);
-            pictureBoxIconeRelatar.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonRelatar.Click += buttonRelatar_Click;
 
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
@@ -94,12 +112,19 @@ namespace Views {
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(labelFoto);
+            Controls.Add(buttonInicio);
+            Controls.Add(buttonRelatar);
             Controls.Add(pictureBoxIconeInicioSelecionado);
             Controls.Add(pictureBoxIconeInicio);
             Controls.Add(pictureBoxIconeRelatarSelecionado);
             Controls.Add(pictureBoxIconeRelatar);
             Controls.Add(labelFundo);
+        }
 
+        private void buttonRelatar_Click(object sender, EventArgs e) {
+            TelaRelatar telaRelatar = new TelaRelatar();
+            telaRelatar.Show();
+            this.Hide();
         }
 
     }

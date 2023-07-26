@@ -69,7 +69,7 @@ namespace Views {
             labelNaoTemConta.Location = new System.Drawing.Point(870, 425);
             labelNaoTemConta.Text = "Não tem uma conta?";
             labelNaoTemConta.Size = new System.Drawing.Size(119, 15);
-            labelNaoTemConta.ForeColor = Color.Blue;
+            labelNaoTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
 
             /*CheckBoxSenha = new CheckBox();
             checkBoxSenha.Image = Image.FromFile("Layout/VerSenha.png");
@@ -81,7 +81,7 @@ namespace Views {
             buttonLogar.Name = "Login";
             buttonLogar.Size = new System.Drawing.Size(400, 30);  
             buttonLogar.Text = "ENTRAR";
-            buttonLogar.BackColor = Color.LimeGreen;
+            buttonLogar.BackColor = ColorTranslator.FromHtml("#7ed957");
 
             buttonLogar.Click += buttonLogar_Click;
             buttonLogar.MouseEnter += buttonLogar_MouseEnter;
@@ -133,7 +133,7 @@ namespace Views {
         }
 
         private void buttonLogar_MouseLeave(object sender, EventArgs e) {
-            buttonLogar.BackColor = Color.LimeGreen;
+            buttonLogar.BackColor = ColorTranslator.FromHtml("#7ed957");
         }
 
         private void labelNaoTemConta_MouseClick(object sender, EventArgs e) {
@@ -143,11 +143,11 @@ namespace Views {
         }
 
         private void labelNaoTemConta_MouseEnter(object sender, EventArgs e) {
-            labelNaoTemConta.ForeColor = Color.RoyalBlue;
+            labelNaoTemConta.ForeColor = Color.Blue;
         }
 
         private void labelNaoTemConta_MouseLeave(object sender, EventArgs e) {
-            labelNaoTemConta.ForeColor = Color.Blue;
+            labelNaoTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
         }
 
     }

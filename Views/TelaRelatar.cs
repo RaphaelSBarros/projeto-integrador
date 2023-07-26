@@ -22,6 +22,8 @@ namespace Views {
         private ComboBox comboBoxTipoProblema;
         private ComboBox comboBoxBairroProblema;
         private PictureBox pictureBoxFotoUsuario;
+        private Button buttonInicio;
+        private Button buttonRelatar;
         private Button buttonFotoProblema;
         private Button buttonEnviarRelato;
 
@@ -136,20 +138,45 @@ namespace Views {
             labelFotoProblema.Location = new System.Drawing.Point(725, 600);
             labelFotoProblema.Size = new System.Drawing.Size(400, 20);
 
+            buttonInicio = new Button();
+            buttonInicio.Text = "INÍCIO";
+            buttonInicio.Location = new System.Drawing.Point(700, 808);
+            buttonInicio.Size = new System.Drawing.Size(225, 50);
+            buttonInicio.BackColor = Color.White;
+            buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
+            fonte = new Font("Arial", 14, FontStyle.Bold);
+            buttonInicio.Font = fonte;
+            buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
+
+            buttonRelatar = new Button();
+            buttonRelatar.Text = "RELATAR";
+            buttonRelatar.Location = new System.Drawing.Point(925, 808);
+            buttonRelatar.Size = new System.Drawing.Size(225, 50);
+            buttonRelatar.BackColor = ColorTranslator.FromHtml("#5271FF");
+            buttonRelatar.ForeColor = Color.White;
+            fonte = new Font("Arial", 14, FontStyle.Bold);
+            buttonRelatar.Font = fonte;
+            buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
+
             buttonFotoProblema = new Button();
             buttonFotoProblema.Location = new System.Drawing.Point(725, 620); 
             buttonFotoProblema.Name = "Selecionar Imagem";
-            buttonFotoProblema.Size = new System.Drawing.Size(400, 30);
+            buttonFotoProblema.Size = new System.Drawing.Size(400, 120);
             buttonFotoProblema.Text = "SELECIONAR IMAGEM";
             buttonFotoProblema.ForeColor = Color.Gray; 
+            buttonFotoProblema.BackgroundImageLayout = ImageLayout.Zoom;
 
             buttonEnviarRelato = new Button();
             buttonEnviarRelato.Text = "ENVIAR RELATO";
             buttonEnviarRelato.Location = new System.Drawing.Point(775, 750);
             buttonEnviarRelato.Size = new System.Drawing.Size(300, 30);
-            buttonEnviarRelato.BackColor = Color.LimeGreen;
+            buttonEnviarRelato.BackColor = ColorTranslator.FromHtml("#7ed957");
 
             textBoxDescricaoProblema.TextChanged += textBoxDescricaoProblema_TextChanged;
+            buttonEnviarRelato.Click += buttonEnviarRelato_Click;
+            buttonEnviarRelato.MouseEnter += buttonEnviarRelato_MouseEnter;
+            buttonEnviarRelato.MouseLeave += buttonEnviarRelato_MouseLeave;
+            buttonInicio.Click += buttonInicio_Click;
             buttonFotoProblema.Click += buttonFotoProblema_Click;
             buttonFotoProblema.MouseEnter += buttonFotoProblema_MouseEnter;
             buttonFotoProblema.MouseLeave += buttonFotoProblema_MouseLeave;
@@ -172,6 +199,8 @@ namespace Views {
             Controls.Add(comboBoxTipoProblema);
             Controls.Add(comboBoxBairroProblema);
             Controls.Add(pictureBoxFotoUsuario);
+            Controls.Add(buttonInicio);
+            Controls.Add(buttonRelatar);
             Controls.Add(buttonFotoProblema);
             Controls.Add(buttonEnviarRelato);
             Controls.Add(labelFundo);
@@ -183,6 +212,24 @@ namespace Views {
             int linhaHeight = textBoxDescricaoProblema.Font.Height;
             int novaAltura = linhaHeight * linhaAtual + 4;
             textBoxDescricaoProblema.Height = novaAltura;           
+        }
+
+        private void buttonEnviarRelato_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
+            buttonEnviarRelato.BackColor = Color.PaleGreen;
+        }
+
+        private void buttonEnviarRelato_MouseLeave(object sender, EventArgs e) {
+            buttonEnviarRelato.BackColor = ColorTranslator.FromHtml("#7ed957");
+        }
+
+        private void buttonInicio_Click(object sender, EventArgs e) {
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.Show();
+            this.Hide();
         }
 
         private void buttonFotoProblema_Click(object sender, EventArgs e) {
