@@ -42,7 +42,7 @@ namespace Repositories
                 usuario.Email = row["Email"].ToString();
                 usuario.Cpf = row["CPF"].ToString();
                 usuario.Senha = row["Senha"].ToString();
-                usuario,Telefone = row["Telefone"].ToString();
+                usuario.Telefone = row["Telefone"].ToString();
                 usuarios.Add(usuario);
             }
             CloseConexao();
