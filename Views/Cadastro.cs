@@ -215,8 +215,8 @@ namespace Views {
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e) {
+            string nome, apelido, email, cpf, telefone, senha;
 
-            string nome, apelido, email, cpf, logradouro, bairro, numero, telefone, senha;
             if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" &&  inputTelefone.Text != "" &&  inputSenha.Text != ""){
                 nome = inputNome.Text;
                 apelido = inputNickname.Text;
@@ -300,23 +300,18 @@ namespace Views {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Arquivos de Imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             openFileDialog.Title = "Selecione uma Imagem";
+            
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
                 string filePath = openFileDialog.FileName;
 
-                if (File.Exists(filePath))
-                {
-                    try
-                    {
+                if (File.Exists(filePath)) {
+                    try {
                         Image imagemSelecionada = Image.FromFile(filePath);
                         buttonFotoUsuario.Image = imagemSelecionada;
-                    }
-                    catch (Exception ex) when (ex is OutOfMemoryException || ex is FileNotFoundException)
-                    {
+                    } catch (Exception ex) when (ex is OutOfMemoryException || ex is FileNotFoundException) {
                         MessageBox.Show("Erro ao abrir a imagem: Arquivo inválido ou não é uma imagem suportada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
+                } else {
                     MessageBox.Show("O arquivo selecionado não existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

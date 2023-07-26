@@ -12,10 +12,12 @@ namespace Views {
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;
-        private Label labelIconeInicioSelecionado;
-        private Label labelIconeInicio;
-        private Label labelIconeRelatarSelecionado;
-        private Label labelIconeRelatar;
+        private Label labelInicio;
+        private Label labelRelatar;
+        private PictureBox pictureBoxIconeInicioSelecionado;
+        private PictureBox pictureBoxIconeInicio;
+        private PictureBox pictureBoxIconeRelatarSelecionado;
+        private PictureBox pictureBoxIconeRelatar;
          
 
         public TelaInicial() {
@@ -72,21 +74,17 @@ namespace Views {
             fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
-            labelIconeInicioSelecionado = new Label();
-            labelIconeInicioSelecionado.Location = new System.Drawing.Point(700, 50);
-            labelIconeInicioSelecionado.Size = new System.Drawing.Size(80, 80);
-
-            labelIconeRelatar = new Label();
-            labelIconeRelatar.Location = new System.Drawing.Point(700, 50);
-            labelIconeRelatar.Size = new System.Drawing.Size(80, 80);
-
-            labelIconeInicio = new Label();
-            labelIconeInicio.Location = new System.Drawing.Point(700, 50);
-            labelIconeInicio.Size = new System.Drawing.Size(80, 80);
-
-            labelIconeRelatarSelecionado = new Label();
-            labelIconeRelatarSelecionado.Location = new System.Drawing.Point(700, 50);
-            labelIconeRelatarSelecionado.Size = new System.Drawing.Size(80, 80);
+            pictureBoxIconeInicioSelecionado = new PictureBox();
+            pictureBoxIconeInicioSelecionado.Image = Image.FromFile("Layout/IconeInicioSelecionado.png");
+            pictureBoxIconeInicioSelecionado.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBoxIconeInicioSelecionado.Location = new System.Drawing.Point(725, 850);
+            pictureBoxIconeInicioSelecionado.Size = new System.Drawing.Size(60, 50);
+            
+            pictureBoxIconeRelatar = new PictureBox();
+            pictureBoxIconeRelatar.Image = Image.FromFile("Layout/IconeRelatar.png");
+            pictureBoxIconeRelatar.Location = new System.Drawing.Point(900, 850);
+            pictureBoxIconeRelatar.Size = new System.Drawing.Size(60, 60);
+            pictureBoxIconeRelatar.BackgroundImageLayout = ImageLayout.Zoom;
 
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
@@ -96,11 +94,12 @@ namespace Views {
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(labelFoto);
-            Controls.Add(labelIconeInicioSelecionado);
-            Controls.Add(labelIconeInicio);
-            Controls.Add(labelIconeRelatarSelecionado);
-            Controls.Add(labelIconeRelatar);
+            Controls.Add(pictureBoxIconeInicioSelecionado);
+            Controls.Add(pictureBoxIconeInicio);
+            Controls.Add(pictureBoxIconeRelatarSelecionado);
+            Controls.Add(pictureBoxIconeRelatar);
             Controls.Add(labelFundo);
+
         }
 
     }
