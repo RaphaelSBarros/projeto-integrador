@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "V12YiURFSGeFhDp552RLw+/Kf2P5aIyxV/6r0wpg3AxBixiLkEXKp+EdTJRwD1WB7vTpGz8bm9SLxAFbRLhygQ==",
+  "dgSpecHash": "VARPQj0eqHXkWDMv3wQvHQZq4Mh/1jHe4TaTUcQH2WGpRrCU6Qz3f1tWALwYHyNxMqnHKp8Bhwvso+fm/szp5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gustavo.silva41\\Desktop\\lxio\\projeto-integrador\\Resolville.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Nova pasta\\projeto-integrador\\Resolville.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gustavo.silva41\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
   ],
   "logs": []
 }

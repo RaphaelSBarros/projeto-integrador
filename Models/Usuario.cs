@@ -13,6 +13,7 @@ namespace Models
         public string Telefone { get; set; }
         public string Senha { get; set; }
 
+        public Usuario(){}
         public Usuario(
             string nome,
             string apelido,
@@ -28,7 +29,7 @@ namespace Models
             Telefone = telefone;
             Senha = senha;
 
-            Repositories.UsuarioRepository.addUsuarios(this); // tem q add dps lá no repositorio
+            Repositories.UsuarioRepository.AddUsuario(this); // tem q add dps lá no repositorio
         }
 
         public static Usuario? GetUsuario(int index){
