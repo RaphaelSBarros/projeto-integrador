@@ -6,6 +6,7 @@ namespace Controllers
     public static class UsuarioController {
 
         public static void addUsuario(
+            int id,
             string nome,
             string apelido,
             string email,
@@ -13,7 +14,7 @@ namespace Controllers
             string telefone,
             string senha
         ){
-            new Models.Usuario(nome, apelido, email, cpf, telefone, senha);
+            new Models.Usuario(id, nome, apelido, email, cpf, telefone, senha);
         }
 
         public static List<Models.Usuario> ListarUsuarios(){
