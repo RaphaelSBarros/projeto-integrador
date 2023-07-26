@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using MySqlConnector;
-using Models; // apagar, pois repositorie não pode ver models!!!
 
 namespace Repositories
 {
