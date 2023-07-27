@@ -54,8 +54,6 @@ namespace Controllers
             return Models.Usuario.GetUsuario(index);
         }
 
-        
-
         public static void DeleteUsuario(int index){
             Models.Usuario.DeleteUsuario(index);
         }

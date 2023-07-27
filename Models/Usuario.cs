@@ -43,6 +43,7 @@ namespace Models
         }
 
         public static void UpdateUsuario(
+            int index,
             string nome,
             string apelido,
             string email,
@@ -51,7 +52,7 @@ namespace Models
             string senha
         ){
             Usuario usuario = Usuario.GetUsuario(index);
-            if(Pessoa != null){
+            if(usuario != null){
                 usuario.Nome = nome;
                 usuario.Apelido = apelido;
                 usuario.Email = email;
