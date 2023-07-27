@@ -1,36 +1,44 @@
 using System;
 using System.Collections.Generic;
+// REVER!!!
 
 namespace Controllers
 {
     public static class UsuarioController {
 
-        public static void addUsuario(
-            int id,
+        public static void AddUsuario(
             string nome,
-            string apelido,
+            string nome_usuario,
             string email,
             string cpf,
-            string telefone,
-            string senha
+            string senha,
+            string telefone
         ){
-            new Models.Usuario(id, nome, apelido, email, cpf, telefone, senha);
+            new Models.Usuario(nome, nome_usuario, email, cpf, senha, telefone);
         }
 
         public static List<Models.Usuario> ListarUsuarios(){
-            return Repositories.UsuarioRepository.ListarUsuarios();
+            return Models.Usuario.ListarUsuarios();
         }
 
         public static Models.Usuario? GetUsuario(int index){
-            return Repositories.UsuarioRepository.GetUsuario(index);
+            return Models.Usuario.GetUsuario(index);
         }
 
-        public static void AlterarUsuarios(int index, string nome, string apelido, string email, string cpf, string telefone, string senha){
-            Repositories.UsuarioRepository.AlterarUsuarios(index, nome, apelido, email, cpf, telefone, senha);
+        public static void UpdateUsuario(
+                int index, 
+                string nome, 
+                string nome_usuario, 
+                string email, 
+                string cpf, 
+                string senha, 
+                string telefone
+            ){
+            Models.Usuario.UpdateUsuario(index, nome, nome_usuario, email, cpf, senha, telefone);
         }
 
-        public static void removeUsuario(int index){
-            Repositories.UsuarioRepository.removeUsuarios(index);
+        public static void DeleteUsuario(int index){
+            Models.Usuario.DeleteUsuario(index);
         }
     }
     

@@ -225,7 +225,7 @@ namespace Views {
                 telefone = inputTelefone.Text;
                 senha = inputSenha.Text;
 
-                Controllers.UsuarioController.addUsuario(nome, apelido, email, cpf, telefone, senha);
+                Controllers.UsuarioController.addUsuario(nome, apelido, email, cpf, telefone, senha); 
 
                 inputNome.Text = "";
                 inputNickname.Text = "";
