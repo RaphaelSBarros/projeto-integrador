@@ -83,7 +83,7 @@ namespace Repositories
             }
             CloseConexao();
         }
-        public static List<Models.Usuario> ListarUsuarios() { // LISTAR as informações dos usuários do BANCO DE DADOS.
+        public static List<Models.Usuario> ListUsuarios() { // LISTAR as informações dos usuários do BANCO DE DADOS.
             return usuarios;
         }
         public static void UpdateUsuario(int index, Models.Usuario usuario){ // ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.

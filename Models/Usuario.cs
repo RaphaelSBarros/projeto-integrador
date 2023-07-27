@@ -14,7 +14,6 @@ namespace Models
 
         public Usuario(){}
         public Usuario(
-            int id,
             string nome,
             string apelido,
             string email,
@@ -22,23 +21,53 @@ namespace Models
             string telefone,
             string senha
         ) {
-            Id = id;
-            Nome = nome;
-            Apelido = apelido;
-            Email = email;
-            Cpf = cpf;
-            Telefone = telefone;
-            Senha = senha;
+            this.Nome = nome;
+            this.Apelido = apelido;
+            this.Email = email;
+            this.Cpf = cpf;
+            this.Telefone = telefone;
+            this.Senha = senha;
 
             Repositories.UsuarioRepository.AddUsuario(this); // tem q add dps lá no repositorio o telefone
+        }
+
+        public static void Sincronizar(){
+            Repositories.UsuarioRepository.Sincronizar();
+        }
+        public static List<Models.Usuario> ListUsuarios(){
+            return Repositories.UsuarioRepository.ListUsuarios();
         }
 
         public static Usuario? GetUsuario(int index){
             return Repositories.UsuarioRepository.GetUsuario(index);
         }
 
-        public override string ToString(){
-            return $"----\nNome: {Nome}\nApelido: {Apelido}\nEmail: {Email}\nCPF: {Cpf}\nTelefone: {Telefone}\nLogin: {Cpf}\nSenha: {Senha}\n";
+        public static void UpdateUsuario(
+            string nome,
+            string apelido,
+            string email,
+            string cpf,
+            string telefone,
+            string senha
+        ){
+            Usuario usuario = Usuario.GetUsuario(index);
+            if(Pessoa != null){
+                usuario.Nome = nome;
+                usuario.Apelido = apelido;
+                usuario.Email = email;
+                usuario.Cpf = cpf;
+                usuario.Telefone = telefone;
+                usuario.Senha = senha;
+
+                Repositories.UsuarioRepository.UpdateUsuario(index, usuario);
+            }
+        }
+
+        public static void DeleteUsuario(int index){
+            Usuario usuario = Usuario.GetUsuario(index);
+            if(usuario != null){
+                Repositories.UsuarioRepository.DeleteUsuario(index);
+            }
         }
     }
 }

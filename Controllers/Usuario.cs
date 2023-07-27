@@ -5,8 +5,11 @@ namespace Controllers
 {
     public static class UsuarioController {
 
+        public static void Sincronizar(){
+            Models.Usuario.Sincronizar();
+        }
+
         public static void addUsuario(
-            int id,
             string nome,
             string apelido,
             string email,
@@ -14,24 +17,47 @@ namespace Controllers
             string telefone,
             string senha
         ){
-            new Models.Usuario(id, nome, apelido, email, cpf, telefone, senha);
+            new Models.Usuario(
+                nome,
+                apelido,
+                email,
+                cpf,
+                telefone, 
+                senha);
         }
 
-        public static List<Models.Usuario> ListarUsuarios(){
-            return Repositories.UsuarioRepository.ListarUsuarios();
+        public static List<Models.Usuario> ListUsuarios(){
+            return Models.Usuario.ListUsuarios();
         }
+        public static void UpdateUsuarios(
+            int index,
+            string nome,
+            string apelido,
+            string email,
+            string cpf,
+            string telefone,
+            string senha
+        ){
+            Models.Usuario.UpdateUsuario(
+                index,
+                nome,
+                apelido,
+                email,
+                cpf,
+                telefone,
+                senha
+            );
+        }
+
 
         public static Models.Usuario? GetUsuario(int index){
-            return Repositories.UsuarioRepository.GetUsuario(index);
+            return Models.Usuario.GetUsuario(index);
         }
 
-        public static void AlterarUsuarios(int index, string nome, string apelido, string email, string cpf, string telefone, string senha){
-            Repositories.UsuarioRepository.AlterarUsuarios(index, nome, apelido, email, cpf, telefone, senha);
-        }
+        
 
-        public static void removeUsuario(int index){
-            Repositories.UsuarioRepository.removeUsuarios(index);
+        public static void DeleteUsuario(int index){
+            Models.Usuario.DeleteUsuario(index);
         }
     }
-    
 }
