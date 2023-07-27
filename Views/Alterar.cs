@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using System.Drawing;
 
-namespace Views {   
-    public class Cadastro : Form {   
+namespace Views {
+
+    public class Alterar : Form{
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;   
@@ -13,7 +13,6 @@ namespace Views {
         private Label labelSenha;
         private Label labelTelefone; 
         private Label labelCPF;      
-        private Label labelJaTemConta;   
         private Label labelExibeErro; 
         private Label labelFotoUsuario;
         private TextBox inputNome;
@@ -23,10 +22,11 @@ namespace Views {
         private MaskedTextBox inputTelefone; 
         private MaskedTextBox inputCPF;
         private Button buttonFotoUsuario;
-        private Button buttonCadastrar;
-        
-        public Cadastro() {   
-            this.WindowState = FormWindowState.Maximized;
+        private Button buttonAlterar;
+
+        public Alterar() {
+            
+        this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/LogoResolville.png");
             Panel panel = new Panel();
@@ -139,28 +139,19 @@ namespace Views {
             labelExibeErro.Size = new System.Drawing.Size(220, 20);
             labelExibeErro.ForeColor = Color.Red;*/
 
-            labelJaTemConta = new Label();
-            labelJaTemConta.Location = new System.Drawing.Point(875, 670);
-            labelJaTemConta.Text = "Já tem uma conta?";
-            labelJaTemConta.Size = new System.Drawing.Size(107, 15);
-            labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
-           
-            buttonCadastrar = new Button();
-            buttonCadastrar.Location = new System.Drawing.Point(725, 640); 
-            buttonCadastrar.Name = "Cadastrar";
-            buttonCadastrar.Size = new System.Drawing.Size(400, 30);
-            buttonCadastrar.Text = "CADASTRAR-SE";
-            buttonCadastrar.BackColor = ColorTranslator.FromHtml("#7ed957");
+            buttonAlterar = new Button();
+            buttonAlterar.Location = new System.Drawing.Point(725, 640); 
+            buttonAlterar.Name = "Alterar";
+            buttonAlterar.Size = new System.Drawing.Size(400, 30);
+            buttonAlterar.Text = "Alterar-SE";
+            buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
 
             buttonFotoUsuario.Click += buttonFotoUsuario_Click;
             buttonFotoUsuario.MouseEnter += buttonFotoUsuario_MouseEnter;
             buttonFotoUsuario.MouseLeave += buttonFotoUsuario_MouseLeave;
-            buttonCadastrar.Click += buttonCadastrar_Click;
-            buttonCadastrar.MouseEnter += buttonCadastrar_MouseEnter;
-            buttonCadastrar.MouseLeave += buttonCadastrar_MouseLeave;
-            labelJaTemConta.MouseClick += labelJaTemConta_MouseClick;
-            labelJaTemConta.MouseEnter += labelJaTemConta_MouseEnter;
-            labelJaTemConta.MouseLeave += labelJaTemConta_MouseLeave;
+            buttonAlterar.Click += buttonAlterar_Click;
+            buttonAlterar.MouseEnter += buttonAlterar_MouseEnter;
+            buttonAlterar.MouseLeave += buttonAlterar_MouseLeave;
             
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
@@ -177,11 +168,10 @@ namespace Views {
             Controls.Add(inputTelefone);
             Controls.Add(labelCPF);
             Controls.Add(inputCPF);
-            Controls.Add(labelJaTemConta);
             Controls.Add(labelExibeErro);
             Controls.Add(labelFotoUsuario);
             Controls.Add(buttonFotoUsuario);
-            Controls.Add(buttonCadastrar);    
+            Controls.Add(buttonAlterar);    
             Controls.Add(labelFundo);       
         }
 
@@ -214,7 +204,7 @@ namespace Views {
             e.Handled = true;
         }
 
-        private void buttonCadastrar_Click(object sender, EventArgs e) {
+        private void buttonAlterar_Click(object sender, EventArgs e) {
             string nome, apelido, email, cpf, telefone, senha;
 
             if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" &&  inputTelefone.Text != "" &&  inputSenha.Text != ""){
@@ -325,28 +315,14 @@ namespace Views {
             buttonFotoUsuario.BackColor = Color.White;
         }
 
-        private void buttonCadastrar_MouseEnter(object sender, EventArgs e) {
-            buttonCadastrar.BackColor = Color.PaleGreen;
+        private void buttonAlterar_MouseEnter(object sender, EventArgs e) {
+            buttonAlterar.BackColor = Color.PaleGreen;
         }
 
-        private void buttonCadastrar_MouseLeave(object sender, EventArgs e) {
-            buttonCadastrar.BackColor = ColorTranslator.FromHtml("#7ed957");
+        private void buttonAlterar_MouseLeave(object sender, EventArgs e) {
+            buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
         }
 
-        private void labelJaTemConta_MouseClick(object sender, EventArgs e) {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-        }
-
-        private void labelJaTemConta_MouseEnter(object sender, EventArgs e) {
-            labelJaTemConta.ForeColor = Color.Blue;
-        }
-
-        private void labelJaTemConta_MouseLeave(object sender, EventArgs e) {
-            labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
-        }
-       
     }
 
 }

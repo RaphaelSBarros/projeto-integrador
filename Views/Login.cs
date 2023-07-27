@@ -35,11 +35,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            /*labelFundo = new Label();
+            labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();*/
+            labelFundo.SendToBack();
 
             labelCPF = new Label();
             labelCPF.Text = "CPF";

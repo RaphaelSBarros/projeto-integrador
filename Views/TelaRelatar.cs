@@ -9,6 +9,7 @@ namespace Views {
         private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
+        private Label labelFoto;
         private Label labelOla;
         private Label labelNome;        
         private Label labelEscrevaRelato;
@@ -172,6 +173,7 @@ namespace Views {
             buttonEnviarRelato.Size = new System.Drawing.Size(300, 30);
             buttonEnviarRelato.BackColor = ColorTranslator.FromHtml("#7ed957");
 
+            labelFoto.Click += labelFoto_Click;
             textBoxDescricaoProblema.TextChanged += textBoxDescricaoProblema_TextChanged;
             buttonEnviarRelato.Click += buttonEnviarRelato_Click;
             buttonEnviarRelato.MouseEnter += buttonEnviarRelato_MouseEnter;
@@ -205,6 +207,12 @@ namespace Views {
             Controls.Add(buttonEnviarRelato);
             Controls.Add(labelFundo);
             
+        }
+
+        private void labelFoto_Click(object sender, EventArgs e) {
+            TelaPerfil telaPerfil = new TelaPerfil();
+            telaPerfil.Show();
+            this.Hide();
         }
 
         private void textBoxDescricaoProblema_TextChanged(object sender, EventArgs e) {
@@ -251,6 +259,7 @@ namespace Views {
                 }
             }
         }
+        
         private void buttonFotoProblema_MouseEnter(object sender, EventArgs e ) {
             buttonFotoProblema.BackColor = Color.LightGray;
         }

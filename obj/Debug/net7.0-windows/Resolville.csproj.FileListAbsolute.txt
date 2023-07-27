@@ -46,3 +46,35 @@ C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.AssemblyReference.cache
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfoInputs.cache
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfo.cs
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.dll
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
+C:\Users\gustavo.silva41\Desktop\lxio\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.dll
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\MySqlConnector.dll
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll

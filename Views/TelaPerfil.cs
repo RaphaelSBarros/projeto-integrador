@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Views {
 
-    public class TelaInicial : Form {
+    public class TelaPerfil : Form {
         private Label labelFundo;
         private Label labelDivisao1;
         private Label labelDivisao2;
@@ -13,9 +13,9 @@ namespace Views {
         private Label labelOla;
         private Label labelNome;
         private Button buttonInicio;
-        private Button buttonRelatar;        
+        private Button buttonRelatar;
 
-        public TelaInicial() {
+        public TelaPerfil() {
             this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
@@ -53,11 +53,6 @@ namespace Views {
             labelLinha2.Size = new System.Drawing.Size(450, 8);
             labelLinha2.BackColor = Color.Blue;
 
-            labelFoto = new Label();
-            labelFoto.Text = "";
-            labelFoto.Location = new System.Drawing.Point(700, 50);
-            labelFoto.Size = new System.Drawing.Size(80, 80);
-
             labelOla = new Label();
             labelOla.Text = "Olá";
             labelOla.Location = new System.Drawing.Point(790, 80);
@@ -94,9 +89,6 @@ namespace Views {
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
-            labelFoto.Click += labelFoto_Click;
-            buttonRelatar.Click += buttonRelatar_Click;
-
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
@@ -108,18 +100,6 @@ namespace Views {
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);
             Controls.Add(labelFundo);
-        }
-
-        private void labelFoto_Click(object sender, EventArgs e) {
-            TelaPerfil telaPerfil = new TelaPerfil();
-            telaPerfil.Show();
-            this.Hide();
-        }
-
-        private void buttonRelatar_Click(object sender, EventArgs e) {
-            TelaRelatar telaRelatar = new TelaRelatar();
-            telaRelatar.Show();
-            this.Hide();
         }
 
     }

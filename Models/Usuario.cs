@@ -1,10 +1,10 @@
-
 using System;
 
 namespace Models
 {
     public class Usuario
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Apelido { get; set; }
         public string Email { get; set; }
@@ -12,7 +12,9 @@ namespace Models
         public string Telefone { get; set; }
         public string Senha { get; set; }
 
+        public Usuario(){}
         public Usuario(
+            int id,
             string nome,
             string apelido,
             string email,
@@ -20,6 +22,7 @@ namespace Models
             string telefone,
             string senha
         ) {
+            Id = id;
             Nome = nome;
             Apelido = apelido;
             Email = email;
@@ -27,7 +30,7 @@ namespace Models
             Telefone = telefone;
             Senha = senha;
 
-            Repositories.UsuarioRepository.addUsuarios(this);
+            Repositories.UsuarioRepository.AddUsuario(this); // tem q add dps lá no repositorio o telefone
         }
 
         public static Usuario? GetUsuario(int index){
@@ -37,6 +40,5 @@ namespace Models
         public override string ToString(){
             return $"----\nNome: {Nome}\nApelido: {Apelido}\nEmail: {Email}\nCPF: {Cpf}\nTelefone: {Telefone}\nLogin: {Cpf}\nSenha: {Senha}\n";
         }
-        
     }
 }
