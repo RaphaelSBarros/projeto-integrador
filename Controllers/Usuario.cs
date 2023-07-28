@@ -59,6 +59,10 @@ namespace Controllers
         public static void DeleteUsuario(int index){
             Models.Usuario.DeleteUsuario(index);
         }
+
+        public static void VerificaLogin(string cpf, string senha){
+            Models.Usuario.VerificaLogin(cpf, senha);
+        }
         
     }
 }

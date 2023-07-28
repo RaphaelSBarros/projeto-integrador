@@ -122,9 +122,7 @@ namespace Views {
         }
 
         private void buttonLogar_Click(object sender, EventArgs e) {
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.Show();
-            this.Hide();
+            Controllers.UsuarioController.VerificaLogin(inputCPF.Text, inputSenha.Text);
         }
 
         private void buttonLogar_MouseEnter(object sender, EventArgs e) {
