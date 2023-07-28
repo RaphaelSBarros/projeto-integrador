@@ -80,7 +80,13 @@ namespace Views {
             labelLinha2.Text = "";
             labelLinha2.Location = new System.Drawing.Point(700, 800);
             labelLinha2.Size = new System.Drawing.Size(450, 8);
-            labelLinha2.BackColor = Color.Blue;           
+            labelLinha2.BackColor = Color.Blue; 
+
+            labelFoto = new Label();
+            labelFoto.Text = "";
+            labelFoto.Location = new System.Drawing.Point(700, 50);
+            labelFoto.Size = new System.Drawing.Size(80, 80);
+            labelFoto.BackgroundImageLayout = ImageLayout.Zoom;          
 
             labelEscrevaRelato = new Label();
             labelEscrevaRelato.Text = "ESCREVA SEU RELATO DE PROBLEMA";
@@ -189,7 +195,8 @@ namespace Views {
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(labelLinha1);
-            Controls.Add(labelLinha2);            
+            Controls.Add(labelLinha2); 
+            Controls.Add(labelFoto);           
             Controls.Add(labelEscrevaRelato);
             Controls.Add(labelTipoProblema);
             Controls.Add(labelBairroProblema);
@@ -200,7 +207,6 @@ namespace Views {
             Controls.Add(textBoxDescricaoProblema);
             Controls.Add(comboBoxTipoProblema);
             Controls.Add(comboBoxBairroProblema);
-            Controls.Add(pictureBoxFotoUsuario);
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);
             Controls.Add(buttonFotoProblema);

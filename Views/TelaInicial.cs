@@ -57,6 +57,7 @@ namespace Views {
             labelFoto.Text = "";
             labelFoto.Location = new System.Drawing.Point(700, 50);
             labelFoto.Size = new System.Drawing.Size(80, 80);
+            labelFoto.BackgroundImageLayout = ImageLayout.Zoom;
 
             labelOla = new Label();
             labelOla.Text = "Olá";

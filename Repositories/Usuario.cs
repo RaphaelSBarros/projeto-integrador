@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using MySqlConnector;
-using Models; // apagar, pois repositorie não pode ver models!!!
 
 namespace Repositories
 {
@@ -43,6 +42,7 @@ namespace Repositories
                 usuario.Email = row["Email"].ToString();
                 usuario.Cpf = row["CPF"].ToString();
                 usuario.Senha = row["Senha"].ToString();
+                usuario.Telefone = row["Telefone"].ToString();
                 usuarios.Add(usuario);
             }
             CloseConexao();
@@ -59,7 +59,7 @@ namespace Repositories
         }
         public static void AddUsuario(Models.Usuario usuario){ // ADICIONAR as informações do usuário no BANCO DE DADOS e na LISTA (cache).
             InitConexao();
-            string query = "INSERT INTO usuario (Nome, CPF, Email, Nome_Usuario, Senha) VALUES (@Nome, @CPF, @Email, @Nome_Usuario, @Senha)";
+            string query = "INSERT INTO usuario (Nome, CPF, Email, Nome_Usuario, Senha, Telefone) VALUES (@Nome, @CPF, @Email, @Nome_Usuario, @Senha, @Telefone)";
             MySqlCommand command = new MySqlCommand(query, conexao);
             if(usuario != null){
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
@@ -67,6 +67,8 @@ namespace Repositories
                 command.Parameters.AddWithValue("@Email", usuario.Email);
                 command.Parameters.AddWithValue("@Nome_Usuario", usuario.Apelido);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
+                command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
+
 
                 int rowsAffected = command.ExecuteNonQuery();
                 usuario.Id = Convert.ToInt32(command.LastInsertedId);
@@ -74,10 +76,10 @@ namespace Repositories
                 if(rowsAffected > 0){
                     usuarios.Add(usuario);
                 }else{
-                    MessageBox.Show("Usuário não Cadastrado!");
+                    MessageBox.Show("Usuário não foi Cadastrado!");
                 }
             }else{
-                MessageBox.Show("Usuário não Cadastrado!");
+                MessageBox.Show("Usuário não foi Cadastrado!");
             }
             CloseConexao();
         }
@@ -86,7 +88,7 @@ namespace Repositories
         }
         public static void UpdateUsuario(int index, Models.Usuario usuario){ // ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
             InitConexao();
-            string query = "UPDATE usuario SET Nome = @Nome, CPF = @CPF, Email = @Email, Nome_Usuario = @Nome_Usuario, Senha = @Senha WHERE id = @Id";
+            string query = "UPDATE usuario SET Nome = @Nome, CPF = @CPF, Email = @Email, Nome_Usuario = @Nome_Usuario, Senha = @Senha, Telefone = @Telefone WHERE ID_Usuario = @ID_Usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
             if(usuario != null){
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
@@ -94,6 +96,7 @@ namespace Repositories
                 command.Parameters.AddWithValue("@Email", usuario.Email);
                 command.Parameters.AddWithValue("@Nome_Usuario", usuario.Apelido);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
+                command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
                 command.Parameters.AddWithValue("@ID_Usuario", usuario.Id);
                 int rowsAffected = command.ExecuteNonQuery();
             
@@ -104,14 +107,15 @@ namespace Repositories
                     MessageBox.Show(rowsAffected.ToString());
                 }
             }else {
-                MessageBox.Show("Usuário não encontrado");
+                MessageBox.Show("Usuário não foi encontrado");
             }
             CloseConexao();
         }
         public static void DeleteUsuario(int index){ // DELETAR as informações do usuário no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
             InitConexao();
-            string query = "DELETE FROM usuario WHERE ID_Pessoa = @ID_Pessoa";
+            string query = "DELETE FROM usuario WHERE ID_Usuario = @ID_Usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
+            command.Parameters.AddWithValue("@ID_Usuario", usuarios[index].Id);
             int rowsAffected = command.ExecuteNonQuery();
 
             if(rowsAffected > 0){
