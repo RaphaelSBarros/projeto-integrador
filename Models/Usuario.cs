@@ -31,12 +31,19 @@ namespace Models
             Repositories.UsuarioRepository.AddUsuario(this);
         }
 
+        public static void Sincronizar(){
+            Repositories.UsuarioRepository.Sincronizar();
+        }
+        public static List<Models.Usuario> ListUsuarios(){
+            return Repositories.UsuarioRepository.ListUsuarios();
+        }
+
         public static Usuario? GetUsuario(int index){
             return Repositories.UsuarioRepository.GetUsuario(index);
         }
 
         public static List<Models.Usuario> ListarUsuarios(){
-            return Repositories.UsuarioRepository.ListarUsuarios();
+            return Repositories.UsuarioRepository.ListUsuarios();
         }
 
         public static void UpdateUsuario(

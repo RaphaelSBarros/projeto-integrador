@@ -19,6 +19,26 @@ namespace Controllers
         public static List<Models.Usuario> ListarUsuarios(){
             return Models.Usuario.ListarUsuarios();
         }
+        public static void UpdateUsuarios(
+            int index,
+            string nome,
+            string apelido,
+            string email,
+            string cpf,
+            string telefone,
+            string senha
+        ){
+            Models.Usuario.UpdateUsuario(
+                index,
+                nome,
+                apelido,
+                email,
+                cpf,
+                telefone,
+                senha
+            );
+        }
+
 
         public static Models.Usuario? GetUsuario(int index){
             return Models.Usuario.GetUsuario(index);
@@ -41,5 +61,4 @@ namespace Controllers
         }
         
     }
-    
 }
