@@ -14,4 +14,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Resolville
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\
+=======
+build_property.ProjectDir = C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\
+>>>>>>> 0e102d668ce05eb4ff9c63d6a8093a6325b32a8f

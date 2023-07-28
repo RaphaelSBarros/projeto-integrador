@@ -25,7 +25,7 @@ namespace Repositories
         }
         public static List<Models.Usuario> Sincronizar(){ // SINCRONIZAR o banco de dados atual com o SOFTWARE.
             InitConexao();
-            string query = "SELECT * FROM usuario"; // talvez mude
+            string query = "SELECT * FROM usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
             MySqlDataAdapter bdAdapter = new MySqlDataAdapter(command);
 
@@ -34,11 +34,11 @@ namespace Repositories
             DataTable table = dbDataSet.Tables["usuario"];
 
             foreach(DataRow row in table.Rows){
-                int id = Convert.ToInt32(row["ID_Usuario"].ToString());
-                Models.Usuario usuario = new Models.Usuario(); // possivelmente tem q tirar o construct
-                usuario.Id = id;
+                int id_usuario = Convert.ToInt32(row["ID_Usuario"].ToString());
+                Models.Usuario usuario = new Models.Usuario();
+                usuario.ID_Usuario = id_usuario;
                 usuario.Nome = row["Nome"].ToString();
-                usuario.Apelido = row["Nome_Usuario"].ToString();
+                usuario.Nome_Usuario = row["Nome_Usuario"].ToString();
                 usuario.Email = row["Email"].ToString();
                 usuario.Cpf = row["CPF"].ToString();
                 usuario.Senha = row["Senha"].ToString();
@@ -65,13 +65,13 @@ namespace Repositories
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@CPF", usuario.Cpf);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
-                command.Parameters.AddWithValue("@Nome_Usuario", usuario.Apelido);
+                command.Parameters.AddWithValue("@Nome_Usuario", usuario.Nome_Usuario);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
 
 
                 int rowsAffected = command.ExecuteNonQuery();
-                usuario.Id = Convert.ToInt32(command.LastInsertedId);
+                usuario.ID_Usuario = Convert.ToInt32(command.LastInsertedId);
 
                 if(rowsAffected > 0){
                     usuarios.Add(usuario);
@@ -94,10 +94,10 @@ namespace Repositories
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@CPF", usuario.Cpf);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
-                command.Parameters.AddWithValue("@Nome_Usuario", usuario.Apelido);
+                command.Parameters.AddWithValue("@Nome_Usuario", usuario.Nome_Usuario);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-                command.Parameters.AddWithValue("@ID_Usuario", usuario.Id);
+                command.Parameters.AddWithValue("@ID_Usuario", usuario.ID_Usuario);
                 int rowsAffected = command.ExecuteNonQuery();
             
                 if (rowsAffected > 0) {
@@ -115,7 +115,7 @@ namespace Repositories
             InitConexao();
             string query = "DELETE FROM usuario WHERE ID_Usuario = @ID_Usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
-            command.Parameters.AddWithValue("@ID_Usuario", usuarios[index].Id);
+            command.Parameters.AddWithValue("@ID_Usuario", usuarios[index].ID_Usuario);
             int rowsAffected = command.ExecuteNonQuery();
 
             if(rowsAffected > 0){
