@@ -215,17 +215,17 @@ namespace Views {
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e) {
-            string nome, apelido, email, cpf, telefone, senha;
+            string nome, nome_Usuario, email, cpf, telefone, senha;
 
             if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" &&  inputTelefone.Text != "" &&  inputSenha.Text != ""){
                 nome = inputNome.Text;
-                apelido = inputNickname.Text;
+                nome_Usuario = inputNickname.Text;
                 email = inputEmail.Text;
                 cpf = inputCPF.Text;
                 telefone = inputTelefone.Text;
                 senha = inputSenha.Text;
 
-                Controllers.UsuarioController.addUsuario(nome, apelido, email, cpf, telefone, senha);
+                Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, telefone, senha);
 
                 inputNome.Text = "";
                 inputNickname.Text = "";

@@ -146,7 +146,8 @@ ALTER TABLE `status_atendimento`
 -- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`ID_Usuario`);
+  ADD PRIMARY KEY (`ID_Usuario`),
+  CHANGE `ID_Usuario` `ID_Usuario` INT(11) NOT NULL AUTO_INCREMENT; 
 
 --
 -- Restrições para tabelas despejadas

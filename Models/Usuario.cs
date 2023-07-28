@@ -4,9 +4,9 @@ namespace Models
 {
     public class Usuario
     {
-        public int Id { get; set; }
+        public int ID_Usuario { get; set; }
         public string Nome { get; set; }
-        public string Apelido { get; set; }
+        public string Nome_Usuario { get; set; }
         public string Email { get; set; }
         public string Cpf { get; set; }
         public string Telefone { get; set; }
@@ -14,31 +14,60 @@ namespace Models
 
         public Usuario(){}
         public Usuario(
-            int id,
             string nome,
-            string apelido,
+            string nome_usuario,
             string email,
             string cpf,
-            string telefone,
-            string senha
+            string senha,
+            string telefone
         ) {
-            Id = id;
             Nome = nome;
-            Apelido = apelido;
+            Nome_Usuario = nome_usuario;
             Email = email;
             Cpf = cpf;
-            Telefone = telefone;
             Senha = senha;
+            Telefone = telefone;
 
-            Repositories.UsuarioRepository.AddUsuario(this); // tem q add dps lá no repositorio o telefone
+            Repositories.UsuarioRepository.AddUsuario(this);
         }
 
         public static Usuario? GetUsuario(int index){
             return Repositories.UsuarioRepository.GetUsuario(index);
         }
 
-        public override string ToString(){
-            return $"----\nNome: {Nome}\nApelido: {Apelido}\nEmail: {Email}\nCPF: {Cpf}\nTelefone: {Telefone}\nLogin: {Cpf}\nSenha: {Senha}\n";
+        public static List<Models.Usuario> ListarUsuarios(){
+            return Repositories.UsuarioRepository.ListarUsuarios();
         }
+
+        public static void UpdateUsuario(
+                int index, 
+                string nome, 
+                string cpf, 
+                string email, 
+                string nome_usuario, 
+                string senha, 
+                string telefone
+            ){
+            Models.Usuario usuario = Models.Usuario.GetUsuario(index);
+
+            if(usuario != null){
+                usuario.Nome = nome;
+                usuario.Nome_Usuario = nome_usuario;
+                usuario.Email = email;
+                usuario.Cpf = cpf;
+                usuario.Senha = senha;
+                usuario.Telefone = telefone;
+
+                Repositories.UsuarioRepository.UpdateUsuario(index, usuario);
+            }
+        }
+
+        public static void DeleteUsuario(int index){
+            Models.Usuario usuario = Models.Usuario.GetUsuario(index);
+            if(usuario != null){
+                Repositories.UsuarioRepository.DeleteUsuario(index);
+            }
+        }
+
     }
 }

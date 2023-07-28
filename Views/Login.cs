@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 namespace Views {
     public class Login : Form {
-        //private Exemplo exemplo;
         private Label labelFundo;
         private Label labelDivisao1;
         private Label labelDivisao2;

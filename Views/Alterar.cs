@@ -143,7 +143,7 @@ namespace Views {
             buttonAlterar.Location = new System.Drawing.Point(725, 640); 
             buttonAlterar.Name = "Alterar";
             buttonAlterar.Size = new System.Drawing.Size(400, 30);
-            buttonAlterar.Text = "Alterar-SE";
+            buttonAlterar.Text = "ALTERAR";
             buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
 
             buttonFotoUsuario.Click += buttonFotoUsuario_Click;
