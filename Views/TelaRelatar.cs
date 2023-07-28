@@ -58,7 +58,7 @@ namespace Views {
             labelOla.Text = "Olá";
             labelOla.Location = new System.Drawing.Point(790, 80);
             labelOla.Size = new System.Drawing.Size(41, 25);
-            labelOla.ForeColor = Color.Blue;
+            labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
@@ -66,7 +66,7 @@ namespace Views {
             labelNome.Text = "";
             labelNome.Location = new System.Drawing.Point(830, 80);
             labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = Color.Blue;
+            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
             fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;           
 
@@ -74,13 +74,13 @@ namespace Views {
             labelLinha1.Text = "";
             labelLinha1.Location = new System.Drawing.Point(700, 150);
             labelLinha1.Size = new System.Drawing.Size(450, 8);
-            labelLinha1.BackColor = Color.Blue;
+            labelLinha1.BackColor = ColorTranslator.FromHtml("#5271FF");
 
             labelLinha2 = new Label();
             labelLinha2.Text = "";
             labelLinha2.Location = new System.Drawing.Point(700, 800);
             labelLinha2.Size = new System.Drawing.Size(450, 8);
-            labelLinha2.BackColor = Color.Blue; 
+            labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
 
             labelFoto = new Label();
             labelFoto.Text = "";
@@ -92,7 +92,7 @@ namespace Views {
             labelEscrevaRelato.Text = "ESCREVA SEU RELATO DE PROBLEMA";
             labelEscrevaRelato.Location = new System.Drawing.Point(730, 185);
             labelEscrevaRelato.Size = new System.Drawing.Size(400, 25);
-            labelEscrevaRelato.ForeColor = Color.LimeGreen;
+            labelEscrevaRelato.ForeColor = ColorTranslator.FromHtml("#7ed957");
             fonte = new Font("Arial", 15, FontStyle.Bold);
             labelEscrevaRelato.Font = fonte;
 
@@ -116,7 +116,17 @@ namespace Views {
             comboBoxBairroProblema.Text = "Bairro do Problema";
             comboBoxBairroProblema.Location = new System.Drawing.Point(725, 310);
             comboBoxBairroProblema.Size = new System.Drawing.Size(400, 20);
-            comboBoxBairroProblema.ForeColor = Color.Gray;
+            comboBoxBairroProblema.ForeColor = Color.Gray; 
+
+            string[] bairrosJoinville = {
+                "Aventureiro", "Boa Vista", "Bom Retiro", "Bucarein", "Comasa", "Costa e Silva",
+                "Floresta", "Glória", "Iririú", "Itaum", "Jarivatuba", "Jardim Iririú", "Jardim Paraíso",
+                "João Costa", "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Profipo",
+                "Saguaçu", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Nova",
+                "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Boehmerwald", "Centro",
+                "Fátima", "Guanabara", "Itinga", "Jardim Sofia", "Parque Guarani", "Pirabeiraba", "São Marcos"
+            };
+            comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
 
             labelLogradouroProblema = new Label();
             labelLogradouroProblema.Text = "Escreva o logradouro (Rua) do problema";
@@ -167,8 +177,8 @@ namespace Views {
 
             buttonFotoProblema = new Button();
             buttonFotoProblema.Location = new System.Drawing.Point(725, 620); 
-            buttonFotoProblema.Name = "Selecionar Imagem";
             buttonFotoProblema.Size = new System.Drawing.Size(400, 120);
+            buttonFotoProblema.Name = "Selecionar Imagem";
             buttonFotoProblema.Text = "SELECIONAR IMAGEM";
             buttonFotoProblema.ForeColor = Color.Gray; 
             buttonFotoProblema.BackgroundImageLayout = ImageLayout.Zoom;
