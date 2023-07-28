@@ -124,9 +124,7 @@ namespace Views {
                 "João Costa", "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Profipo",
                 "Saguaçu", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Nova",
                 "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Boehmerwald", "Centro",
-                "Comasa", "Costa e Silva", "Fátima", "Gloria", "Guanabara", "Itaum", "Itinga", "Jardim Iririu",
-                "Jardim Paraiso", "Morro do Meio", "Nova Brasilia", "Pirabeiraba", "Parque Guarani", "Petrópolis",
-                "Profipo", "Saguaçu", "São Marcos"               
+                "Fátima", "Guanabara", "Itinga", "Jardim Sofia", "Parque Guarani", "Pirabeiraba", "São Marcos"
             };
             comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
 
