@@ -116,7 +116,19 @@ namespace Views {
             comboBoxBairroProblema.Text = "Bairro do Problema";
             comboBoxBairroProblema.Location = new System.Drawing.Point(725, 310);
             comboBoxBairroProblema.Size = new System.Drawing.Size(400, 20);
-            comboBoxBairroProblema.ForeColor = Color.Gray;
+            comboBoxBairroProblema.ForeColor = Color.Gray; 
+
+            string[] bairrosJoinville = {
+                "Aventureiro", "Boa Vista", "Bom Retiro", "Bucarein", "Comasa", "Costa e Silva",
+                "Floresta", "Glória", "Iririú", "Itaum", "Jarivatuba", "Jardim Iririú", "Jardim Paraíso",
+                "João Costa", "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Profipo",
+                "Saguaçu", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Nova",
+                "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Boehmerwald", "Centro",
+                "Comasa", "Costa e Silva", "Fátima", "Gloria", "Guanabara", "Itaum", "Itinga", "Jardim Iririu",
+                "Jardim Paraiso", "Morro do Meio", "Nova Brasilia", "Pirabeiraba", "Parque Guarani", "Petrópolis",
+                "Profipo", "Saguaçu", "São Marcos"               
+            };
+            comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
 
             labelLogradouroProblema = new Label();
             labelLogradouroProblema.Text = "Escreva o logradouro (Rua) do problema";
