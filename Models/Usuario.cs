@@ -14,7 +14,6 @@ namespace Models
 
         public Usuario(){}
         public Usuario(
-            int id_usuario,
             string nome,
             string nome_usuario,
             string email,
@@ -22,7 +21,6 @@ namespace Models
             string senha,
             string telefone
         ) {
-            ID_Usuario = id_usuario;
             Nome = nome;
             Nome_Usuario = nome_usuario;
             Email = email;
@@ -53,12 +51,12 @@ namespace Models
             Models.Usuario usuario = Models.Usuario.GetUsuario(index);
 
             if(usuario != null){
-                Nome = nome;
-                Nome_Usuario = nome_usuario;
-                Email = email;
-                Cpf = cpf;
-                Senha = senha;
-                Telefone = telefone;
+                usuario.Nome = nome;
+                usuario.Nome_Usuario = nome_usuario;
+                usuario.Email = email;
+                usuario.Cpf = cpf;
+                usuario.Senha = senha;
+                usuario.Telefone = telefone;
 
                 Repositories.UsuarioRepository.UpdateUsuario(index, usuario);
             }
@@ -66,7 +64,7 @@ namespace Models
 
         public static void DeleteUsuario(int index){
             Models.Usuario usuario = Models.Usuario.GetUsuario(index);
-            if(pessoa != null){
+            if(usuario != null){
                 Repositories.UsuarioRepository.DeleteUsuario(index);
             }
         }
