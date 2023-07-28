@@ -78,10 +78,8 @@ C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\bin\Debug\net7.0-windows\
 C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\Nova pasta\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
-<<<<<<< HEAD
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\bin\Debug\net7.0-windows\MySqlConnector.dll
 C:\Users\raphael.barros\OneDrive - SENAC-SC\Área de Trabalho\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
-=======
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.AssemblyReference.cache
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfoInputs.cache
@@ -91,3 +89,5 @@ C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
 >>>>>>> 0e102d668ce05eb4ff9c63d6a8093a6325b32a8f
+C:\Users\matheus.cidral\Desktop\Resolville\bin\Debug\net7.0-windows\MySqlConnector.dll
+C:\Users\matheus.cidral\Desktop\Resolville\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
