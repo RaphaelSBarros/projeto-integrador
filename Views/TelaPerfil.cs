@@ -9,9 +9,12 @@ namespace Views {
         private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
+        private Label labelLinha3;
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;
+        private Label labelSeusRelatos;
+        private Button buttonEditarPerfil;
         private Button buttonInicio;
         private Button buttonRelatar;
 
@@ -45,19 +48,32 @@ namespace Views {
             labelLinha1.Text = "";
             labelLinha1.Location = new System.Drawing.Point(700, 150);
             labelLinha1.Size = new System.Drawing.Size(450, 8);
-            labelLinha1.BackColor = Color.RoyalBlue;
+            labelLinha1.BackColor = ColorTranslator.FromHtml("#5271FF");
 
             labelLinha2 = new Label();
             labelLinha2.Text = "";
             labelLinha2.Location = new System.Drawing.Point(700, 800);
             labelLinha2.Size = new System.Drawing.Size(450, 8);
-            labelLinha2.BackColor = Color.Blue;
+            labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
+
+            labelLinha3 = new Label();
+            labelLinha3.Text = "";
+            labelLinha3.Location = new System.Drawing.Point(700, 275);
+            labelLinha3.Size = new System.Drawing.Size(450, 5);
+            labelLinha3.BackColor = Color.Gray;
+            labelLinha3.SendToBack();
+
+            labelFoto = new Label();
+            labelFoto.Text = "";
+            labelFoto.Location = new System.Drawing.Point(700, 50);
+            labelFoto.Size = new System.Drawing.Size(80, 80);
+            labelFoto.BackgroundImageLayout = ImageLayout.Zoom;
 
             labelOla = new Label();
             labelOla.Text = "Olá";
             labelOla.Location = new System.Drawing.Point(790, 80);
             labelOla.Size = new System.Drawing.Size(41, 25);
-            labelOla.ForeColor = Color.Blue;
+            labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
@@ -65,16 +81,35 @@ namespace Views {
             labelNome.Text = "";
             labelNome.Location = new System.Drawing.Point(830, 80);
             labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = Color.Blue;
+            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
             fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
+
+            labelSeusRelatos = new Label();
+            labelSeusRelatos.Text = "SEUS RELATOS";
+            labelSeusRelatos.Location = new System.Drawing.Point(870, 265);
+            labelSeusRelatos.Size = new System.Drawing.Size(100, 30);
+            labelSeusRelatos.ForeColor = Color.Gray;
+            labelSeusRelatos.TextAlign = ContentAlignment.MiddleCenter;
+            fonte = new Font("Arial", 14, FontStyle.Bold);
+            labelOla.Font = fonte;
+
+            buttonEditarPerfil = new Button();
+            buttonEditarPerfil.Text = "EDITAR PERFIL                                                             >";
+            buttonEditarPerfil.Location = new System.Drawing.Point(725, 200);
+            buttonEditarPerfil.Size = new System.Drawing.Size(400, 35);
+            buttonEditarPerfil.BackColor = Color.White;
+            buttonEditarPerfil.ForeColor = Color.Gray;
+            fonte = new Font("Arial", 12, FontStyle.Bold);
+            buttonEditarPerfil.Font = fonte;
+            buttonEditarPerfil.TextAlign = ContentAlignment.MiddleCenter;
 
             buttonInicio = new Button();
             buttonInicio.Text = "INÍCIO";
             buttonInicio.Location = new System.Drawing.Point(700, 808);
             buttonInicio.Size = new System.Drawing.Size(225, 50);
-            buttonInicio.BackColor = ColorTranslator.FromHtml("#5271FF");
-            buttonInicio.ForeColor = Color.White;
+            buttonInicio.BackColor = Color.White;
+            buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
             fonte = new Font("Arial", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
@@ -82,24 +117,42 @@ namespace Views {
             buttonRelatar = new Button();
             buttonRelatar.Text = "RELATAR";
             buttonRelatar.Location = new System.Drawing.Point(925, 808);
-            buttonRelatar.BackColor = Color.White;
             buttonRelatar.Size = new System.Drawing.Size(225, 50);
+            buttonRelatar.BackColor = Color.White;
             buttonRelatar.ForeColor = ColorTranslator.FromHtml("#5271FF");
             fonte = new Font("Arial", 14, FontStyle.Bold);
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
+            buttonInicio.Click += buttonInicio_Click;
+            buttonRelatar.Click += buttonRelatar_Click;
+
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
             Controls.Add(labelLinha1);
-            Controls.Add(labelLinha2);
+            Controls.Add(labelLinha2);           
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(labelFoto);
+            Controls.Add(labelSeusRelatos);
+            Controls.Add(buttonEditarPerfil);
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);
+            Controls.Add(labelLinha3);
             Controls.Add(labelFundo);
+        }
+
+        private void buttonInicio_Click(object sender, EventArgs e) {
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.Show();
+            this.Hide();
+        }
+
+        private void buttonRelatar_Click(object sender, EventArgs e) {
+            TelaRelatar telaRelatar = new TelaRelatar();
+            telaRelatar.Show();
+            this.Hide();
         }
 
     }
