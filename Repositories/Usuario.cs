@@ -132,7 +132,20 @@ namespace Repositories {
 
             CloseConexao();
         }
+        public static void VerificaLogin(string cpf, string senha){
+            InitConexao();
+            string query = "SELECT * FROM usuario WHERE CPF = @cpf AND Senha = @senha";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            command.Parameters.AddWithValue("@cpf", cpf);
+            command.Parameters.AddWithValue("@senha", senha);
+            int rowsAffected = command.ExecuteNonQuery();
 
+            if(rowsAffected == 0){
+                MessageBox.Show("funcionou");
+            }else{
+                MessageBox.Show($"CPF: {cpf}\nSenha: {senha}\n"+Convert.ToString(rowsAffected)+"\n");
+            }
+        }
     }
     
 }
