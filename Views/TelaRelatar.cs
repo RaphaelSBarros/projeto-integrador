@@ -119,12 +119,13 @@ namespace Views {
             comboBoxBairroProblema.ForeColor = Color.Gray; 
 
             string[] bairrosJoinville = {
-                "Aventureiro", "Boa Vista", "Bom Retiro", "Bucarein", "Comasa", "Costa e Silva",
-                "Floresta", "Glória", "Iririú", "Itaum", "Jarivatuba", "Jardim Iririú", "Jardim Paraíso",
-                "João Costa", "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Profipo",
-                "Saguaçu", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Nova",
-                "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Boehmerwald", "Centro",
-                "Fátima", "Guanabara", "Itinga", "Jardim Sofia", "Parque Guarani", "Pirabeiraba", "São Marcos"
+                "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Aventureiro", "Boa Vista", 
+                "Boehmerwald", "Bom Retiro", "Bucarein", "Centro", "Comasa", "Costa e Silva", "Espinheiros", 
+                "Fátima", "Floresta", "Glória", "Guanabara", "Iririú", "Itaum", "Itinga", "Parque Guarani", 
+                "Jardim Iririú", "Jardim Paraíso", "Jardim Sophia", "Jarivatuba", "Jativoca", "João Costa", 
+                "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Pirabeiraba", "Profipo", 
+                "Saguaçu", "Santa Catarina", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Cubatão", 
+                "Vila Nova", "Zona Industrial Norte", "Zona Industrial Tupy"
             };
             comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
 

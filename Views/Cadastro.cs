@@ -269,8 +269,8 @@ namespace Views {
                 return;
             }*/
 
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.Show();
+            Login login = new Login();
+            login.Show();
             this.Hide();
         }
 

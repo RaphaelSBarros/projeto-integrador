@@ -38,11 +38,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            labelFundo = new Label();
+            /*labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
+            labelFundo.SendToBack();*/
 
             labelLinha1 = new Label();
             labelLinha1.Text = "";
@@ -87,12 +87,12 @@ namespace Views {
 
             labelSeusRelatos = new Label();
             labelSeusRelatos.Text = "SEUS RELATOS";
-            labelSeusRelatos.Location = new System.Drawing.Point(870, 265);
-            labelSeusRelatos.Size = new System.Drawing.Size(100, 30);
+            labelSeusRelatos.Location = new System.Drawing.Point(870, 262);
+            labelSeusRelatos.Size = new System.Drawing.Size(115, 30);
             labelSeusRelatos.ForeColor = Color.Gray;
             labelSeusRelatos.TextAlign = ContentAlignment.MiddleCenter;
-            fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
+            fonte = new Font("Arial", 10, FontStyle.Bold);
+            labelSeusRelatos.Font = fonte;
 
             buttonEditarPerfil = new Button();
             buttonEditarPerfil.Text = "EDITAR PERFIL                                                             >";
@@ -124,6 +124,7 @@ namespace Views {
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
+            buttonEditarPerfil.Click += buttonEditarPerfil_Click;
             buttonInicio.Click += buttonInicio_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
@@ -141,6 +142,12 @@ namespace Views {
             Controls.Add(buttonRelatar);
             Controls.Add(labelLinha3);
             Controls.Add(labelFundo);
+        }
+
+        private void buttonEditarPerfil_Click(object sender, EventArgs e) {
+            Alterar alterar = new Alterar();
+            alterar.Show();
+            this.Hide();
         }
 
         private void buttonInicio_Click(object sender, EventArgs e) {
