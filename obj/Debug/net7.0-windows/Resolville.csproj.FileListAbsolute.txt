@@ -91,6 +91,7 @@ C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug
 >>>>>>> 0e102d668ce05eb4ff9c63d6a8093a6325b32a8f
 C:\Users\matheus.cidral\Desktop\Resolville\bin\Debug\net7.0-windows\MySqlConnector.dll
 C:\Users\matheus.cidral\Desktop\Resolville\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
@@ -100,3 +101,22 @@ C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
+=======
+C:\Users\raphael.barros\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
+C:\Users\raphael.barros\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
+C:\Users\raphael.barros\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
+C:\Users\raphael.barros\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
+C:\Users\raphael.barros\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+C:\Users\raphael.barros\projeto-integrador\bin\Debug\net7.0-windows\MySqlConnector.dll
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.AssemblyReference.cache
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfoInputs.cache
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfo.cs
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CoreCompileInputs.cache
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.dll
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
+C:\Users\raphael.barros\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
+>>>>>>> 2eb00fdb3bb150c865552bcc3c59b6ed75fa0d37

@@ -60,6 +60,10 @@ namespace Models {
             }
         }
 
+        public static void VerificaLogin(string cpf, string senha){
+            Repositories.UsuarioRepository.VerificaLogin(cpf, senha);
+        }
+
     }
 
 }

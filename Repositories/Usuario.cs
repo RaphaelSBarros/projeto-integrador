@@ -132,7 +132,22 @@ namespace Repositories {
 
             CloseConexao();
         }
+        public static void VerificaLogin(string cpf, string senha){
+            InitConexao();
+            string query = "SELECT * FROM usuario WHERE CPF = @cpf AND Senha = @senha";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            command.Parameters.AddWithValue("@cpf", cpf);
+            command.Parameters.AddWithValue("@senha", senha);
+            MySqlDataReader dados = command.ExecuteReader();
 
+            bool result = dados.HasRows;
+
+            if(result){
+                MessageBox.Show($"Bem Vindo, Matheus");
+            }else{
+                MessageBox.Show("CPF OU SENHA INCORRETO");
+            }
+        }
     }
     
 }
