@@ -91,3 +91,12 @@ C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug
 >>>>>>> 0e102d668ce05eb4ff9c63d6a8093a6325b32a8f
 C:\Users\matheus.cidral\Desktop\Resolville\bin\Debug\net7.0-windows\MySqlConnector.dll
 C:\Users\matheus.cidral\Desktop\Resolville\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.exe
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.deps.json
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.runtimeconfig.json
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.dll
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\Resolville.pdb
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\bin\Debug\net7.0-windows\MySqlConnector.dll
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
+C:\Users\gustavo.silva41\Desktop\PROJETO INTEGRADOR\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll

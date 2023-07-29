@@ -61,7 +61,6 @@ CREATE TABLE `postagem` (
   `Outros_Problemas` varchar(100) NOT NULL,
   `Foto` blob NOT NULL,
   `Observacao` varchar(100) NOT NULL,
-  `Confirmacao_Usuario` tinyint(4) NOT NULL,
   `Data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

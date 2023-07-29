@@ -238,8 +238,28 @@ namespace Views {
             textBoxDescricaoProblema.Height = novaAltura;           
         }
 
-        private void buttonEnviarRelato_Click(object sender, EventArgs e) {
+        private void buttonEnviarRelato_Click(object sender, EventArgs e) { // FAZER
+            string nome, nome_Usuario, email, cpf, senha, telefone;
 
+            if(inputNome.Text != ""){
+                nome = inputNome.Text;
+
+                Controllers.UsuarioController.AddPostagem(nome);
+
+                inputNome.Text = "";
+        
+                MessageBox.Show(
+                    "Mensagem do Sistema",
+                    "Postagem realizada com sucesso!",
+                    MessageBoxButtons.OK
+                );
+            }else{
+                MessageBox.Show(
+                    "Mensagem do Sistema",
+                    "ERRO: Preencha todos os campos necessários!",
+                    MessageBoxButtons.OK
+                );
+            }
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
