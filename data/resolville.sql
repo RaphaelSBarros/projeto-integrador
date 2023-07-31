@@ -61,7 +61,6 @@ CREATE TABLE `postagem` (
   `Outros_Problemas` varchar(100) NOT NULL,
   `Foto` blob NOT NULL,
   `Observacao` varchar(100) NOT NULL,
-  `Confirmacao_Usuario` tinyint(4) NOT NULL,
   `Data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -118,7 +117,8 @@ ALTER TABLE `atendimento_prefeitura`
 -- Índices de tabela `bairro`
 --
 ALTER TABLE `bairro`
-  ADD PRIMARY KEY (`ID_Bairro`);
+  ADD PRIMARY KEY (`ID_Bairro`),
+  CHANGE `ID_Bairro` `ID_Bairro` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Índices de tabela `postagem`
@@ -134,7 +134,8 @@ ALTER TABLE `postagem`
 -- Índices de tabela `problema`
 --
 ALTER TABLE `problema`
-  ADD PRIMARY KEY (`Code_Problema`);
+  ADD PRIMARY KEY (`Code_Problema`),
+  CHANGE `Code_Problema` `Code_Problema` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Índices de tabela `status_atendimento`
@@ -168,6 +169,48 @@ ALTER TABLE `postagem`
   ADD CONSTRAINT `postagem_ibfk_3` FOREIGN KEY (`Code_Atendimento`) REFERENCES `atendimento_prefeitura` (`Code_Atendimento`),
   ADD CONSTRAINT `postagem_ibfk_4` FOREIGN KEY (`Code_Problema`) REFERENCES `problema` (`Code_Problema`);
 COMMIT;
+
+--
+-- ADICIONAR VALORES PARA BAIRROS DE JOINVILLE
+--
+INSERT INTO `bairro` (`Bairro`) VALUES
+    ("Aventureiro"),
+    ("Boa Vista"),
+    ("Bom Retiro"),
+    ("Bucarein"),
+    ("Comasa"),
+    ("Costa e Silva"),
+    ("Floresta"),
+    ("Glória"),
+    ("Iririú"),
+    ("Itaum"),
+    ("Jarivatuba"),
+    ("Jardim Iririú"),
+    ("Jardim Paraíso"),
+    ("João Costa"),
+    ("Morro do Meio"),
+    ("Nova Brasília"),
+    ("Paranaguamirim"),
+    ("Petrópolis"),
+    ("Profipo"),
+    ("Saguaçu"),
+    ("Santo Antônio"),
+    ("São Marcos"),
+    ("Ulysses Guimarães"),
+    ("Vila Nova"),
+    ("Adhemar Garcia"),
+    ("América"),
+    ("Anita Garibaldi"),
+    ("Atiradores"),
+    ("Boehmerwald"),
+    ("Centro"),
+    ("Fátima"),
+    ("Guanabara"),
+    ("Itinga"),
+    ("Jardim Sofia"),
+    ("Parque Guarani"),
+    ("Pirabeiraba"),
+    ("São Marcos");
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
