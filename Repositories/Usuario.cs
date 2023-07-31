@@ -138,12 +138,14 @@ namespace Repositories {
             MySqlCommand command = new MySqlCommand(query, conexao);
             command.Parameters.AddWithValue("@cpf", cpf);
             command.Parameters.AddWithValue("@senha", senha);
-            int rowsAffected = command.ExecuteNonQuery();
+            MySqlDataReader dados = command.ExecuteReader();
 
-            if(rowsAffected == 0){
-                MessageBox.Show("funcionou");
+            bool result = dados.HasRows;
+
+            if(result){
+                MessageBox.Show($"Bem Vindo, Matheus");
             }else{
-                MessageBox.Show($"CPF: {cpf}\nSenha: {senha}\n"+Convert.ToString(rowsAffected)+"\n");
+                MessageBox.Show("CPF OU SENHA INCORRETO");
             }
         }
     }
