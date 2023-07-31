@@ -3,75 +3,77 @@ using System;
 
 namespace Models {
     public class Postagem {
-// FOREIGN KEYS
-// `ID_Usuario` int(11) NOT NULL
-// `Code_Problema` int(100) NOT NULL
-// `ID_Bairro` int(11) NOT NULL
-// `Code_Atendimento` int(11) NOT NULL
-
-
-// `Code_Postagem` int(11) NOT NULL
-// `Logradouro` varchar(100) NOT NULL
-// `Outros_Problemas` varchar(100) NOT NULL
-// `Foto` blob NOT NULL
-// `Observacao` varchar(100) NOT NULL
-// `Data` date NOT NULL
         public int Code_Postagem { get; set; }
         public string Logradouro { get; set; }
         public string Outros_Problemas { get; set; }
+        public byte[] Foto { get; set; }
         public string Observacao { get; set; }
         public string Data { get; set; }
 
-        public Postagem() {}
+        // FOREIGN KEYS //
+        public int FK_ID_Usuario { get; set; }
+        public int FK_Code_Problema { get; set; }
+        public int FK_ID_Bairro { get; set; }
+        public int FK_Code_Atendimento { get; set; }
 
-        public Postagem(string nome, string nome_usuario, string email, string cpf, string senha, string telefone) {
-            Nome = nome;
-            Nome_Usuario = nome_usuario;
-            Email = email;
-            Cpf = cpf;
-            Senha = senha;
-            Telefone = telefone;
+        public Postagem(){}
+        public Postagem(
+            int code_postagem, 
+            string logradouro, 
+            string outros_problemas, 
+            byte[] foto, 
+            string observacao, 
+            string data,
+            int fk_id_usuario,
+            int fk_code_problema,
+            int fk_id_bairro,
+            int fk_code_atendimento
+        ){
+            Code_Postagem = code_postagem;
+            Logradouro = logradouro;
+            Outros_Problemas = outros_problemas;
+            Foto = foto;
+            Observacao = observacao;
+            Data = data;
+            FK_ID_Usuario = fk_id_usuario;
+            FK_Code_Problema = fk_code_problema;
+            FK_ID_Bairro = fk_id_bairro;
+            FK_Code_Atendimento = fk_code_atendimento;
 
-            Repositories.UsuarioRepository.AddUsuario(this);
+            // Repositories.PostagemRepository.AddPostagem(this);
         }
 
-        public static void Sincronizar() {
-            Repositories.UsuarioRepository.Sincronizar();
-        }
+        // public static void Sincronizar() {
+        //     Repositories.PostagemRepository.Sincronizar();
+        // }
 
-        public static List<Models.Usuario> ListUsuarios() {
-            return Repositories.UsuarioRepository.ListUsuarios();
-        }
+        // public static Postagem? GetPostagem(int index) {
+        //     return Repositories.PostagemRepository.GetPostagem(index);
+        // }
 
-        public static Usuario? GetUsuario(int index) {
-            return Repositories.UsuarioRepository.GetUsuario(index);
-        }
+        // public static List<Models.Usuario> ListPostagens() {
+        //     return Repositories.PostagemRepository.ListPostagens();
+        // }
 
-        public static List<Models.Usuario> ListarUsuarios() {
-            return Repositories.UsuarioRepository.ListUsuarios();
-        }
+        // public static void UpdatePostagem(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {
+        //     Models.Postagem postagem = Models.Postagem.GetPostagem(index);
+        //     if(usuario != null) {
+        //         usuario.Nome = nome;
+        //         usuario.Nome_Usuario = nome_usuario;
+        //         usuario.Email = email;
+        //         usuario.Cpf = cpf;
+        //         usuario.Senha = senha;
+        //         usuario.Telefone = telefone;
 
-        public static void UpdateUsuario(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {
-            Models.Usuario usuario = Models.Usuario.GetUsuario(index);
-            if(usuario != null) {
-                usuario.Nome = nome;
-                usuario.Nome_Usuario = nome_usuario;
-                usuario.Email = email;
-                usuario.Cpf = cpf;
-                usuario.Senha = senha;
-                usuario.Telefone = telefone;
+        //         Repositories.PostagemRepository.UpdatePostagem(index, usuario);
+        //     }
+        // }
 
-                Repositories.UsuarioRepository.UpdateUsuario(index, usuario);
-            }
-        }
-
-        public static void DeleteUsuario(int index){
-            Models.Usuario usuario = Models.Usuario.GetUsuario(index);
-            if(usuario != null) {
-                Repositories.UsuarioRepository.DeleteUsuario(index);
-            }
-        }
-
+        // public static void DeleteUsuario(int index){
+        //     Models.Usuario usuario = Models.Usuario.GetUsuario(index);
+        //     if(usuario != null) {
+        //         Repositories.PostagemRepository.DeleteUsuario(index);
+        //     }
+        // }
     }
-
 }

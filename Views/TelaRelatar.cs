@@ -139,7 +139,7 @@ namespace Views {
             textBoxLogradouroProblema.Size = new System.Drawing.Size(400, 100);
 
             labelDescricaoProblema = new Label();
-            labelDescricaoProblema.Text = "Escreva uma descrição para o problema";
+            labelDescricaoProblema.Text = "Escreva um ponto de referência e descrição para o problema";
             labelDescricaoProblema.Location = new System.Drawing.Point(725, 410);
             labelDescricaoProblema.Size = new System.Drawing.Size(400, 20);
 
@@ -239,27 +239,31 @@ namespace Views {
         }
 
         private void buttonEnviarRelato_Click(object sender, EventArgs e) { // FAZER
-            string nome, nome_Usuario, email, cpf, senha, telefone;
+            int code_postagem, fk_id_usuario, fk_code_problema, fk_id_bairro, fk_code_atendimento;
+            string logradouro, outros_problemas, observacao, data;
+            byte[] foto;
 
-            if(inputNome.Text != ""){
-                nome = inputNome.Text;
+        //     if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxLogradouroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
+        //         logradouro =
+        //         outros_problemas =
+        //         observacao =
 
-                Controllers.UsuarioController.AddPostagem(nome);
+        //         Controllers.UsuarioController.AddPostagem(nome);
 
-                inputNome.Text = "";
+        //         inputNome.Text = "";
         
-                MessageBox.Show(
-                    "Mensagem do Sistema",
-                    "Postagem realizada com sucesso!",
-                    MessageBoxButtons.OK
-                );
-            }else{
-                MessageBox.Show(
-                    "Mensagem do Sistema",
-                    "ERRO: Preencha todos os campos necessários!",
-                    MessageBoxButtons.OK
-                );
-            }
+        //         MessageBox.Show(
+        //             "Mensagem do Sistema",
+        //             "Postagem realizada com sucesso!",
+        //             MessageBoxButtons.OK
+        //         );
+        //     }else{
+        //         MessageBox.Show(
+        //             "Mensagem do Sistema",
+        //             "ERRO: Preencha todos os campos necessários!",
+        //             MessageBoxButtons.OK
+        //         );
+        //     }
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
@@ -303,7 +307,5 @@ namespace Views {
         private void buttonFotoProblema_MouseLeave(object sender, EventArgs e ) {
             buttonFotoProblema.BackColor = Color.White;
         }
-
     }
-
 }

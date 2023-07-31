@@ -27,16 +27,12 @@ namespace Models {
             Repositories.UsuarioRepository.Sincronizar();
         }
 
-        public static List<Models.Usuario> ListUsuarios() {
-            return Repositories.UsuarioRepository.ListUsuarios();
-        }
-
         public static Usuario? GetUsuario(int index) {
             return Repositories.UsuarioRepository.GetUsuario(index);
         }
 
         public static List<Models.Usuario> ListarUsuarios() {
-            return Repositories.UsuarioRepository.ListUsuarios();
+            return Repositories.UsuarioRepository.ListarUsuarios();
         }
 
         public static void UpdateUsuario(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {

@@ -87,7 +87,7 @@ namespace Repositories {
             CloseConexao();
         }
 
-        public static List<Models.Usuario> ListUsuarios() { // LISTAR as informações dos usuários do BANCO DE DADOS.
+        public static List<Models.Usuario> ListarUsuarios() { // LISTAR as informações dos usuários do BANCO DE DADOS.
             return usuarios;
         }
 
