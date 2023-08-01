@@ -135,3 +135,11 @@ C:\Users\Usuario\Desktop\GITHUB\projeto-integrador\bin\Debug\net7.0-windows\MySq
 C:\Users\Usuario\Desktop\GITHUB\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CopyComplete
 C:\Users\Usuario\Desktop\GITHUB\projeto-integrador\obj\Debug\net7.0-windows\Resolville.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\GITHUB\projeto-integrador\obj\Debug\net7.0-windows\ref\Resolville.dll
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.dll
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\refint\Resolville.dll
+C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\obj\Debug\net7.0-windows\Resolville.pdb

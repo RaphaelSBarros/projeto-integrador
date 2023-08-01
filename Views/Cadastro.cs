@@ -1,12 +1,9 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
-using System.IO;
 
 namespace Views {   
-    public class Cadastro : Form {   
-        private TelaInicial telaInicial;
-
+    public class Cadastro : Form {
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;   
