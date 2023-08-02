@@ -30,7 +30,7 @@ namespace Views {
         private Button buttonFotoUsuario;
         private Button buttonCadastrar;
         
-        public Cadastro(TelaInicial telaInicial) {   
+        public Cadastro() {   
             this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/LogoResolville.png");
@@ -50,11 +50,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            labelFundo = new Label();
+            /*labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
+            labelFundo.SendToBack();*/
 
             labelNome = new Label();
             labelNome.Text = "Nome Completo (Nome e Sobrenome)";
@@ -298,44 +298,50 @@ namespace Views {
         private void buttonCadastrar_Click(object sender, EventArgs e) {
             string nome, nome_Usuario, email, cpf, senha, telefone;
 
-            if (inputNome.Text == "") {
-                labelNomeErro.Text = "Campo Obrigatório*";
-            } 
-            if(inputNickname.Text == "") {
-                labelNicknameErro.Text = "Campo Obrigatório*";
-            }
-            if(inputEmail.Text == "") {
-                labelEmailErro.Text = "Campo Obrigatório*";
-            }
-            if(inputCPF.Text == "") {
-                labelSenhaErro.Text = "Campo Obrigatório*";
-            }
-            if(inputSenha.Text == "") {
-                labelTelefoneErro.Text = "Campo Obrigatório*";
-            }
-            if(inputTelefone.Text == "") {
-                labelCPFErro.Text = "Campo Obrigatório*";
-            }
+            labelNomeErro.Text = "";
+            labelNicknameErro.Text = "";
+            labelEmailErro.Text = "";
+            labelSenhaErro.Text = "";
+            labelTelefoneErro.Text = "";
+            labelCPFErro.Text = "";
 
-            if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
+            if(string.IsNullOrEmpty(inputNome.Text)) {
+                labelNomeErro.Text = "Campo Obrigatório*";
+                labelNomeErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(string.IsNullOrEmpty(inputNickname.Text)) {
+                labelNicknameErro.Text = "Campo Obrigatório*";
+                labelNicknameErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(string.IsNullOrEmpty(inputEmail.Text)) {
+                labelEmailErro.Text = "Campo Obrigatório*";
+                labelEmailErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(string.IsNullOrEmpty(inputSenha.Text)) {
+                labelSenhaErro.Text = "Campo Obrigatório*";
+                labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(string.IsNullOrEmpty(inputTelefone.Text)) {
+                labelTelefoneErro.Text = "Campo Obrigatório*";
+                labelTelefoneErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(string.IsNullOrEmpty(inputCPF.Text)) {
+                labelCPFErro.Text = "Campo Obrigatório*";
+                labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
                 labelNomeErro.Text = "Sintaxe Incorreta*";
-            } 
-            if(inputNickname.Text.Length < 2 || inputNickname.Text.Length > 20) {
+                labelNomeErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(inputNickname.Text.Length < 2 || inputNickname.Text.Length > 20) {
                 labelNicknameErro.Text = "Sintaxe Incorreta*";
-            }
-            if(inputEmail.Text.Length < 2 || inputEmail.Text.Length > 80) {
+                labelNicknameErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(inputEmail.Text.Length < 2 || inputEmail.Text.Length > 80) {
                 labelEmailErro.Text = "Sintaxe Incorreta*";
-            }
-            if(inputSenha.Text.Length < 8 || inputSenha.Text.Length > 40) {
+                labelEmailErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(inputSenha.Text.Length < 8 || inputSenha.Text.Length > 40) {
                 labelSenhaErro.Text = "Sintaxe Incorreta*";
-            }
-            if(inputTelefone.Text.Length != 15) {
+                labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(inputTelefone.Text.Length != 15) {
                 labelTelefoneErro.Text = "Sintaxe Incorreta*";
-            }
-            if(inputCPF.Text.Length != 14) {
+                labelTelefoneErro.TextAlign = ContentAlignment.MiddleRight;
+            } else if(inputCPF.Text.Length != 14) {
                 labelCPFErro.Text = "Sintaxe Incorreta*";
-            }
-            if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" &&  inputSenha.Text != "" && inputTelefone.Text != ""){
+                labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
+            } else {
                 nome = inputNome.Text;
                 nome_Usuario = inputNickname.Text;
                 email = inputEmail.Text;
@@ -348,7 +354,7 @@ namespace Views {
                 inputNome.Text = "";
                 inputNickname.Text = "";
                 inputEmail.Text = "";
-                inputCPF.Text = "";               
+                inputCPF.Text = "";
                 inputSenha.Text = "";
                 inputTelefone.Text = "";
 
@@ -359,37 +365,9 @@ namespace Views {
                 );
             }
 
-            /*string nome = inputNome.Text;
-            if(!IsValidName(nome)) {
-                labelExibeErro.Text = "*Preencha os campos corretamente*";
-                return;
-            } else {
-                labelExibeErro.Text = "";
-                return;
-            }
-
-            //Validação do Email
-            string email = inputEmail.Text;
-            if(!IsValidEmail(email)) {
-                labelExibeErro.Text = "*Preencha os campos corretamente*";
-                return;
-            } else {
-                labelExibeErro.Text = "";
-                return;
-            }
-
-            string logradouro = inputLogradouro.Text;
-            if(!IsValidLogradouro(logradouro)) {
-                labelExibeErro.Text = "*Preencha os campos corretamente*";
-                return;
-            } else {
-                labelExibeErro.Text = "";
-                return;
-            }*/
-
-            Login login = new Login();
+            /*Login login = new Login();
             login.Show();
-            this.Hide();
+            this.Hide();*/
         }
 
         private bool IsValidName(string name) {
@@ -398,7 +376,7 @@ namespace Views {
         }
 
         private bool IsValidEmail(string email) {
-            string pattern = @"^[\w\.-]+@[\w-]+(\.[\w-]+)*$";           
+            string pattern = @"^[\w\.-]+@[\w-]+(\.[\w-]+)*$";
             if(!System.Text.RegularExpressions.Regex.IsMatch(email, pattern)) {
                 return false;
             }
