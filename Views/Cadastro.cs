@@ -1,12 +1,9 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
-using System.IO;
 
 namespace Views {   
     public class Cadastro : Form {   
-        private TelaInicial telaInicial;
-
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;   
@@ -33,7 +30,7 @@ namespace Views {
         private Button buttonFotoUsuario;
         private Button buttonCadastrar;
         
-        public Cadastro(TelaInicial telaInicial) {   
+        public Cadastro() {   
             this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/LogoResolville.png");
