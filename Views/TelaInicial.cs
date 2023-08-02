@@ -103,13 +103,6 @@ namespace Views {
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
-            string nomeUsuario = "João da Silva";
-            string dataPostagem = "31/07/2023";
-            string descricaoProblema = "Views.TelaRelatar.buttonFotoProblema";
-            Image fotoUsuario = Image.FromFile("Layout/FotoUsuario.png");
-            Image fotoProblema = Image.FromFile("caminho_da_imagem_problema.jpg");
-            ExibirPostagem();
-
             labelFoto.Click += labelFoto_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
@@ -124,55 +117,6 @@ namespace Views {
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);
             Controls.Add(labelFundo);
-        }
-
-        private void ExibirPostagem() {
-            string nomeUsuario = "João da Silva";
-            string dataPostagem = "31/07/2023";
-            string descricaoProblema = "Views.TelaRelatar.buttonFotoProblema";
-            Image fotoUsuario = Image.FromFile("Layout/FotoUsuario.png");
-            Image fotoProblema = Image.FromFile("caminho_da_imagem_problema.jpg");
-
-            PictureBox pictureBoxFotoUsuario = new PictureBox();
-            pictureBoxFotoUsuario.Location = new Point(700, 200);
-            pictureBoxFotoUsuario.Size = new Size(50, 50);
-            pictureBoxFotoUsuario.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxFotoUsuario.Image = fotoUsuario;
-
-            Label labelNomeUsuario = new Label();
-            labelNomeUsuario.Location = new Point(730, 200);
-            labelNomeUsuario.Size = new Size(50, 20);
-            labelNomeUsuario.Text = nomeUsuario;
-
-            Label labelDataPostagem = new Label();
-            labelDataPostagem.Location = new Point(70, 30);
-            labelDataPostagem.Size = new Size(100, 20);
-            labelDataPostagem.Text = dataPostagem;
-
-            TextBox textBoxDescricaoProblema = new TextBox();
-            textBoxDescricaoProblema.Location = new Point(10, 70);
-            textBoxDescricaoProblema.Size = new Size(300, 100);
-            textBoxDescricaoProblema.Multiline = true;
-            textBoxDescricaoProblema.ReadOnly = true;
-            textBoxDescricaoProblema.Text = descricaoProblema;
-
-            PictureBox pictureBoxFotoProblema = new PictureBox();
-            pictureBoxFotoProblema.Location = new Point(10, 180);
-            pictureBoxFotoProblema.Size = new Size(300, 200);
-            pictureBoxFotoProblema.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxFotoProblema.Image = fotoProblema;
-
-            Panel panelPostagem = new Panel();
-            panelPostagem.Location = new Point(10, 10);
-            panelPostagem.Size = new Size(320, 400);
-            panelPostagem.BorderStyle = BorderStyle.FixedSingle;
-            panelPostagem.Controls.Add(pictureBoxFotoUsuario);
-            panelPostagem.Controls.Add(labelNomeUsuario);
-            panelPostagem.Controls.Add(labelDataPostagem);
-            panelPostagem.Controls.Add(textBoxDescricaoProblema);
-            panelPostagem.Controls.Add(pictureBoxFotoProblema);
-
-            this.Controls.Add(panelPostagem);
         }
 
         private void labelFoto_Click(object sender, EventArgs e) {
