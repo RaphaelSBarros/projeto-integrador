@@ -3,11 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 
 namespace Views {   
-<<<<<<< HEAD
     public class Cadastro : Form {   
-=======
-    public class Cadastro : Form {
->>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;   
