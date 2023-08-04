@@ -61,6 +61,8 @@ namespace Views {
             labelNome.Text = "Nome Completo (Nome e Sobrenome)";
             labelNome.Location = new System.Drawing.Point(700, 250);
             labelNome.Size = new System.Drawing.Size(220, 20);
+            Font fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
+            labelNome.Font = fonte;
 
             labelNomeErro = new Label();
             labelNomeErro.Text = "";
