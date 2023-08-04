@@ -6,7 +6,13 @@ namespace Views {
     public class Alterar : Form{
         private Label labelFundo; 
         private Label labelDivisao1;
-        private Label labelDivisao2;   
+        private Label labelDivisao2;  
+        private Label labelNomeErro;
+        private Label labelNicknameErro;
+        private Label labelEmailErro;
+        private Label labelSenhaErro;
+        private Label labelTelefoneErro;
+        private Label labelCPFErro; 
         private Label labelNome;
         private Label labelNickname;
         private Label labelEmail;
@@ -56,6 +62,13 @@ namespace Views {
             labelNome.Location = new System.Drawing.Point(700, 250);
             labelNome.Size = new System.Drawing.Size(220, 20);
 
+            labelNomeErro = new Label();
+            labelNomeErro.Text = "";
+            labelNomeErro.TextAlign = ContentAlignment.MiddleRight;
+            labelNomeErro.Location = new System.Drawing.Point(925, 250);
+            labelNomeErro.Size = new System.Drawing.Size(225, 20);
+            labelNomeErro.ForeColor = Color.Red;
+
             inputNome = new TextBox();
             inputNome.Location = new System.Drawing.Point(700, 270); 
             inputNome.Name = "Nome";
@@ -68,6 +81,13 @@ namespace Views {
             labelNickname.Location = new System.Drawing.Point(700, 310);
             labelNickname.Size = new System.Drawing.Size(220, 20);
 
+            labelNicknameErro = new Label();
+            labelNicknameErro.Text = "";
+            labelNicknameErro.TextAlign = ContentAlignment.MiddleRight;
+            labelNicknameErro.Location = new System.Drawing.Point(925, 310);
+            labelNicknameErro.Size = new System.Drawing.Size(225, 20);
+            labelNicknameErro.ForeColor = Color.Red;
+
             inputNickname = new TextBox();
             inputNickname.Location = new System.Drawing.Point(700, 330); 
             inputNickname.Name = "Nickname";
@@ -79,6 +99,13 @@ namespace Views {
             labelEmail.Location = new System.Drawing.Point(700, 370);
             labelEmail.Size = new System.Drawing.Size(220, 20);
 
+            labelEmailErro = new Label();
+            labelEmailErro.Text = "";
+            labelEmailErro.TextAlign = ContentAlignment.MiddleRight;
+            labelEmailErro.Location = new System.Drawing.Point(925, 370);
+            labelEmailErro.Size = new System.Drawing.Size(225, 20);
+            labelEmailErro.ForeColor = Color.Red;
+
             inputEmail = new TextBox();
             inputEmail.Location = new System.Drawing.Point(700, 390); 
             inputEmail.Name = "Email";
@@ -89,6 +116,13 @@ namespace Views {
             labelSenha.Text = "Senha";
             labelSenha.Location = new System.Drawing.Point(700, 430);
             labelSenha.Size = new System.Drawing.Size(220, 20);
+
+            labelSenhaErro = new Label();
+            labelSenhaErro.Text = "";
+            labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
+            labelSenhaErro.Location = new System.Drawing.Point(925, 430);
+            labelSenhaErro.Size = new System.Drawing.Size(225, 20);
+            labelSenhaErro.ForeColor = Color.Red;
 
             inputSenha = new TextBox();
             inputSenha.Location = new System.Drawing.Point(700, 450); 
@@ -102,6 +136,13 @@ namespace Views {
             labelTelefone.Location = new System.Drawing.Point(700, 490);
             labelTelefone.Size = new System.Drawing.Size(220, 20);
 
+            labelTelefoneErro = new Label();
+            labelTelefoneErro.Text = "";
+            labelTelefoneErro.TextAlign = ContentAlignment.MiddleRight;
+            labelTelefoneErro.Location = new System.Drawing.Point(815, 490);
+            labelTelefoneErro.Size = new System.Drawing.Size(105, 20);
+            labelTelefoneErro.ForeColor = Color.Red;
+
             inputTelefone = new MaskedTextBox();
             inputTelefone.Location = new System.Drawing.Point(700, 510); 
             inputTelefone.Name = "Telefone";
@@ -113,6 +154,13 @@ namespace Views {
             labelCPF.Text = "CPF";
             labelCPF.Location = new System.Drawing.Point(935, 490);
             labelCPF.Size = new System.Drawing.Size(215, 20);
+
+            labelCPFErro = new Label();
+            labelCPFErro.Text = "";
+            labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
+            labelCPFErro.Location = new System.Drawing.Point(1050, 490);
+            labelCPFErro.Size = new System.Drawing.Size(100, 20);
+            labelCPFErro.ForeColor = Color.Red;
 
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(935, 510); 
@@ -146,6 +194,8 @@ namespace Views {
             buttonAlterar.Text = "ALTERAR";
             buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
 
+            inputCPF.Click += inputCPF_Click;
+            inputTelefone.Click += inputTelefone_Click;
             buttonFotoUsuario.Click += buttonFotoUsuario_Click;
             buttonFotoUsuario.MouseEnter += buttonFotoUsuario_MouseEnter;
             buttonFotoUsuario.MouseLeave += buttonFotoUsuario_MouseLeave;
@@ -175,89 +225,155 @@ namespace Views {
             Controls.Add(labelFundo);       
         }
 
-        private void inputCPF_KeyPress(object sender, KeyPressEventArgs e) {
+        private void inputCPF_Click(object sender, EventArgs e) {
             string cpf = new string(inputCPF.Text.Where(Char.IsDigit).ToArray());
-            if(cpf.Length >= 3) {
-                cpf = ".";
-            } if (cpf.Length >= 7) {
-                cpf = cpf.Insert(7, ".");
-            } if (cpf.Length >= 11) {
-                cpf = cpf.Insert(11, "-");
-            }
-            
             inputCPF.SelectionStart = cpf.Length;
-            e.Handled = true;
+
+            if(cpf.Length == 4) {
+                inputCPF.SelectionStart = cpf.Length + 1;
+            } 
+            if(cpf.Length == 5) {
+                inputCPF.SelectionStart = cpf.Length + 1;
+            }  
+            if(cpf.Length == 6) {
+                inputCPF.SelectionStart = cpf.Length + 1;
+            }  
+            if(cpf.Length == 7) {
+                inputCPF.SelectionStart = cpf.Length + 2;
+            }  
+            if(cpf.Length == 8) {
+                inputCPF.SelectionStart = cpf.Length + 2;
+            }  
+            if(cpf.Length == 9) {
+                inputCPF.SelectionStart = cpf.Length + 2;
+            }  
+            if(cpf.Length == 10) {
+                inputCPF.SelectionStart = cpf.Length + 3;
+            }
+            if(cpf.Length == 11) {
+                inputCPF.SelectionStart = cpf.Length + 3;
+            }
         }
 
-        private void inputTelefone_KeyPress(object sender, KeyPressEventArgs e) {
+        private void inputTelefone_Click(object sender, EventArgs e) {
             string telefone = new string(inputTelefone.Text.Where(Char.IsDigit).ToArray());
-            if(telefone.Length >= 2) {
-                telefone = "(" + telefone.Substring(0, 2) + ")";
-            } if (telefone.Length >= 5) {
-                telefone = telefone.Insert(5, " ");
-            } if (telefone.Length >= 10) {
-                telefone = telefone.Insert(10, "-");
-            }
-
-            inputTelefone.Text = telefone;
             inputTelefone.SelectionStart = telefone.Length;
-            e.Handled = true;
+
+            if(telefone.Length == 1) {
+                inputTelefone.SelectionStart = telefone.Length + 1;
+            } 
+            if(telefone.Length == 2) {
+                inputTelefone.SelectionStart = telefone.Length + 1;
+            }  
+            if(telefone.Length == 3) {
+                inputTelefone.SelectionStart = telefone.Length + 3;
+            }  
+            if(telefone.Length == 4) {
+                inputTelefone.SelectionStart = telefone.Length + 3;
+            }  
+            if(telefone.Length == 5) {
+                inputTelefone.SelectionStart = telefone.Length + 3;
+            }  
+            if(telefone.Length == 6) {
+                inputTelefone.SelectionStart = telefone.Length + 3;
+            }  
+            if(telefone.Length == 7) {
+                inputTelefone.SelectionStart = telefone.Length + 4;
+            }
+            if(telefone.Length == 8) {
+                inputTelefone.SelectionStart = telefone.Length + 4;
+            }
+            if(telefone.Length == 9) {
+                inputTelefone.SelectionStart = telefone.Length + 4;
+            }
+            if(telefone.Length == 10) {
+                inputTelefone.SelectionStart = telefone.Length + 4;
+            }
+            if(telefone.Length == 11) {
+                inputTelefone.SelectionStart = telefone.Length + 4;
+            }
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e) {
             string nome, nome_Usuario, email, cpf, senha, telefone;
+            List<string> errors = new List<string>();
 
-            if(inputNome.Text != "" && inputNickname.Text != "" && inputEmail.Text != "" && inputCPF.Text != "" && inputSenha.Text != "" &&  inputTelefone.Text != ""){
-                nome = inputNome.Text;
-                nome_Usuario = inputNickname.Text;
-                email = inputEmail.Text;
-                cpf = inputCPF.Text;
-                senha = inputSenha.Text;
-                telefone = inputTelefone.Text;
+            labelNomeErro.Text = "";
+            labelNicknameErro.Text = "";
+            labelEmailErro.Text = "";
+            labelSenhaErro.Text = "";
+            labelTelefoneErro.Text = "";
+            labelCPFErro.Text = "";
 
-                Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
-
-                inputNome.Text = "";
-                inputNickname.Text = "";
-                inputEmail.Text = "";
-                inputCPF.Text = "";
-                inputSenha.Text = "";
-                inputTelefone.Text = "";
-
-                MessageBox.Show(
-                    "Cadastro realizado com sucesso!",
-                    "Sucesso",
-                    MessageBoxButtons.OK
-                );
+            if (string.IsNullOrEmpty(inputNome.Text)) {
+                labelNomeErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
+                labelNomeErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
             }
 
-            /*string nome = inputNome.Text;
-            if(!IsValidName(nome)) {
-                labelExibeErro.Text = "*Preencha os campos corretamente*";
-                return;
-            } else {
-                labelExibeErro.Text = "";
+            if (string.IsNullOrEmpty(inputNickname.Text)) {
+                labelNicknameErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome do Usuário* é obrigatório*");
+            } else if (inputNickname.Text.Length < 2 || inputNickname.Text.Length > 20) {
+                labelNicknameErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome do Usuário* deve ter entre 2 e 20 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputEmail.Text)) {
+                labelEmailErro.Text = "Campo Obrigatório*";
+                errors.Add("Email é obrigatório*");
+            } else if (inputEmail.Text.Length < 2 || inputEmail.Text.Length > 80 || !IsValidEmail(inputEmail.Text)) {
+                labelEmailErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Email deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputSenha.Text)) {
+                labelSenhaErro.Text = "Campo Obrigatório*";
+                errors.Add("Senha é obrigatória");
+            } else if (inputSenha.Text.Length < 8 || inputSenha.Text.Length > 40) {
+                labelSenhaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Senha deve ter entre 8 e 40 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputTelefone.Text)) {
+                labelTelefoneErro.Text = "Campo Obrigatório*";
+                errors.Add("Telefone é obrigatório*");
+            } else if (inputTelefone.Text.Length != 15) {
+                labelTelefoneErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Telefone deve estar no formato (00) 00000-0000");
+            }
+
+            if (string.IsNullOrEmpty(inputCPF.Text)) {
+                labelCPFErro.Text = "Campo Obrigatório*";
+                errors.Add("CPF é obrigatório*");
+            } else if (inputCPF.Text.Length != 14) {
+                labelCPFErro.Text = "Sintaxe Incorreta*";
+                errors.Add("CPF deve estar no formato 000,000,000-00");
+            }
+
+            if (errors.Count > 0) {
                 return;
             }
 
-            //Validação do Email
-            string email = inputEmail.Text;
-            if(!IsValidEmail(email)) {
-                labelExibeErro.Text = "*Preencha os campos corretamente*";
-                return;
-            } else {
-                labelExibeErro.Text = "";
-                return;
-            }
+            nome = inputNome.Text;
+            nome_Usuario = inputNickname.Text;
+            email = inputEmail.Text;
+            cpf = inputCPF.Text;
+            senha = inputSenha.Text;
+            telefone = inputTelefone.Text;
+            
+            Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
 
-            string logradouro = inputLogradouro.Text;
-            if(!IsValidLogradouro(logradouro)) {
-                labelExibeErro.Text = "*Preencha os campos corretamente*";
-                return;
-            } else {
-                labelExibeErro.Text = "";
-                return;
-            }*/
+            inputNome.Text = "";
+            inputNickname.Text = "";
+            inputEmail.Text = "";
+            inputCPF.Text = "";
+            inputSenha.Text = "";
+            inputTelefone.Text = "";
+
+            MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
 
             Login login = new Login();
             login.Show();

@@ -63,6 +63,7 @@ namespace Views {
 
             labelNomeErro = new Label();
             labelNomeErro.Text = "";
+            labelNomeErro.TextAlign = ContentAlignment.MiddleRight;
             labelNomeErro.Location = new System.Drawing.Point(925, 250);
             labelNomeErro.Size = new System.Drawing.Size(225, 20);
             labelNomeErro.ForeColor = Color.Red;
@@ -81,6 +82,7 @@ namespace Views {
 
             labelNicknameErro = new Label();
             labelNicknameErro.Text = "";
+            labelNicknameErro.TextAlign = ContentAlignment.MiddleRight;
             labelNicknameErro.Location = new System.Drawing.Point(925, 310);
             labelNicknameErro.Size = new System.Drawing.Size(225, 20);
             labelNicknameErro.ForeColor = Color.Red;
@@ -98,6 +100,7 @@ namespace Views {
 
             labelEmailErro = new Label();
             labelEmailErro.Text = "";
+            labelEmailErro.TextAlign = ContentAlignment.MiddleRight;
             labelEmailErro.Location = new System.Drawing.Point(925, 370);
             labelEmailErro.Size = new System.Drawing.Size(225, 20);
             labelEmailErro.ForeColor = Color.Red;
@@ -115,6 +118,7 @@ namespace Views {
 
             labelSenhaErro = new Label();
             labelSenhaErro.Text = "";
+            labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
             labelSenhaErro.Location = new System.Drawing.Point(925, 430);
             labelSenhaErro.Size = new System.Drawing.Size(225, 20);
             labelSenhaErro.ForeColor = Color.Red;
@@ -133,6 +137,7 @@ namespace Views {
 
             labelTelefoneErro = new Label();
             labelTelefoneErro.Text = "";
+            labelTelefoneErro.TextAlign = ContentAlignment.MiddleRight;
             labelTelefoneErro.Location = new System.Drawing.Point(815, 490);
             labelTelefoneErro.Size = new System.Drawing.Size(105, 20);
             labelTelefoneErro.ForeColor = Color.Red;
@@ -151,8 +156,10 @@ namespace Views {
 
             labelCPFErro = new Label();
             labelCPFErro.Text = "";
+            labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
             labelCPFErro.Location = new System.Drawing.Point(1050, 490);
             labelCPFErro.Size = new System.Drawing.Size(100, 20);
+            labelCPFErro.ForeColor = Color.Red;
 
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(935, 510); 
@@ -297,6 +304,7 @@ namespace Views {
 
         private void buttonCadastrar_Click(object sender, EventArgs e) {
             string nome, nome_Usuario, email, cpf, senha, telefone;
+            List<string> errors = new List<string>();
 
             labelNomeErro.Text = "";
             labelNicknameErro.Text = "";
@@ -305,69 +313,80 @@ namespace Views {
             labelTelefoneErro.Text = "";
             labelCPFErro.Text = "";
 
-            if(string.IsNullOrEmpty(inputNome.Text)) {
+            if (string.IsNullOrEmpty(inputNome.Text)) {
                 labelNomeErro.Text = "Campo Obrigatório*";
-                labelNomeErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(string.IsNullOrEmpty(inputNickname.Text)) {
-                labelNicknameErro.Text = "Campo Obrigatório*";
-                labelNicknameErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(string.IsNullOrEmpty(inputEmail.Text)) {
-                labelEmailErro.Text = "Campo Obrigatório*";
-                labelEmailErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(string.IsNullOrEmpty(inputSenha.Text)) {
-                labelSenhaErro.Text = "Campo Obrigatório*";
-                labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(string.IsNullOrEmpty(inputTelefone.Text)) {
-                labelTelefoneErro.Text = "Campo Obrigatório*";
-                labelTelefoneErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(string.IsNullOrEmpty(inputCPF.Text)) {
-                labelCPFErro.Text = "Campo Obrigatório*";
-                labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
                 labelNomeErro.Text = "Sintaxe Incorreta*";
-                labelNomeErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(inputNickname.Text.Length < 2 || inputNickname.Text.Length > 20) {
-                labelNicknameErro.Text = "Sintaxe Incorreta*";
-                labelNicknameErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(inputEmail.Text.Length < 2 || inputEmail.Text.Length > 80) {
-                labelEmailErro.Text = "Sintaxe Incorreta*";
-                labelEmailErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(inputSenha.Text.Length < 8 || inputSenha.Text.Length > 40) {
-                labelSenhaErro.Text = "Sintaxe Incorreta*";
-                labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(inputTelefone.Text.Length != 15) {
-                labelTelefoneErro.Text = "Sintaxe Incorreta*";
-                labelTelefoneErro.TextAlign = ContentAlignment.MiddleRight;
-            } else if(inputCPF.Text.Length != 14) {
-                labelCPFErro.Text = "Sintaxe Incorreta*";
-                labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
-            } else {
-                nome = inputNome.Text;
-                nome_Usuario = inputNickname.Text;
-                email = inputEmail.Text;
-                cpf = inputCPF.Text;
-                senha = inputSenha.Text;
-                telefone = inputTelefone.Text;
-
-                Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
-
-                inputNome.Text = "";
-                inputNickname.Text = "";
-                inputEmail.Text = "";
-                inputCPF.Text = "";
-                inputSenha.Text = "";
-                inputTelefone.Text = "";
-
-                MessageBox.Show(
-                    "Cadastro realizado com sucesso!",
-                    "Sucesso",
-                    MessageBoxButtons.OK
-                );
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
             }
 
-            /*Login login = new Login();
+            if (string.IsNullOrEmpty(inputNickname.Text)) {
+                labelNicknameErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome do Usuário* é obrigatório*");
+            } else if (inputNickname.Text.Length < 2 || inputNickname.Text.Length > 20) {
+                labelNicknameErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome do Usuário* deve ter entre 2 e 20 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputEmail.Text)) {
+                labelEmailErro.Text = "Campo Obrigatório*";
+                errors.Add("Email é obrigatório*");
+            } else if (inputEmail.Text.Length < 2 || inputEmail.Text.Length > 80 || !IsValidEmail(inputEmail.Text)) {
+                labelEmailErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Email deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputSenha.Text)) {
+                labelSenhaErro.Text = "Campo Obrigatório*";
+                errors.Add("Senha é obrigatória");
+            } else if (inputSenha.Text.Length < 8 || inputSenha.Text.Length > 40) {
+                labelSenhaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Senha deve ter entre 8 e 40 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputTelefone.Text)) {
+                labelTelefoneErro.Text = "Campo Obrigatório*";
+                errors.Add("Telefone é obrigatório*");
+            } else if (inputTelefone.Text.Length != 15) {
+                labelTelefoneErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Telefone deve estar no formato (00) 00000-0000");
+            }
+
+            if (string.IsNullOrEmpty(inputCPF.Text)) {
+                labelCPFErro.Text = "Campo Obrigatório*";
+                errors.Add("CPF é obrigatório*");
+            } else if (inputCPF.Text.Length != 14) {
+                labelCPFErro.Text = "Sintaxe Incorreta*";
+                errors.Add("CPF deve estar no formato 000,000,000-00");
+            }
+
+            if (errors.Count > 0) {
+                return;
+            }
+
+            nome = inputNome.Text;
+            nome_Usuario = inputNickname.Text;
+            email = inputEmail.Text;
+            cpf = inputCPF.Text;
+            senha = inputSenha.Text;
+            telefone = inputTelefone.Text;
+
+            
+            Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
+
+            inputNome.Text = "";
+            inputNickname.Text = "";
+            inputEmail.Text = "";
+            inputCPF.Text = "";
+            inputSenha.Text = "";
+            inputTelefone.Text = "";
+
+            MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+
+            Login login = new Login();
             login.Show();
-            this.Hide();*/
+            this.Hide();
         }
 
         private bool IsValidName(string name) {

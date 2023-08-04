@@ -141,12 +141,6 @@ namespace Repositories {
             MySqlDataReader dados = command.ExecuteReader();
 
             bool result = dados.HasRows;
-
-            if(result){
-                MessageBox.Show($"Bem Vindo, Matheus");
-            }else{
-                MessageBox.Show("CPF OU SENHA INCORRETO");
-            }
         }
     }
     

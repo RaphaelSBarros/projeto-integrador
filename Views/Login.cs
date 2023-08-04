@@ -6,6 +6,8 @@ namespace Views {
         private Label labelFundo;
         private Label labelDivisao1;
         private Label labelDivisao2;
+        private Label labelCPFErro;
+        private Label labelSenhaErro;
         private Label labelSenha;
         private Label labelCPF;
         private Label labelNaoTemConta; 
@@ -45,6 +47,13 @@ namespace Views {
             labelCPF.Location = new System.Drawing.Point(700, 250);
             labelCPF.Size = new System.Drawing.Size(220, 20);
 
+            labelCPFErro = new Label();
+            labelCPFErro.Text = "";
+            labelCPFErro.TextAlign = ContentAlignment.MiddleRight;
+            labelCPFErro.Location = new System.Drawing.Point(925, 250);
+            labelCPFErro.Size = new System.Drawing.Size(225, 20);
+            labelCPFErro.ForeColor = Color.Red;
+
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(700, 270); 
             inputCPF.Name = "CPF";
@@ -56,6 +65,13 @@ namespace Views {
             labelSenha.Text = "Senha";
             labelSenha.Location = new System.Drawing.Point(700, 310);
             labelSenha.Size = new System.Drawing.Size(220, 20);
+
+            labelSenhaErro = new Label();
+            labelSenhaErro.Text = "";
+            labelSenhaErro.TextAlign = ContentAlignment.MiddleRight;
+            labelSenhaErro.Location = new System.Drawing.Point(925, 310);
+            labelSenhaErro.Size = new System.Drawing.Size(225, 20);
+            labelSenhaErro.ForeColor = Color.Red;
 
             inputSenha = new TextBox();
             inputSenha.Location = new System.Drawing.Point(700, 330); 
@@ -82,6 +98,7 @@ namespace Views {
             buttonLogar.Text = "ENTRAR";
             buttonLogar.BackColor = ColorTranslator.FromHtml("#7ed957");
 
+            inputCPF.Click += inputCPF_Click;
             buttonLogar.Click += buttonLogar_Click;
             buttonLogar.MouseEnter += buttonLogar_MouseEnter;
             buttonLogar.MouseLeave += buttonLogar_MouseLeave;
@@ -93,6 +110,8 @@ namespace Views {
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
+            Controls.Add(labelCPFErro);
+            Controls.Add(labelSenhaErro);
             Controls.Add(labelCPF);
             Controls.Add(labelSenha);
             Controls.Add(labelNaoTemConta);
@@ -103,18 +122,34 @@ namespace Views {
             Controls.Add(labelFundo);
         }
 
-        private void inputCPF_KeyPress(object sender, KeyPressEventArgs e) {
+        private void inputCPF_Click(object sender, EventArgs e) {
             string cpf = new string(inputCPF.Text.Where(Char.IsDigit).ToArray());
-            if(cpf.Length >= 3) {
-                cpf = ".";
-            } if (cpf.Length >= 7) {
-                cpf = cpf.Insert(7, ".");
-            } if (cpf.Length >= 11) {
-                cpf = cpf.Insert(11, "-");
-            }
-            
             inputCPF.SelectionStart = cpf.Length;
-            e.Handled = true;
+
+            if(cpf.Length == 4) {
+                inputCPF.SelectionStart = cpf.Length + 1;
+            } 
+            if(cpf.Length == 5) {
+                inputCPF.SelectionStart = cpf.Length + 1;
+            }  
+            if(cpf.Length == 6) {
+                inputCPF.SelectionStart = cpf.Length + 1;
+            }  
+            if(cpf.Length == 7) {
+                inputCPF.SelectionStart = cpf.Length + 2;
+            }  
+            if(cpf.Length == 8) {
+                inputCPF.SelectionStart = cpf.Length + 2;
+            }  
+            if(cpf.Length == 9) {
+                inputCPF.SelectionStart = cpf.Length + 2;
+            }  
+            if(cpf.Length == 10) {
+                inputCPF.SelectionStart = cpf.Length + 3;
+            }
+            if(cpf.Length == 11) {
+                inputCPF.SelectionStart = cpf.Length + 3;
+            }  
         }
 
         private void checkBoxSenha_CheckedChanged(object sender, EventArgs e) {
@@ -122,7 +157,43 @@ namespace Views {
         }
 
         private void buttonLogar_Click(object sender, EventArgs e) {
+            string cpf, senha;
+            List<string> errors = new List<string>();
+
+            labelSenhaErro.Text = "";
+            labelCPFErro.Text = "";
+
+            if (string.IsNullOrEmpty(inputSenha.Text)) {
+                labelSenhaErro.Text = "Campo Obrigatório*";
+                errors.Add("Senha é obrigatória");
+            } else if (inputSenha.Text.Length < 8 || inputSenha.Text.Length > 40) {
+                labelSenhaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Senha deve ter entre 8 e 40 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputCPF.Text)) {
+                labelCPFErro.Text = "Campo Obrigatório*";
+                errors.Add("CPF é obrigatório*");
+            } else if (inputCPF.Text.Length != 14) {
+                labelCPFErro.Text = "Sintaxe Incorreta*";
+                errors.Add("CPF deve estar no formato 000,000,000-00");
+            }
+
+            if (errors.Count > 0) {
+                return;
+            }
+
+            cpf = inputCPF.Text;
+            senha = inputSenha.Text;
+
             Controllers.UsuarioController.VerificaLogin(inputCPF.Text, inputSenha.Text);
+
+            inputCPF.Text = "";
+            inputSenha.Text = "";
+
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.Show();
+            this.Hide();
         }
 
         private void buttonLogar_MouseEnter(object sender, EventArgs e) {
