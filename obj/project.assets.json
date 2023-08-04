@@ -52,24 +52,37 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Usuario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\mathe\\.nuget\\packages\\": {}
+>>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
       "projectName": "Resolville",
       "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
+      "projectName": "Resolville",
+      "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\",
+>>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -77,7 +90,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

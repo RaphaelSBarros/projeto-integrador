@@ -10,7 +10,7 @@ namespace Views {
         private Label labelLinha1;
         private Label labelLinha2;
         private Label labelLinha3;
-        private Label labelFoto;
+        private PictureBox pictureBoxFoto;
         private Label labelOla;
         private Label labelNome;
         private Label labelSeusRelatos;
@@ -38,11 +38,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            /*labelFundo = new Label();
+            labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();*/
+            labelFundo.SendToBack();
 
             labelLinha1 = new Label();
             labelLinha1.Text = "";
@@ -63,11 +63,11 @@ namespace Views {
             labelLinha3.BackColor = Color.Gray;
             labelLinha3.SendToBack();
 
-            labelFoto = new Label();
-            labelFoto.Text = "";
-            labelFoto.Location = new System.Drawing.Point(700, 50);
-            labelFoto.Size = new System.Drawing.Size(80, 80);
-            labelFoto.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBoxFoto = new PictureBox();
+            pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
+            pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
+            pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+            pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
             labelOla = new Label();
             labelOla.Text = "Olá";
@@ -135,7 +135,7 @@ namespace Views {
             Controls.Add(labelLinha2);           
             Controls.Add(labelOla);
             Controls.Add(labelNome);
-            Controls.Add(labelFoto);
+            Controls.Add(pictureBoxFoto);
             Controls.Add(labelSeusRelatos);
             Controls.Add(buttonEditarPerfil);
             Controls.Add(buttonInicio);

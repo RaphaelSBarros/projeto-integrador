@@ -22,7 +22,6 @@ namespace Views {
         private TextBox textBoxDescricaoProblema;
         private ComboBox comboBoxTipoProblema;
         private ComboBox comboBoxBairroProblema;
-        private PictureBox pictureBoxFotoUsuario;
         private Button buttonInicio;
         private Button buttonRelatar;
         private Button buttonFotoProblema;
@@ -85,6 +84,7 @@ namespace Views {
 
             labelFoto = new Label();
             labelFoto.Text = "";
+            labelFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
             labelFoto.Location = new System.Drawing.Point(700, 50);
             labelFoto.Size = new System.Drawing.Size(80, 80);
             labelFoto.BackgroundImageLayout = ImageLayout.Zoom;          

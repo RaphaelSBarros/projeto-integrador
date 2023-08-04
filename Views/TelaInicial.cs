@@ -35,11 +35,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            labelFundo = new Label();
+            /*labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
+            labelFundo.SendToBack();*/
 
             labelLinha1 = new Label();
             labelLinha1.Text = "";
@@ -54,7 +54,7 @@ namespace Views {
             labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
 
             labelFoto = new Label();
-            labelFoto.Text = "";
+            labelFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
             labelFoto.Location = new System.Drawing.Point(700, 50);
             labelFoto.Size = new System.Drawing.Size(80, 80);
             labelFoto.BackgroundImageLayout = ImageLayout.Zoom;
@@ -65,6 +65,14 @@ namespace Views {
             labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
+            labelOla.Font = fonte;
+
+            labelNome = new Label();
+            labelNome.Text = "";
+            labelNome.Location = new System.Drawing.Point(830, 80);
+            labelNome.Size = new System.Drawing.Size(225, 25);
+            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
+            fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
             labelNome = new Label();
