@@ -111,7 +111,8 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `atendimento_prefeitura`
   ADD PRIMARY KEY (`Code_Atendimento`),
-  ADD KEY `ID_Status` (`ID_Status`);
+  ADD KEY `ID_Status` (`ID_Status`),
+  CHANGE `Code_Atendimento` `Code_Atendimento` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Índices de tabela `bairro`
@@ -128,7 +129,8 @@ ALTER TABLE `postagem`
   ADD KEY `ID_Usuario` (`ID_Usuario`),
   ADD KEY `ID_Bairro` (`ID_Bairro`),
   ADD KEY `Code_Atendimento` (`Code_Atendimento`),
-  ADD KEY `Code_Problema` (`Code_Problema`);
+  ADD KEY `Code_Problema` (`Code_Problema`),
+  CHANGE `Code_Postagem` `Code_Postagem` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Índices de tabela `problema`
@@ -141,7 +143,8 @@ ALTER TABLE `problema`
 -- Índices de tabela `status_atendimento`
 --
 ALTER TABLE `status_atendimento`
-  ADD PRIMARY KEY (`ID_Status`);
+  ADD PRIMARY KEY (`ID_Status`),
+  CHANGE `ID_Status` `ID_Status` INT(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Índices de tabela `usuario`
