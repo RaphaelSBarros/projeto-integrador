@@ -19,7 +19,6 @@ namespace Views {
         private Label labelSenha;
         private Label labelTelefone; 
         private Label labelCPF;      
-        private Label labelExibeErro; 
         private Label labelFotoUsuario;
         private TextBox inputNome;
         private TextBox inputNickname;

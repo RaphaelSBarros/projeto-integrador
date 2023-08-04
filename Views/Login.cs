@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 
 namespace Views {
+    
     public class Login : Form {
         private Label labelFundo;
         private Label labelDivisao1;

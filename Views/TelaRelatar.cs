@@ -246,27 +246,27 @@ namespace Views {
             string logradouro, outros_problemas, observacao, data;
             byte[] foto;
 
-        //     if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxLogradouroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
-        //         logradouro =
-        //         outros_problemas =
-        //         observacao =
+             /*if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxLogradouroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
+                 logradouro =
+                 outros_problemas =
+                 observacao =
 
-        //         Controllers.UsuarioController.AddPostagem(nome);
+                 Controllers.UsuarioController.AddPostagem(nome);
 
-        //         inputNome.Text = "";
+                 inputNome.Text = "";
         
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "Postagem realizada com sucesso!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }else{
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "ERRO: Preencha todos os campos necessários!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }
+                 MessageBox.Show(
+                     "Mensagem do Sistema",
+                     "Postagem realizada com sucesso!",
+                     MessageBoxButtons.OK
+                 );
+             }else{
+                 MessageBox.Show(
+                     "Mensagem do Sistema",
+                     "ERRO: Preencha todos os campos necessários!",
+                     MessageBoxButtons.OK
+                 );
+             }*/
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
@@ -311,7 +311,7 @@ namespace Views {
             buttonFotoProblema.BackColor = Color.White;
         }
 
-        private void GetBairros(){
+        private void GetBairros() {
             List<Models.Bairro> bairros = Controllers.BairroController.ListarBairros();
 
             comboBoxBairroProblema.Items.Clear();
@@ -321,9 +321,10 @@ namespace Views {
             }
         }
 
-        public override void Refresh()
-        {
+        public override void Refresh() {
             GetBairros();
         }
+
     }
+
 }

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 
 namespace Views {   
+    
     public class Cadastro : Form {   
         private Label labelFundo; 
         private Label labelDivisao1;
@@ -30,7 +31,6 @@ namespace Views {
         private Button buttonFotoUsuario;
         private Button buttonCadastrar;
         
-        public Cadastro(){}
         public Cadastro() {   
             this.WindowState = FormWindowState.Maximized;
 
