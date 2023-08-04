@@ -1,26 +1,17 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "zocuEV/pBePq3QFSLTH/IaYQNHXvmW+bOhrOj+8YNgD4v//IHQcJwJK8sEbI2Prs7ChOfmF+8/qDgfhmn7g0Ww==",
-=======
-<<<<<<< HEAD
-  "dgSpecHash": "LGrQnvrIYztIU25IpdoJ7f1MbPGGEeWOyOXlbJ4t4BOJ918CmmtdMJysp5DzcMZEmMEnAg9bm4tki01gTZy3cw==",
+  "dgSpecHash": "T7Cpv6q3kWVNOf3asddCwhyDkMfPIS4up/oVxBRd2wzkbaHmvVpcBGPwC6SMsfNhadUlKABdjiqcVQH8ZxVTfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+  "projectFilePath": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
-=======
-  "dgSpecHash": "ZYWp2wbBebp/AZvmNX0E10RYMPZvPUJTf6qgb6zE6kF39P4rl29+isPJ2CPddpTQPP6SUvoC8+tKfQacrNixhQ==",
->>>>>>> fadf7386f625b82bd27dc16dc8e7e82df2fb5aa1
-  "success": true,
-  "projectFilePath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
-  "expectedPackageFiles": [
-<<<<<<< HEAD
-    "C:\\Users\\matheus.cidral\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
-=======
-    "C:\\Users\\mathe\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
->>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
->>>>>>> fadf7386f625b82bd27dc16dc8e7e82df2fb5aa1
+    "C:\\Users\\gustavo.silva41\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

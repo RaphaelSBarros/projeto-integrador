@@ -1,57 +1,24 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj": {}
+    "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj": {
+    "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+        "projectUniqueName": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj",
         "projectName": "Resolville",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\",
-=======
-    "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj": {}
->>>>>>> fadf7386f625b82bd27dc16dc8e7e82df2fb5aa1
-  },
-  "projects": {
-    "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
-        "projectName": "Resolville",
-<<<<<<< HEAD
-        "projectPath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
-        "packagesPath": "C:\\Users\\matheus.cidral\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\obj\\",
-=======
-        "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\",
->>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
->>>>>>> fadf7386f625b82bd27dc16dc8e7e82df2fb5aa1
+        "projectPath": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj",
+        "packagesPath": "C:\\Users\\gustavo.silva41\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\matheus.cidral\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gustavo.silva41\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-<<<<<<< HEAD
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 6a6b84df18418508a242d6d8c47111ff63f9184d
->>>>>>> fadf7386f625b82bd27dc16dc8e7e82df2fb5aa1
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
