@@ -29,6 +29,7 @@ namespace Views {
         private Button buttonEnviarRelato;
 
         public TelaRelatar() {
+            Controllers.BairroController.Sincronizar();
             this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
@@ -128,6 +129,7 @@ namespace Views {
                 "Vila Nova", "Zona Industrial Norte", "Zona Industrial Tupy"
             };
             comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
+            this.GetBairros();
 
             labelLogradouroProblema = new Label();
             labelLogradouroProblema.Text = "Escreva o logradouro (Rua) do problema";
@@ -307,6 +309,21 @@ namespace Views {
 
         private void buttonFotoProblema_MouseLeave(object sender, EventArgs e ) {
             buttonFotoProblema.BackColor = Color.White;
+        }
+
+        private void GetBairros(){
+            List<Models.Bairro> bairros = Controllers.BairroController.ListarBairros();
+
+            comboBoxBairroProblema.Items.Clear();
+            foreach (var bairro in bairros)
+            {
+                comboBoxBairroProblema.Items.Add(bairro.Bairro_Nome);
+            }
+        }
+
+        public override void Refresh()
+        {
+            GetBairros();
         }
     }
 }
