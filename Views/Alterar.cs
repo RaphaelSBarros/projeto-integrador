@@ -19,7 +19,6 @@ namespace Views {
         private Label labelSenha;
         private Label labelTelefone; 
         private Label labelCPF;      
-        private Label labelExibeErro; 
         private Label labelFotoUsuario;
         private TextBox inputNome;
         private TextBox inputNickname;
@@ -247,6 +246,12 @@ namespace Views {
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
+            Controls.Add(labelNomeErro);
+            Controls.Add(labelNicknameErro);
+            Controls.Add(labelEmailErro);
+            Controls.Add(labelSenhaErro);
+            Controls.Add(labelTelefoneErro);
+            Controls.Add(labelCPFErro);
             Controls.Add(labelNome);
             Controls.Add(inputNome);
             Controls.Add(labelNickname);
@@ -259,7 +264,6 @@ namespace Views {
             Controls.Add(inputTelefone);
             Controls.Add(labelCPF);
             Controls.Add(inputCPF);
-            Controls.Add(labelExibeErro);
             Controls.Add(labelFotoUsuario);
             Controls.Add(buttonFotoUsuario);
             Controls.Add(buttonAlterar);    

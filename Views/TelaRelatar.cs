@@ -9,6 +9,10 @@ namespace Views {
         private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
+        private Label labelTipoProblemaErro;
+        private Label labelBairroProblemaErro;
+        private Label labelLogradouroProblemaErro;
+        private Label labelDescricaoProblemaErro;
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;        
@@ -164,7 +168,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = Color.White;
             buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -211,6 +215,10 @@ namespace Views {
             Controls.Add(labelLinha2); 
             Controls.Add(labelFoto);           
             Controls.Add(labelEscrevaRelato);
+            Controls.Add(labelTipoProblemaErro);
+            Controls.Add(labelBairroProblemaErro);
+            Controls.Add(labelLogradouroProblemaErro);
+            Controls.Add(labelDescricaoProblemaErro);
             Controls.Add(labelTipoProblema);
             Controls.Add(labelBairroProblema);
             Controls.Add(labelLogradouroProblema);
@@ -246,27 +254,9 @@ namespace Views {
             string logradouro, outros_problemas, observacao, data;
             byte[] foto;
 
-        //     if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxLogradouroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
-        //         logradouro =
-        //         outros_problemas =
-        //         observacao =
 
-        //         Controllers.UsuarioController.AddPostagem(nome);
 
-        //         inputNome.Text = "";
-        
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "Postagem realizada com sucesso!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }else{
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "ERRO: Preencha todos os campos necessários!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }
+            //Controllers.UsuarioController.AddPostagem(nome);        
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
@@ -311,7 +301,7 @@ namespace Views {
             buttonFotoProblema.BackColor = Color.White;
         }
 
-        private void GetBairros(){
+        private void GetBairros() {
             List<Models.Bairro> bairros = Controllers.BairroController.ListarBairros();
 
             comboBoxBairroProblema.Items.Clear();
@@ -321,9 +311,10 @@ namespace Views {
             }
         }
 
-        public override void Refresh()
-        {
+        public override void Refresh() {
             GetBairros();
         }
+
     }
+
 }

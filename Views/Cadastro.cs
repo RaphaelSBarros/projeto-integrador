@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 
 namespace Views {   
+    
     public class Cadastro : Form {   
         private Label labelFundo; 
         private Label labelDivisao1;
