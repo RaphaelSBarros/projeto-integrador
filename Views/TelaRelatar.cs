@@ -28,7 +28,9 @@ namespace Views {
         private Button buttonEnviarRelato;
 
         public TelaRelatar() {
+            Controllers.Tipo_ProblemaController.Sincronizar();
             Controllers.BairroController.Sincronizar();
+
             this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
@@ -107,6 +109,7 @@ namespace Views {
             comboBoxTipoProblema.Location = new System.Drawing.Point(725, 250);
             comboBoxTipoProblema.Size = new System.Drawing.Size(400, 20);
             comboBoxTipoProblema.ForeColor = Color.Gray;
+            this.GetTipoProblema();
 
             labelBairroProblema = new Label();
             labelBairroProblema.Text = "Selecione o bairro do problema";
@@ -118,17 +121,6 @@ namespace Views {
             comboBoxBairroProblema.Location = new System.Drawing.Point(725, 310);
             comboBoxBairroProblema.Size = new System.Drawing.Size(400, 20);
             comboBoxBairroProblema.ForeColor = Color.Gray; 
-
-            string[] bairrosJoinville = {
-                "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Aventureiro", "Boa Vista", 
-                "Boehmerwald", "Bom Retiro", "Bucarein", "Centro", "Comasa", "Costa e Silva", "Espinheiros", 
-                "Fátima", "Floresta", "Glória", "Guanabara", "Iririú", "Itaum", "Itinga", "Parque Guarani", 
-                "Jardim Iririú", "Jardim Paraíso", "Jardim Sophia", "Jarivatuba", "Jativoca", "João Costa", 
-                "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Pirabeiraba", "Profipo", 
-                "Saguaçu", "Santa Catarina", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Cubatão", 
-                "Vila Nova", "Zona Industrial Norte", "Zona Industrial Tupy"
-            };
-            comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
             this.GetBairros();
 
             labelLogradouroProblema = new Label();
@@ -242,31 +234,37 @@ namespace Views {
         }
 
         private void buttonEnviarRelato_Click(object sender, EventArgs e) { // FAZER
-            int code_postagem, fk_id_usuario, fk_code_problema, fk_id_bairro, fk_code_atendimento;
+            int fk_id_usuario, fk_code_problema, fk_id_bairro;
             string logradouro, outros_problemas, observacao, data;
-            byte[] foto;
+            Image foto;
 
-        //     if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxLogradouroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
-        //         logradouro =
-        //         outros_problemas =
-        //         observacao =
+            if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
+                fk_id_usuario = 1; // FALTA COLOCA COM O BAGUIO Q O RAPHAEL FEZ
+                fk_code_problema = comboBoxTipoProblema.FindString(comboBoxTipoProblema.Text); // INDEX DO PROBLEMA
+                fk_id_bairro = comboBoxBairroProblema.FindString(comboBoxBairroProblema.Text); // INDEX DO BAIRRO
+                logradouro = textBoxLogradouroProblema.Text;
+                observacao = textBoxDescricaoProblema.Text;
+                foto = buttonFotoProblema.Image;
 
-        //         Controllers.UsuarioController.AddPostagem(nome);
+                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema, fk_id_bairro, logradouro, observacao, foto);
 
-        //         inputNome.Text = "";
+                comboBoxTipoProblema.Text = "";
+                comboBoxBairroProblema.Text = "";
+                textBoxLogradouroProblema.Text = "";
+                textBoxDescricaoProblema.Text = "";
         
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "Postagem realizada com sucesso!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }else{
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "ERRO: Preencha todos os campos necessários!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }
+                MessageBox.Show(
+                    "Mensagem do Sistema",
+                    "Postagem realizada com sucesso!",
+                    MessageBoxButtons.OK
+                );
+            }else{
+                MessageBox.Show(
+                    "Mensagem do Sistema",
+                    "ERRO: Preencha todos os campos necessários!",
+                    MessageBoxButtons.OK
+                );
+            }
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
@@ -319,6 +317,17 @@ namespace Views {
             {
                 comboBoxBairroProblema.Items.Add(bairro.Bairro_Nome);
             }
+        }
+
+        private void GetTipoProblema(){
+            List<Models.Tipo_Problema> tipo_problema = Controllers.Tipo_ProblemaController.ListarProblemas();
+
+            comboBoxTipoProblema.Items.Clear();
+            foreach(var problema in tipo_problema)
+            {
+                comboBoxTipoProblema.Items.Add(problema.Problema_Nome);
+            }
+            
         }
 
         public override void Refresh()

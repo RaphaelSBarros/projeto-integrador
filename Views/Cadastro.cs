@@ -30,7 +30,6 @@ namespace Views {
         private Button buttonFotoUsuario;
         private Button buttonCadastrar;
         
-        public Cadastro(){}
         public Cadastro() {   
             this.WindowState = FormWindowState.Maximized;
 

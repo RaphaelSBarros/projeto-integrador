@@ -364,7 +364,7 @@ namespace Views {
             senha = inputSenha.Text;
             telefone = inputTelefone.Text;
             
-            Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
+            // Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
 
             inputNome.Text = "";
             inputNickname.Text = "";

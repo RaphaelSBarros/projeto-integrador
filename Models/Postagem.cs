@@ -6,7 +6,7 @@ namespace Models {
         public int Code_Postagem { get; set; }
         public string Logradouro { get; set; }
         public string Outros_Problemas { get; set; }
-        public byte[] Foto { get; set; }
+        public Image Foto { get; set; }
         public string Observacao { get; set; }
         public string Data { get; set; }
 
@@ -18,29 +18,21 @@ namespace Models {
 
         public Postagem(){}
         public Postagem(
-            int code_postagem, 
-            string logradouro, 
-            string outros_problemas, 
-            byte[] foto, 
-            string observacao, 
-            string data,
             int fk_id_usuario,
             int fk_code_problema,
             int fk_id_bairro,
-            int fk_code_atendimento
+            string logradouro, 
+            string observacao, 
+            Image foto
         ){
-            Code_Postagem = code_postagem;
-            Logradouro = logradouro;
-            Outros_Problemas = outros_problemas;
-            Foto = foto;
-            Observacao = observacao;
-            Data = data;
             FK_ID_Usuario = fk_id_usuario;
             FK_Code_Problema = fk_code_problema;
             FK_ID_Bairro = fk_id_bairro;
-            FK_Code_Atendimento = fk_code_atendimento;
+            Logradouro = logradouro;
+            Observacao = observacao;
+            Foto = foto;
 
-            // Repositories.PostagemRepository.AddPostagem(this);
+            Repositories.PostagemRepository.AddPostagem(this);
         }
 
         // public static void Sincronizar() {
