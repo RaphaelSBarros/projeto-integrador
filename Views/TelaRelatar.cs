@@ -9,6 +9,10 @@ namespace Views {
         private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
+        private Label labelTipoProblemaErro;
+        private Label labelBairroProblemaErro;
+        private Label labelLogradouroProblemaErro;
+        private Label labelDescricaoProblemaErro;
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;        
@@ -156,7 +160,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = Color.White;
             buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -203,6 +207,10 @@ namespace Views {
             Controls.Add(labelLinha2); 
             Controls.Add(labelFoto);           
             Controls.Add(labelEscrevaRelato);
+            Controls.Add(labelTipoProblemaErro);
+            Controls.Add(labelBairroProblemaErro);
+            Controls.Add(labelLogradouroProblemaErro);
+            Controls.Add(labelDescricaoProblemaErro);
             Controls.Add(labelTipoProblema);
             Controls.Add(labelBairroProblema);
             Controls.Add(labelLogradouroProblema);
@@ -309,7 +317,7 @@ namespace Views {
             buttonFotoProblema.BackColor = Color.White;
         }
 
-        private void GetBairros(){
+        private void GetBairros() {
             List<Models.Bairro> bairros = Controllers.BairroController.ListarBairros();
 
             comboBoxBairroProblema.Items.Clear();
@@ -319,6 +327,7 @@ namespace Views {
             }
         }
 
+<<<<<<< HEAD
         private void GetTipoProblema(){
             List<Models.Tipo_Problema> tipo_problema = Controllers.Tipo_ProblemaController.ListarProblemas();
 
@@ -332,7 +341,12 @@ namespace Views {
 
         public override void Refresh()
         {
+=======
+        public override void Refresh() {
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
             GetBairros();
         }
+
     }
+
 }

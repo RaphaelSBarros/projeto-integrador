@@ -1,6 +1,7 @@
 using System;
 
 namespace Views {
+
     public class Program {
         
         [STAThread]
@@ -9,6 +10,6 @@ namespace Views {
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new TelaRelatar());
-        } 
+
     }  
 }

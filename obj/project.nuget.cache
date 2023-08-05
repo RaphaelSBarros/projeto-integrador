@@ -1,17 +1,41 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "T7Cpv6q3kWVNOf3asddCwhyDkMfPIS4up/oVxBRd2wzkbaHmvVpcBGPwC6SMsfNhadUlKABdjiqcVQH8ZxVTfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gustavo.silva41\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "38Hec2UtW3ddW8g90Xsa+6Z4TaaF+1qGHjGBHsQBDLv9j8nfBLF1QcE8vZTNvE0Ms+GNsjKHVII3L0hr4Z5Lag==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lucas.velloso\\Desktop\\PI\\projeto-integrador\\Resolville.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lucas.velloso\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
+=======
+  "dgSpecHash": "zocuEV/pBePq3QFSLTH/IaYQNHXvmW+bOhrOj+8YNgD4v//IHQcJwJK8sEbI2Prs7ChOfmF+8/qDgfhmn7g0Ww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matheus.cidral\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
+>>>>>>> 647f46833f1e1c51c60ddb80dc38c3c48ce6286c
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
   ],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problema ao ler o arquivo de cache C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+<<<<<<< HEAD
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.velloso\\Desktop\\PI\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\matheus.cidral\\Desktop\\Resolville\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 647f46833f1e1c51c60ddb80dc38c3c48ce6286c
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
     }
   ]
 }

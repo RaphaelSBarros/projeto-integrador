@@ -52,23 +52,55 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\gustavo.silva41\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\lucas.velloso\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\matheus.cidral\\.nuget\\packages\\": {},
+>>>>>>> 647f46833f1e1c51c60ddb80dc38c3c48ce6286c
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj",
       "projectName": "Resolville",
       "projectPath": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\Resolville.csproj",
       "packagesPath": "C:\\Users\\gustavo.silva41\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\lucas.velloso\\Desktop\\PI\\projeto-integrador\\Resolville.csproj",
+      "projectName": "Resolville",
+      "projectPath": "C:\\Users\\lucas.velloso\\Desktop\\PI\\projeto-integrador\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\lucas.velloso\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucas.velloso\\Desktop\\PI\\projeto-integrador\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
+      "projectName": "Resolville",
+      "projectPath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\matheus.cidral\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\matheus.cidral\\Desktop\\Resolville\\obj\\",
+>>>>>>> 647f46833f1e1c51c60ddb80dc38c3c48ce6286c
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\gustavo.silva41\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\lucas.velloso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\matheus.cidral\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 647f46833f1e1c51c60ddb80dc38c3c48ce6286c
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -129,7 +161,15 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problema ao ler o arquivo de cache C:\\Users\\gustavo.silva41\\Desktop\\PROJETO INTEGRADOR\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+<<<<<<< HEAD
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\lucas.velloso\\Desktop\\PI\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\matheus.cidral\\Desktop\\Resolville\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 647f46833f1e1c51c60ddb80dc38c3c48ce6286c
+>>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
     }
   ]
 }

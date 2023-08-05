@@ -2,6 +2,7 @@ using System;
 // gustavo arruma sapoha ai tudo errado - "gustavo"
 
 namespace Models {
+
     public class Postagem {
         public int Code_Postagem { get; set; }
         public string Logradouro { get; set; }
@@ -16,7 +17,6 @@ namespace Models {
         public int FK_ID_Bairro { get; set; }
         public int FK_Code_Atendimento { get; set; }
 
-        public Postagem(){}
         public Postagem(
             int fk_id_usuario,
             int fk_code_problema,
@@ -35,37 +35,37 @@ namespace Models {
             Repositories.PostagemRepository.AddPostagem(this);
         }
 
-        // public static void Sincronizar() {
-        //     Repositories.PostagemRepository.Sincronizar();
-        // }
+        /* public static void Sincronizar() {
+             Repositories.PostagemRepository.Sincronizar();
+         }
 
-        // public static Postagem? GetPostagem(int index) {
-        //     return Repositories.PostagemRepository.GetPostagem(index);
-        // }
+         public static Postagem? GetPostagem(int index) {
+             return Repositories.PostagemRepository.GetPostagem(index);
+         }
 
-        // public static List<Models.Usuario> ListPostagens() {
-        //     return Repositories.PostagemRepository.ListPostagens();
-        // }
+         public static List<Models.Usuario> ListPostagens() {
+             return Repositories.PostagemRepository.ListPostagens();
+         }
 
-        // public static void UpdatePostagem(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {
-        //     Models.Postagem postagem = Models.Postagem.GetPostagem(index);
-        //     if(usuario != null) {
-        //         usuario.Nome = nome;
-        //         usuario.Nome_Usuario = nome_usuario;
-        //         usuario.Email = email;
-        //         usuario.Cpf = cpf;
-        //         usuario.Senha = senha;
-        //         usuario.Telefone = telefone;
+         public static void UpdatePostagem(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {
+             Models.Postagem postagem = Models.Postagem.GetPostagem(index);
+             if(usuario != null) {
+                 usuario.Nome = nome;
+                 usuario.Nome_Usuario = nome_usuario;
+                 usuario.Email = email;
+                 usuario.Cpf = cpf;
+                 usuario.Senha = senha;
+                 usuario.Telefone = telefone;
 
-        //         Repositories.PostagemRepository.UpdatePostagem(index, usuario);
-        //     }
-        // }
+                 Repositories.PostagemRepository.UpdatePostagem(index, usuario);
+             }
+         }
 
-        // public static void DeleteUsuario(int index){
-        //     Models.Usuario usuario = Models.Usuario.GetUsuario(index);
-        //     if(usuario != null) {
-        //         Repositories.PostagemRepository.DeleteUsuario(index);
-        //     }
-        // }
+         public static void DeleteUsuario(int index){
+             Models.Usuario usuario = Models.Usuario.GetUsuario(index);
+             if(usuario != null) {
+                 Repositories.PostagemRepository.DeleteUsuario(index);
+             }
+         }*/
     }
 }
