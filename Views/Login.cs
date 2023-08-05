@@ -91,10 +91,12 @@ namespace Views {
             inputSenha.MaxLength = 20;
 
             labelNaoTemConta = new Label();
-            labelNaoTemConta.Location = new System.Drawing.Point(870, 425);
+            labelNaoTemConta.Location = new System.Drawing.Point(860, 425);
             labelNaoTemConta.Text = "Não tem uma conta?";
-            labelNaoTemConta.Size = new System.Drawing.Size(119, 15);
+            labelNaoTemConta.Size = new System.Drawing.Size(125, 15);
             labelNaoTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
+            fonte = new Font("Garet", 8, FontStyle.Bold);
+            labelNaoTemConta.Font = fonte;
 
             /*CheckBoxSenha = new CheckBox();
             checkBoxSenha.Image = Image.FromFile("Layout/VerSenha.png");
@@ -107,6 +109,9 @@ namespace Views {
             buttonLogar.Size = new System.Drawing.Size(400, 30);  
             buttonLogar.Text = "ENTRAR";
             buttonLogar.BackColor = ColorTranslator.FromHtml("#7ed957");
+            buttonLogar.ForeColor = Color.White;
+            fonte = new Font("Garet", 10, FontStyle.Bold);
+            buttonLogar.Font = fonte;
 
             inputCPF.Click += inputCPF_Click;
             buttonLogar.Click += buttonLogar_Click;
