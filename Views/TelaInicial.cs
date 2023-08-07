@@ -64,24 +64,16 @@ namespace Views {
             labelOla.Location = new System.Drawing.Point(790, 80);
             labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            Font fonte = new Font("Arial", 14, FontStyle.Bold);
+            Font fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
             labelOla.Font = fonte;
-
+           
             labelNome = new Label();
             labelNome.Text = "";
             labelNome.Location = new System.Drawing.Point(830, 80);
             labelNome.Size = new System.Drawing.Size(225, 25);
             labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-
-            labelNome = new Label();
-            labelNome.Text = "";
-            labelNome.Location = new System.Drawing.Point(830, 80);
-            labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
+            fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
+            labelNome.Font = fonte;
 
             buttonInicio = new Button();
             buttonInicio.Text = "INÍCIO";
@@ -89,7 +81,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = ColorTranslator.FromHtml("#5271FF");
             buttonInicio.ForeColor = Color.White;
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("Garet", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -99,7 +91,7 @@ namespace Views {
             buttonRelatar.Size = new System.Drawing.Size(225, 50);
             buttonRelatar.BackColor = Color.White;
             buttonRelatar.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("Garet", 14, FontStyle.Bold);
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
