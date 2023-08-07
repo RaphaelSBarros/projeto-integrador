@@ -10,6 +10,6 @@ namespace Views {
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new TelaRelatar());
-
+        }
     }  
 }

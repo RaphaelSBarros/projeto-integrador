@@ -36,6 +36,8 @@ namespace Views {
             Controllers.BairroController.Sincronizar();
 
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
             Panel panel = new Panel();
@@ -254,7 +256,7 @@ namespace Views {
                 observacao = textBoxDescricaoProblema.Text;
                 foto = buttonFotoProblema.Image;
 
-                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema, fk_id_bairro, logradouro, observacao, foto);
+                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema+1, fk_id_bairro+1, logradouro, observacao, foto);
 
                 comboBoxTipoProblema.Text = "";
                 comboBoxBairroProblema.Text = "";
@@ -262,14 +264,14 @@ namespace Views {
                 textBoxDescricaoProblema.Text = "";
         
                 MessageBox.Show(
-                    "Mensagem do Sistema",
                     "Postagem realizada com sucesso!",
+                    "Mensagem do Sistema",
                     MessageBoxButtons.OK
                 );
             }else{
                 MessageBox.Show(
-                    "Mensagem do Sistema",
                     "ERRO: Preencha todos os campos necessários!",
+                    "Mensagem do Sistema",
                     MessageBoxButtons.OK
                 );
             }
@@ -327,7 +329,6 @@ namespace Views {
             }
         }
 
-<<<<<<< HEAD
         private void GetTipoProblema(){
             List<Models.Tipo_Problema> tipo_problema = Controllers.Tipo_ProblemaController.ListarProblemas();
 
@@ -336,17 +337,6 @@ namespace Views {
             {
                 comboBoxTipoProblema.Items.Add(problema.Problema_Nome);
             }
-            
         }
-
-        public override void Refresh()
-        {
-=======
-        public override void Refresh() {
->>>>>>> 73c795f985b873be9cb998e8bb5c6860b40c6d25
-            GetBairros();
-        }
-
     }
-
 }

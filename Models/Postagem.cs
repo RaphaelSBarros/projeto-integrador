@@ -15,7 +15,7 @@ namespace Models {
         public int FK_ID_Usuario { get; set; }
         public int FK_Code_Problema { get; set; }
         public int FK_ID_Bairro { get; set; }
-        public int FK_Code_Atendimento { get; set; }
+        public int FK_ID_Status { get; set; }
 
         public Postagem(
             int fk_id_usuario,

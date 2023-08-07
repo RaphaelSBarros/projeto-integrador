@@ -79,10 +79,10 @@ namespace Repositories {
                 if(rowsAffected > 0) {
                     postagens.Add(postagem);
                 } else {
-                    MessageBox.Show("Usuário não foi Cadastrado!");
+                    MessageBox.Show(" não foi Cadastrado!");
                 }
             } else {
-                MessageBox.Show("Usuário não foi Cadastrado!");
+                MessageBox.Show(" não foi Cadastrado!");
             }
             CloseConexao();
         }
