@@ -248,7 +248,6 @@ namespace Views {
             string logradouro, outros_problemas, observacao, data;
             Image foto;
 
-<<<<<<< HEAD
             string tipoProblema, bairroProblema, logradouroProblema, descricaoProblema;
             List<string> errors = new List<string>();
 
@@ -265,42 +264,35 @@ namespace Views {
                 errors.Add("TipoProblema Completo deve ter entre 2 e 80 caracteres");
             }
 
-            if (string.IsNullOrEmpty(inputNome.Text)) {
-                labelNomeErro.Text = "Campo Obrigatório*";
+            if (string.IsNullOrEmpty(comboBoxBairroProblema.Text)) {
+                labelBairroProblemaErro.Text = "Campo Obrigatório*";
                 errors.Add("Nome Completo é obrigatório*");
-            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
-                labelNomeErro.Text = "Sintaxe Incorreta*";
+            } else if (comboBoxBairroProblema.Text.Length < 2 || comboBoxBairroProblema.Text.Length > 80) {
+                labelBairroProblemaErro.Text = "Sintaxe Incorreta*";
                 errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
             }
 
-            if (string.IsNullOrEmpty(inputNome.Text)) {
-                labelNomeErro.Text = "Campo Obrigatório*";
+            if (string.IsNullOrEmpty(textBoxLogradouroProblema.Text)) {
+                labelLogradouroProblemaErro.Text = "Campo Obrigatório*";
                 errors.Add("Nome Completo é obrigatório*");
-            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
-                labelNomeErro.Text = "Sintaxe Incorreta*";
+            } else if (textBoxLogradouroProblema.Text.Length < 2 || textBoxLogradouroProblema.Text.Length > 80) {
+                labelLogradouroProblemaErro.Text = "Sintaxe Incorreta*";
                 errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            } 
+
+            if (string.IsNullOrEmpty(textBoxDescricaoProblema.Text)) {
+                labelDescricaoProblemaErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (textBoxDescricaoProblema.Text.Length < 2 || textBoxDescricaoProblema.Text.Length > 80) {
+                labelDescricaoProblemaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            } 
+
+            if (errors.Count > 0) {
+                return;
             }
 
-            if (string.IsNullOrEmpty(inputNome.Text)) {
-                labelNomeErro.Text = "Campo Obrigatório*";
-                errors.Add("Nome Completo é obrigatório*");
-            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
-                labelNomeErro.Text = "Sintaxe Incorreta*";
-                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
-            }
-=======
-            if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
-                fk_id_usuario = 1; // FALTA COLOCA COM O BAGUIO Q O RAPHAEL FEZ
-                fk_code_problema = comboBoxTipoProblema.FindString(comboBoxTipoProblema.Text); // INDEX DO PROBLEMA
-                fk_id_bairro = comboBoxBairroProblema.FindString(comboBoxBairroProblema.Text); // INDEX DO BAIRRO
-                logradouro = textBoxLogradouroProblema.Text;
-                observacao = textBoxDescricaoProblema.Text;
-                foto = buttonFotoProblema.Image;
-
-                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema+1, fk_id_bairro+1, logradouro, observacao, foto);
->>>>>>> f626f2ece86ee5d2b6c13610b550faac41d00108
-
-                comboBoxTipoProblema.Text = "";
+            comboBoxTipoProblema.Text = "";
                 comboBoxBairroProblema.Text = "";
                 textBoxLogradouroProblema.Text = "";
                 textBoxDescricaoProblema.Text = "";
@@ -310,13 +302,6 @@ namespace Views {
                     "Mensagem do Sistema",
                     MessageBoxButtons.OK
                 );
-            }else{
-                MessageBox.Show(
-                    "ERRO: Preencha todos os campos necessários!",
-                    "Mensagem do Sistema",
-                    MessageBoxButtons.OK
-                );
-            }
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
