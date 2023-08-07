@@ -168,7 +168,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = Color.White;
             buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
+            fonte = new Font("Arial", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -254,7 +254,45 @@ namespace Views {
             string logradouro, outros_problemas, observacao, data;
             byte[] foto;
 
+            string tipoProblema, bairroProblema, logradouroProblema, descricaoProblema;
+            List<string> errors = new List<string>();
 
+            labelTipoProblemaErro.Text = "";
+            labelBairroProblemaErro.Text = "";
+            labelLogradouroProblemaErro.Text = "";
+            labelDescricaoProblemaErro.Text = "";
+
+            if (string.IsNullOrEmpty(comboBoxTipoProblema.Text)) {
+                labelTipoProblemaErro.Text = "Campo Obrigatório*";
+                errors.Add("TipoProblema Completo é obrigatório*");
+            } else if (comboBoxTipoProblema.Text.Length < 2 || comboBoxTipoProblema.Text.Length > 80) {
+                labelTipoProblemaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("TipoProblema Completo deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputNome.Text)) {
+                labelNomeErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
+                labelNomeErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputNome.Text)) {
+                labelNomeErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
+                labelNomeErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(inputNome.Text)) {
+                labelNomeErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (inputNome.Text.Length < 2 || inputNome.Text.Length > 80) {
+                labelNomeErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            }
 
             //Controllers.UsuarioController.AddPostagem(nome);        
         }
