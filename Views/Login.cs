@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 
 namespace Views {
+    
     public class Login : Form {
         private Label labelFundo;
         private Label labelDivisao1;
@@ -46,6 +47,9 @@ namespace Views {
             labelCPF.Text = "CPF";
             labelCPF.Location = new System.Drawing.Point(700, 250);
             labelCPF.Size = new System.Drawing.Size(220, 20);
+            labelCPF.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            Font fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelCPF.Font = fonte;
 
             labelCPFErro = new Label();
             labelCPFErro.Text = "";
@@ -53,6 +57,8 @@ namespace Views {
             labelCPFErro.Location = new System.Drawing.Point(925, 250);
             labelCPFErro.Size = new System.Drawing.Size(225, 20);
             labelCPFErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelCPFErro.Font = fonte;
 
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(700, 270); 
@@ -65,6 +71,9 @@ namespace Views {
             labelSenha.Text = "Senha";
             labelSenha.Location = new System.Drawing.Point(700, 310);
             labelSenha.Size = new System.Drawing.Size(220, 20);
+            labelSenha.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelSenha.Font = fonte;
 
             labelSenhaErro = new Label();
             labelSenhaErro.Text = "";
@@ -72,6 +81,8 @@ namespace Views {
             labelSenhaErro.Location = new System.Drawing.Point(925, 310);
             labelSenhaErro.Size = new System.Drawing.Size(225, 20);
             labelSenhaErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelSenhaErro.Font = fonte;
 
             inputSenha = new TextBox();
             inputSenha.Location = new System.Drawing.Point(700, 330); 
@@ -81,10 +92,12 @@ namespace Views {
             inputSenha.MaxLength = 20;
 
             labelNaoTemConta = new Label();
-            labelNaoTemConta.Location = new System.Drawing.Point(870, 425);
+            labelNaoTemConta.Location = new System.Drawing.Point(860, 425);
             labelNaoTemConta.Text = "Não tem uma conta?";
-            labelNaoTemConta.Size = new System.Drawing.Size(119, 15);
+            labelNaoTemConta.Size = new System.Drawing.Size(125, 15);
             labelNaoTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
+            fonte = new Font("Garet", 8, FontStyle.Bold);
+            labelNaoTemConta.Font = fonte;
 
             /*CheckBoxSenha = new CheckBox();
             checkBoxSenha.Image = Image.FromFile("Layout/VerSenha.png");
@@ -97,6 +110,9 @@ namespace Views {
             buttonLogar.Size = new System.Drawing.Size(400, 30);  
             buttonLogar.Text = "ENTRAR";
             buttonLogar.BackColor = ColorTranslator.FromHtml("#7ed957");
+            buttonLogar.ForeColor = Color.White;
+            fonte = new Font("Garet", 10, FontStyle.Bold);
+            buttonLogar.Font = fonte;
 
             inputCPF.Click += inputCPF_Click;
             buttonLogar.Click += buttonLogar_Click;

@@ -19,7 +19,6 @@ namespace Views {
         private Label labelSenha;
         private Label labelTelefone; 
         private Label labelCPF;      
-        private Label labelExibeErro; 
         private Label labelFotoUsuario;
         private TextBox inputNome;
         private TextBox inputNickname;
@@ -61,6 +60,9 @@ namespace Views {
             labelNome.Text = "Nome Completo (Nome e Sobrenome)";
             labelNome.Location = new System.Drawing.Point(700, 250);
             labelNome.Size = new System.Drawing.Size(220, 20);
+            labelNome.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            Font fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelNome.Font = fonte;
 
             labelNomeErro = new Label();
             labelNomeErro.Text = "";
@@ -68,6 +70,8 @@ namespace Views {
             labelNomeErro.Location = new System.Drawing.Point(925, 250);
             labelNomeErro.Size = new System.Drawing.Size(225, 20);
             labelNomeErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelNomeErro.Font = fonte;
 
             inputNome = new TextBox();
             inputNome.Location = new System.Drawing.Point(700, 270); 
@@ -80,6 +84,9 @@ namespace Views {
             labelNickname.Text = "Nome do Usuário";
             labelNickname.Location = new System.Drawing.Point(700, 310);
             labelNickname.Size = new System.Drawing.Size(220, 20);
+            labelNickname.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelNickname.Font = fonte;
 
             labelNicknameErro = new Label();
             labelNicknameErro.Text = "";
@@ -87,6 +94,8 @@ namespace Views {
             labelNicknameErro.Location = new System.Drawing.Point(925, 310);
             labelNicknameErro.Size = new System.Drawing.Size(225, 20);
             labelNicknameErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelNicknameErro.Font = fonte;
 
             inputNickname = new TextBox();
             inputNickname.Location = new System.Drawing.Point(700, 330); 
@@ -98,6 +107,9 @@ namespace Views {
             labelEmail.Text = "Email";
             labelEmail.Location = new System.Drawing.Point(700, 370);
             labelEmail.Size = new System.Drawing.Size(220, 20);
+            labelEmail.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelEmail.Font = fonte;
 
             labelEmailErro = new Label();
             labelEmailErro.Text = "";
@@ -105,6 +117,8 @@ namespace Views {
             labelEmailErro.Location = new System.Drawing.Point(925, 370);
             labelEmailErro.Size = new System.Drawing.Size(225, 20);
             labelEmailErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelEmailErro.Font = fonte;
 
             inputEmail = new TextBox();
             inputEmail.Location = new System.Drawing.Point(700, 390); 
@@ -116,6 +130,9 @@ namespace Views {
             labelSenha.Text = "Senha";
             labelSenha.Location = new System.Drawing.Point(700, 430);
             labelSenha.Size = new System.Drawing.Size(220, 20);
+            labelSenha.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelSenha.Font = fonte;
 
             labelSenhaErro = new Label();
             labelSenhaErro.Text = "";
@@ -123,6 +140,8 @@ namespace Views {
             labelSenhaErro.Location = new System.Drawing.Point(925, 430);
             labelSenhaErro.Size = new System.Drawing.Size(225, 20);
             labelSenhaErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelSenhaErro.Font = fonte;
 
             inputSenha = new TextBox();
             inputSenha.Location = new System.Drawing.Point(700, 450); 
@@ -135,6 +154,9 @@ namespace Views {
             labelTelefone.Text = "Telefone";
             labelTelefone.Location = new System.Drawing.Point(700, 490);
             labelTelefone.Size = new System.Drawing.Size(220, 20);
+            labelTelefone.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelTelefone.Font = fonte;
 
             labelTelefoneErro = new Label();
             labelTelefoneErro.Text = "";
@@ -142,6 +164,8 @@ namespace Views {
             labelTelefoneErro.Location = new System.Drawing.Point(815, 490);
             labelTelefoneErro.Size = new System.Drawing.Size(105, 20);
             labelTelefoneErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelTelefoneErro.Font = fonte;
 
             inputTelefone = new MaskedTextBox();
             inputTelefone.Location = new System.Drawing.Point(700, 510); 
@@ -154,6 +178,9 @@ namespace Views {
             labelCPF.Text = "CPF";
             labelCPF.Location = new System.Drawing.Point(935, 490);
             labelCPF.Size = new System.Drawing.Size(215, 20);
+            labelCPF.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelCPF.Font = fonte;
 
             labelCPFErro = new Label();
             labelCPFErro.Text = "";
@@ -161,6 +188,8 @@ namespace Views {
             labelCPFErro.Location = new System.Drawing.Point(1050, 490);
             labelCPFErro.Size = new System.Drawing.Size(100, 20);
             labelCPFErro.ForeColor = Color.Red;
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelCPFErro.Font = fonte;
 
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(935, 510); 
@@ -173,6 +202,9 @@ namespace Views {
             labelFotoUsuario.Location = new System.Drawing.Point(700, 550);
             labelFotoUsuario.Text = "Foto do Perfil do Usuário";
             labelFotoUsuario.Size = new System.Drawing.Size(220, 20);
+            labelFotoUsuario.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelFotoUsuario.Font = fonte;
 
             buttonFotoUsuario = new Button();
             buttonFotoUsuario.Location = new System.Drawing.Point(700, 570); 
@@ -180,6 +212,9 @@ namespace Views {
             buttonFotoUsuario.Size = new System.Drawing.Size(450, 30);
             buttonFotoUsuario.Text = "SELECIONAR IMAGEM";
             buttonFotoUsuario.ForeColor = Color.Gray;
+            buttonFotoUsuario.ForeColor = ColorTranslator.FromHtml("#6f6f6f");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            buttonFotoUsuario.Font = fonte;
 
             /*labelExibeErro = new Label();
             labelExibeErro.Text = "";
@@ -193,6 +228,11 @@ namespace Views {
             buttonAlterar.Size = new System.Drawing.Size(400, 30);
             buttonAlterar.Text = "ALTERAR";
             buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
+            buttonAlterar.ForeColor = Color.White;
+            fonte = new Font("Garet", 10, FontStyle.Bold);
+            buttonAlterar.Font = fonte;
+
+            
 
             inputCPF.Click += inputCPF_Click;
             inputTelefone.Click += inputTelefone_Click;
@@ -206,6 +246,12 @@ namespace Views {
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
+            Controls.Add(labelNomeErro);
+            Controls.Add(labelNicknameErro);
+            Controls.Add(labelEmailErro);
+            Controls.Add(labelSenhaErro);
+            Controls.Add(labelTelefoneErro);
+            Controls.Add(labelCPFErro);
             Controls.Add(labelNome);
             Controls.Add(inputNome);
             Controls.Add(labelNickname);
@@ -218,7 +264,6 @@ namespace Views {
             Controls.Add(inputTelefone);
             Controls.Add(labelCPF);
             Controls.Add(inputCPF);
-            Controls.Add(labelExibeErro);
             Controls.Add(labelFotoUsuario);
             Controls.Add(buttonFotoUsuario);
             Controls.Add(buttonAlterar);    
@@ -364,7 +409,7 @@ namespace Views {
             senha = inputSenha.Text;
             telefone = inputTelefone.Text;
             
-            Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
+            // Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
 
             inputNome.Text = "";
             inputNickname.Text = "";

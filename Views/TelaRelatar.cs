@@ -9,6 +9,10 @@ namespace Views {
         private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
+        private Label labelTipoProblemaErro;
+        private Label labelBairroProblemaErro;
+        private Label labelLogradouroProblemaErro;
+        private Label labelDescricaoProblemaErro;
         private Label labelFoto;
         private Label labelOla;
         private Label labelNome;        
@@ -28,8 +32,12 @@ namespace Views {
         private Button buttonEnviarRelato;
 
         public TelaRelatar() {
+            Controllers.Tipo_ProblemaController.Sincronizar();
             Controllers.BairroController.Sincronizar();
+
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
             Panel panel = new Panel();
@@ -107,6 +115,7 @@ namespace Views {
             comboBoxTipoProblema.Location = new System.Drawing.Point(725, 250);
             comboBoxTipoProblema.Size = new System.Drawing.Size(400, 20);
             comboBoxTipoProblema.ForeColor = Color.Gray;
+            this.GetTipoProblema();
 
             labelBairroProblema = new Label();
             labelBairroProblema.Text = "Selecione o bairro do problema";
@@ -118,17 +127,6 @@ namespace Views {
             comboBoxBairroProblema.Location = new System.Drawing.Point(725, 310);
             comboBoxBairroProblema.Size = new System.Drawing.Size(400, 20);
             comboBoxBairroProblema.ForeColor = Color.Gray; 
-
-            string[] bairrosJoinville = {
-                "Adhemar Garcia", "América", "Anita Garibaldi", "Atiradores", "Aventureiro", "Boa Vista", 
-                "Boehmerwald", "Bom Retiro", "Bucarein", "Centro", "Comasa", "Costa e Silva", "Espinheiros", 
-                "Fátima", "Floresta", "Glória", "Guanabara", "Iririú", "Itaum", "Itinga", "Parque Guarani", 
-                "Jardim Iririú", "Jardim Paraíso", "Jardim Sophia", "Jarivatuba", "Jativoca", "João Costa", 
-                "Morro do Meio", "Nova Brasília", "Paranaguamirim", "Petrópolis", "Pirabeiraba", "Profipo", 
-                "Saguaçu", "Santa Catarina", "Santo Antônio", "São Marcos", "Ulysses Guimarães", "Vila Cubatão", 
-                "Vila Nova", "Zona Industrial Norte", "Zona Industrial Tupy"
-            };
-            comboBoxBairroProblema.Items.AddRange(bairrosJoinville);
             this.GetBairros();
 
             labelLogradouroProblema = new Label();
@@ -211,6 +209,10 @@ namespace Views {
             Controls.Add(labelLinha2); 
             Controls.Add(labelFoto);           
             Controls.Add(labelEscrevaRelato);
+            Controls.Add(labelTipoProblemaErro);
+            Controls.Add(labelBairroProblemaErro);
+            Controls.Add(labelLogradouroProblemaErro);
+            Controls.Add(labelDescricaoProblemaErro);
             Controls.Add(labelTipoProblema);
             Controls.Add(labelBairroProblema);
             Controls.Add(labelLogradouroProblema);
@@ -242,31 +244,64 @@ namespace Views {
         }
 
         private void buttonEnviarRelato_Click(object sender, EventArgs e) { // FAZER
-            int code_postagem, fk_id_usuario, fk_code_problema, fk_id_bairro, fk_code_atendimento;
+            int fk_id_usuario, fk_code_problema, fk_id_bairro;
             string logradouro, outros_problemas, observacao, data;
-            byte[] foto;
+            Image foto;
 
-        //     if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxLogradouroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
-        //         logradouro =
-        //         outros_problemas =
-        //         observacao =
+            string tipoProblema, bairroProblema, logradouroProblema, descricaoProblema;
+            List<string> errors = new List<string>();
 
-        //         Controllers.UsuarioController.AddPostagem(nome);
+            labelTipoProblemaErro.Text = "";
+            labelBairroProblemaErro.Text = "";
+            labelLogradouroProblemaErro.Text = "";
+            labelDescricaoProblemaErro.Text = "";
 
-        //         inputNome.Text = "";
+            if (string.IsNullOrEmpty(comboBoxTipoProblema.Text)) {
+                labelTipoProblemaErro.Text = "Campo Obrigatório*";
+                errors.Add("TipoProblema Completo é obrigatório*");
+            } else if (comboBoxTipoProblema.Text.Length < 2 || comboBoxTipoProblema.Text.Length > 80) {
+                labelTipoProblemaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("TipoProblema Completo deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(comboBoxBairroProblema.Text)) {
+                labelBairroProblemaErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (comboBoxBairroProblema.Text.Length < 2 || comboBoxBairroProblema.Text.Length > 80) {
+                labelBairroProblemaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            }
+
+            if (string.IsNullOrEmpty(textBoxLogradouroProblema.Text)) {
+                labelLogradouroProblemaErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (textBoxLogradouroProblema.Text.Length < 2 || textBoxLogradouroProblema.Text.Length > 80) {
+                labelLogradouroProblemaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            } 
+
+            if (string.IsNullOrEmpty(textBoxDescricaoProblema.Text)) {
+                labelDescricaoProblemaErro.Text = "Campo Obrigatório*";
+                errors.Add("Nome Completo é obrigatório*");
+            } else if (textBoxDescricaoProblema.Text.Length < 2 || textBoxDescricaoProblema.Text.Length > 80) {
+                labelDescricaoProblemaErro.Text = "Sintaxe Incorreta*";
+                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            } 
+
+            if (errors.Count > 0) {
+                return;
+            }
+
+            comboBoxTipoProblema.Text = "";
+                comboBoxBairroProblema.Text = "";
+                textBoxLogradouroProblema.Text = "";
+                textBoxDescricaoProblema.Text = "";
         
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "Postagem realizada com sucesso!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }else{
-        //         MessageBox.Show(
-        //             "Mensagem do Sistema",
-        //             "ERRO: Preencha todos os campos necessários!",
-        //             MessageBoxButtons.OK
-        //         );
-        //     }
+                MessageBox.Show(
+                    "Postagem realizada com sucesso!",
+                    "Mensagem do Sistema",
+                    MessageBoxButtons.OK
+                );
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
@@ -311,7 +346,7 @@ namespace Views {
             buttonFotoProblema.BackColor = Color.White;
         }
 
-        private void GetBairros(){
+        private void GetBairros() {
             List<Models.Bairro> bairros = Controllers.BairroController.ListarBairros();
 
             comboBoxBairroProblema.Items.Clear();
@@ -321,9 +356,14 @@ namespace Views {
             }
         }
 
-        public override void Refresh()
-        {
-            GetBairros();
+        private void GetTipoProblema(){
+            List<Models.Tipo_Problema> tipo_problema = Controllers.Tipo_ProblemaController.ListarProblemas();
+
+            comboBoxTipoProblema.Items.Clear();
+            foreach(var problema in tipo_problema)
+            {
+                comboBoxTipoProblema.Items.Add(problema.Problema_Nome);
+            }
         }
     }
 }
