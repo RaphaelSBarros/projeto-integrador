@@ -53,13 +53,13 @@ CREATE TABLE `bairro` (
 
 CREATE TABLE `postagem` (
   `Code_Postagem` int(11) NOT NULL,
-  `Code_Atendimento` int(11) NOT NULL,
+  `ID_Status` int(11) NOT NULL,
   `ID_Usuario` int(11) NOT NULL,
   `ID_Bairro` int(11) NOT NULL,
   `Logradouro` varchar(100) NOT NULL,
   `Code_Problema` int(100) NOT NULL,
   `Outros_Problemas` varchar(100) NOT NULL,
-  `Foto` blob NOT NULL,
+  `Foto` blob NULL,
   `Observacao` varchar(100) NOT NULL,
   `Data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -128,7 +128,7 @@ ALTER TABLE `postagem`
   ADD PRIMARY KEY (`Code_Postagem`),
   ADD KEY `ID_Usuario` (`ID_Usuario`),
   ADD KEY `ID_Bairro` (`ID_Bairro`),
-  ADD KEY `Code_Atendimento` (`Code_Atendimento`),
+  ADD KEY `ID_Status` (`ID_Status`),
   ADD KEY `Code_Problema` (`Code_Problema`),
   CHANGE `Code_Postagem` `Code_Postagem` INT(11) NOT NULL AUTO_INCREMENT;
 
@@ -138,7 +138,7 @@ ALTER TABLE `postagem`
 ALTER TABLE `problema`
   ADD PRIMARY KEY (`Code_Problema`),
   CHANGE `Code_Problema` `Code_Problema` INT(11) NOT NULL AUTO_INCREMENT;
-
+  
 --
 -- Índices de tabela `status_atendimento`
 --
@@ -169,7 +169,7 @@ ALTER TABLE `atendimento_prefeitura`
 ALTER TABLE `postagem`
   ADD CONSTRAINT `postagem_ibfk_1` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`id_usuario`),
   ADD CONSTRAINT `postagem_ibfk_2` FOREIGN KEY (`ID_Bairro`) REFERENCES `bairro` (`ID_Bairro`),
-  ADD CONSTRAINT `postagem_ibfk_3` FOREIGN KEY (`Code_Atendimento`) REFERENCES `atendimento_prefeitura` (`Code_Atendimento`),
+  ADD CONSTRAINT `postagem_ibfk_3` FOREIGN KEY (`ID_Status`) REFERENCES `status_atendimento` (`ID_Status`),
   ADD CONSTRAINT `postagem_ibfk_4` FOREIGN KEY (`Code_Problema`) REFERENCES `problema` (`Code_Problema`);
 COMMIT;
 
@@ -177,43 +177,75 @@ COMMIT;
 -- ADICIONAR VALORES PARA BAIRROS DE JOINVILLE
 --
 INSERT INTO `bairro` (`Bairro`) VALUES
-    ("Aventureiro"),
-    ("Boa Vista"),
-    ("Bom Retiro"),
-    ("Bucarein"),
-    ("Comasa"),
-    ("Costa e Silva"),
-    ("Floresta"),
-    ("Glória"),
-    ("Iririú"),
-    ("Itaum"),
-    ("Jarivatuba"),
-    ("Jardim Iririú"),
-    ("Jardim Paraíso"),
-    ("João Costa"),
-    ("Morro do Meio"),
-    ("Nova Brasília"),
-    ("Paranaguamirim"),
-    ("Petrópolis"),
-    ("Profipo"),
-    ("Saguaçu"),
-    ("Santo Antônio"),
-    ("São Marcos"),
-    ("Ulysses Guimarães"),
-    ("Vila Nova"),
-    ("Adhemar Garcia"),
-    ("América"),
-    ("Anita Garibaldi"),
-    ("Atiradores"),
-    ("Boehmerwald"),
-    ("Centro"),
-    ("Fátima"),
-    ("Guanabara"),
-    ("Itinga"),
-    ("Jardim Sofia"),
-    ("Parque Guarani"),
-    ("Pirabeiraba"),
-    ("São Marcos");
+  ('Adhemar Garcia'),
+  ('América'),
+  ('Anita Garibaldi'),
+  ('Atiradores'),
+  ('Aventureiro'),
+  ('Boa Vista'),
+  ('Boehmerwald'),
+  ('Bom Retiro'),
+  ('Bucarein'),
+  ('Centro'),
+  ('Comasa'),
+  ('Costa e Silva'),
+  ('Espinheiros'),
+  ('Fátima'),
+  ('Floresta'),
+  ('Glória'),
+  ('Guanabara'),
+  ('Iririú'),
+  ('Itaum'),
+  ('Itinga'),
+  ('Jardim Iririú'),
+  ('Jardim Paraíso'),
+  ('Jardim Sophia'),
+  ('Jarivatuba'),
+  ('Jativoca'),
+  ('João Costa'),
+  ('Morro do Meio'),
+  ('Nova Brasília'),
+  ('Parque Guarani'),
+  ('Paranaguamirim'),
+  ('Petrópolis'),
+  ('Pirabeiraba'),
+  ('Profipo'),
+  ('Saguaçu'),
+  ('Santa Catarina'),
+  ('Santo Antônio'),
+  ('São Marcos'),
+  ('Ulysses Guimarães'),
+  ('Vila Cubatão'),
+  ('Vila Nova'),
+  ('Zona Industrial Norte'),
+  ('Zona Industrial Tupy');
+
+--
+-- ADICIONAR VALORES PARA O STATUS DE ATENDIMENTO
+--
+INSERT INTO `status_atendimento` (`Descricao_Status`) VALUES 
+  ('Em Aguardo'),
+  ('Em Andamento'),
+  ('Resolvido');
+
+--
+-- ADICIONAR VALORES PARA PROBLEMAS DE JOINVILLE
+--
+INSERT INTO `problema` (`Problema`) VALUES 
+  ('Buracos na via'),
+  ('Ponto de ônibus danificado'),
+  ('Ponto de ônibus sem iluminação'),
+  ('Má sinalização na via'),
+  ('Valos, córregos e valetas sujos'),
+  ('Faixa de pedestre apagada'),
+  ('Sugestão de faixa de pedestre na via'),
+  ('Semáforo com problema'),
+  ('Casa e terrenos abandonados'),
+  ('Buraco na ciclovia'),
+  ('Repintar faixa da ciclovia'),
+  ('Bueiro entupido'),
+  ('Bueiro quebrado'),
+  ('Buraco na calçada');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
