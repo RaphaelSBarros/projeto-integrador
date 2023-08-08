@@ -16,6 +16,8 @@ namespace Views {
         private Button buttonRelatar;        
 
         public TelaInicial() {
+            Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
+            
             this.WindowState = FormWindowState.Maximized;
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
@@ -60,27 +62,11 @@ namespace Views {
             labelFoto.BackgroundImageLayout = ImageLayout.Zoom;
 
             labelOla = new Label();
-            labelOla.Text = "Olá";
+            labelOla.Text = "Olá " + usuarioconectado.Nome_Usuario + "!";
             labelOla.Location = new System.Drawing.Point(790, 80);
-            labelOla.Size = new System.Drawing.Size(41, 25);
+            labelOla.Size = new System.Drawing.Size(225, 25);
             labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-
-            labelNome = new Label();
-            labelNome.Text = "";
-            labelNome.Location = new System.Drawing.Point(830, 80);
-            labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-
-            labelNome = new Label();
-            labelNome.Text = "";
-            labelNome.Location = new System.Drawing.Point(830, 80);
-            labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
             buttonInicio = new Button();

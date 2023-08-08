@@ -56,10 +56,12 @@ namespace Models {
             }
         }
 
-        public static void VerificaLogin(string cpf, string senha){
-            Repositories.UsuarioRepository.VerificaLogin(cpf, senha);
+        public static bool VerificaLogin(string cpf, string senha){
+            return Repositories.UsuarioRepository.VerificaLogin(cpf, senha);
         }
 
+        public static Models.Usuario ListarUsuarioConectado(){
+            return Repositories.UsuarioRepository.ListarUsuarioConectado();
+        }
     }
-
 }

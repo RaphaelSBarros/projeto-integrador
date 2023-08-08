@@ -6,9 +6,10 @@ using MySqlConnector;
 namespace Repositories {
 
     public class UsuarioRepository {
-        
+        static Models.Usuario usuarioConectado = new Models.Usuario(); // LISTA ou CACHE do SOFTWARE em relação ao USUÁRIO conectado no momento.
+        static List<Models.Usuario> usuarios = new List<Models.Usuario>(); // LISTA ou CACHE do SOFTWARE em relação aos USUÁRIOS.
+
         private static MySqlConnection conexao; // CONEXÃO com o BANCO DE DADOS
-        static List<Models.Usuario> usuarios = new List<Models.Usuario>(); // LISTA ou CACHE do SOFTWARE.
         
         // BANCO DE DADOS //
         public static void InitConexao(){ // INICIAR conexão com o BANCO DE DADOS.
@@ -132,16 +133,39 @@ namespace Repositories {
 
             CloseConexao();
         }
-        public static void VerificaLogin(string cpf, string senha){
+
+        // INFORMAÇÕES DO USUÁRIO CONECTADO //
+        public static bool VerificaLogin(string cpf, string senha){
             InitConexao();
-            string query = "SELECT * FROM usuario WHERE CPF = @cpf AND Senha = @senha";
+
+            string query = "SELECT ID_Usuario, Nome, Nome_Usuario, CPF, Senha FROM usuario WHERE CPF = @cpf AND Senha = @senha";
             MySqlCommand command = new MySqlCommand(query, conexao);
             command.Parameters.AddWithValue("@cpf", cpf);
             command.Parameters.AddWithValue("@senha", senha);
-            MySqlDataReader dados = command.ExecuteReader();
 
-            bool result = dados.HasRows;
+            MySqlDataReader reader = command.ExecuteReader();
+            bool result = reader.HasRows;
+
+            if(result){
+                while (reader.Read())
+                {
+                    usuarioConectado.ID_Usuario = (int)reader["ID_Usuario"];
+                    usuarioConectado.Nome = (string)reader["Nome"];
+                    usuarioConectado.Nome_Usuario = (string)reader["Nome_Usuario"];
+                }
+
+                reader.Close();
+                CloseConexao();
+                return true;
+            }
+            
+            reader.Close();
+            CloseConexao();
+            return false;
+        }
+
+        public static Models.Usuario ListarUsuarioConectado(){
+            return usuarioConectado;
         }
     }
-    
 }

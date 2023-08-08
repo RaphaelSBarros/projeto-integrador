@@ -202,14 +202,20 @@ namespace Views {
             cpf = inputCPF.Text;
             senha = inputSenha.Text;
 
-            Controllers.UsuarioController.VerificaLogin(inputCPF.Text, inputSenha.Text);
+            if(Controllers.UsuarioController.VerificaLogin(inputCPF.Text, inputSenha.Text)){
+                inputCPF.Text = "";
+                inputSenha.Text = "";
 
-            inputCPF.Text = "";
-            inputSenha.Text = "";
-
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.Show();
-            this.Hide();
+                TelaInicial telaInicial = new TelaInicial();
+                telaInicial.Show();
+                this.Hide();
+            }else{
+                MessageBox.Show(
+                    "Informações Incorretas, verifique seu CPF e/ou SENHA e tente novamente.",
+                    "Mensagem do Sistema",
+                    MessageBoxButtons.OK
+                );
+            }
         }
 
         private void buttonLogar_MouseEnter(object sender, EventArgs e) {

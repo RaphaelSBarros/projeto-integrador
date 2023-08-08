@@ -244,64 +244,70 @@ namespace Views {
         }
 
         private void buttonEnviarRelato_Click(object sender, EventArgs e) { // FAZER
-            int fk_id_usuario, fk_code_problema, fk_id_bairro;
-            string logradouro, outros_problemas, observacao, data;
-            Image foto;
+            // int fk_id_usuario, fk_code_problema, fk_id_bairro;
+            // string logradouro, outros_problemas, observacao;
+            // Image foto;
 
-            string tipoProblema, bairroProblema, logradouroProblema, descricaoProblema;
-            List<string> errors = new List<string>();
+            // List<string> errors = new List<string>();
 
-            labelTipoProblemaErro.Text = "";
-            labelBairroProblemaErro.Text = "";
-            labelLogradouroProblemaErro.Text = "";
-            labelDescricaoProblemaErro.Text = "";
+            // // IF AQUI
+            // fk_id_usuario = 1;
+            // fk_code_problema = 
+            // foto = buttonFotoProblema.Image;
 
-            if (string.IsNullOrEmpty(comboBoxTipoProblema.Text)) {
-                labelTipoProblemaErro.Text = "Campo Obrigatório*";
-                errors.Add("TipoProblema Completo é obrigatório*");
-            } else if (comboBoxTipoProblema.Text.Length < 2 || comboBoxTipoProblema.Text.Length > 80) {
-                labelTipoProblemaErro.Text = "Sintaxe Incorreta*";
-                errors.Add("TipoProblema Completo deve ter entre 2 e 80 caracteres");
-            }
+            // Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema, fk_id_bairro, logradouro, observacao, foto);
 
-            if (string.IsNullOrEmpty(comboBoxBairroProblema.Text)) {
-                labelBairroProblemaErro.Text = "Campo Obrigatório*";
-                errors.Add("Nome Completo é obrigatório*");
-            } else if (comboBoxBairroProblema.Text.Length < 2 || comboBoxBairroProblema.Text.Length > 80) {
-                labelBairroProblemaErro.Text = "Sintaxe Incorreta*";
-                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
-            }
+            // labelTipoProblemaErro.Text = "";
+            // labelBairroProblemaErro.Text = "";
+            // labelLogradouroProblemaErro.Text = "";
+            // labelDescricaoProblemaErro.Text = "";
 
-            if (string.IsNullOrEmpty(textBoxLogradouroProblema.Text)) {
-                labelLogradouroProblemaErro.Text = "Campo Obrigatório*";
-                errors.Add("Nome Completo é obrigatório*");
-            } else if (textBoxLogradouroProblema.Text.Length < 2 || textBoxLogradouroProblema.Text.Length > 80) {
-                labelLogradouroProblemaErro.Text = "Sintaxe Incorreta*";
-                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
-            } 
+            // if (string.IsNullOrEmpty(comboBoxTipoProblema.Text)) {
+            //     labelTipoProblemaErro.Text = "Campo Obrigatório*";
+            //     errors.Add("TipoProblema Completo é obrigatório*");
+            // } else if (comboBoxTipoProblema.Text.Length < 2 || comboBoxTipoProblema.Text.Length > 80) {
+            //     labelTipoProblemaErro.Text = "Sintaxe Incorreta*";
+            //     errors.Add("TipoProblema Completo deve ter entre 2 e 80 caracteres");
+            // }
 
-            if (string.IsNullOrEmpty(textBoxDescricaoProblema.Text)) {
-                labelDescricaoProblemaErro.Text = "Campo Obrigatório*";
-                errors.Add("Nome Completo é obrigatório*");
-            } else if (textBoxDescricaoProblema.Text.Length < 2 || textBoxDescricaoProblema.Text.Length > 80) {
-                labelDescricaoProblemaErro.Text = "Sintaxe Incorreta*";
-                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
-            } 
+            // if (string.IsNullOrEmpty(comboBoxBairroProblema.Text)) {
+            //     labelBairroProblemaErro.Text = "Campo Obrigatório*";
+            //     errors.Add("Nome Completo é obrigatório*");
+            // } else if (comboBoxBairroProblema.Text.Length < 2 || comboBoxBairroProblema.Text.Length > 80) {
+            //     labelBairroProblemaErro.Text = "Sintaxe Incorreta*";
+            //     errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            // }
 
-            if (errors.Count > 0) {
-                return;
-            }
+            // if (string.IsNullOrEmpty(textBoxLogradouroProblema.Text)) {
+            //     labelLogradouroProblemaErro.Text = "Campo Obrigatório*";
+            //     errors.Add("Nome Completo é obrigatório*");
+            // } else if (textBoxLogradouroProblema.Text.Length < 2 || textBoxLogradouroProblema.Text.Length > 80) {
+            //     labelLogradouroProblemaErro.Text = "Sintaxe Incorreta*";
+            //     errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            // } 
 
-            comboBoxTipoProblema.Text = "";
-                comboBoxBairroProblema.Text = "";
-                textBoxLogradouroProblema.Text = "";
-                textBoxDescricaoProblema.Text = "";
+            // if (string.IsNullOrEmpty(textBoxDescricaoProblema.Text)) {
+            //     labelDescricaoProblemaErro.Text = "Campo Obrigatório*";
+            //     errors.Add("Nome Completo é obrigatório*");
+            // } else if (textBoxDescricaoProblema.Text.Length < 2 || textBoxDescricaoProblema.Text.Length > 80) {
+            //     labelDescricaoProblemaErro.Text = "Sintaxe Incorreta*";
+            //     errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
+            // } 
+
+            // if (errors.Count > 0) {
+            //     return;
+            // }
+
+            // comboBoxTipoProblema.Text = "";
+            //     comboBoxBairroProblema.Text = "";
+            //     textBoxLogradouroProblema.Text = "";
+            //     textBoxDescricaoProblema.Text = "";
         
-                MessageBox.Show(
-                    "Postagem realizada com sucesso!",
-                    "Mensagem do Sistema",
-                    MessageBoxButtons.OK
-                );
+            //     MessageBox.Show(
+            //         "Postagem realizada com sucesso!",
+            //         "Mensagem do Sistema",
+            //         MessageBoxButtons.OK
+            //     );
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {

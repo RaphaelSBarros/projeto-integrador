@@ -24,10 +24,12 @@ namespace Controllers {
             Models.Usuario.DeleteUsuario(index);
         }
 
-        public static void VerificaLogin(string cpf, string senha){
-            Models.Usuario.VerificaLogin(cpf, senha);
+        public static bool VerificaLogin(string cpf, string senha){
+            return Models.Usuario.VerificaLogin(cpf, senha);
         }
-        
+
+        public static Models.Usuario ListarUsuarioConectado(){
+            return Models.Usuario.ListarUsuarioConectado();
+        }
     }
-    
 }

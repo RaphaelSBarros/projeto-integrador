@@ -24,19 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atendimento_prefeitura`
---
-
-CREATE TABLE `atendimento_prefeitura` (
-  `Code_Atendimento` int(11) NOT NULL,
-  `ID_Status` int(11) NOT NULL,
-  `Setor_Responsavel` varchar(100) NOT NULL,
-  `Resposta` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `bairro`
 --
 
@@ -107,14 +94,6 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Índices de tabela `atendimento_prefeitura`
---
-ALTER TABLE `atendimento_prefeitura`
-  ADD PRIMARY KEY (`Code_Atendimento`),
-  ADD KEY `ID_Status` (`ID_Status`),
-  CHANGE `Code_Atendimento` `Code_Atendimento` INT(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Índices de tabela `bairro`
 --
 ALTER TABLE `bairro`
@@ -156,12 +135,6 @@ ALTER TABLE `usuario`
 --
 -- Restrições para tabelas despejadas
 --
-
---
--- Restrições para tabelas `atendimento_prefeitura`
---
-ALTER TABLE `atendimento_prefeitura`
-  ADD CONSTRAINT `atendimento_prefeitura_ibfk_1` FOREIGN KEY (`ID_Status`) REFERENCES `status_atendimento` (`ID_Status`);
 
 --
 -- Restrições para tabelas `postagem`
@@ -247,6 +220,11 @@ INSERT INTO `problema` (`Problema`) VALUES
   ('Bueiro quebrado'),
   ('Buraco na calçada');
 
+--
+-- ADICIONAR VALORES PARA USUÁRIO ADMINISTRADOR
+--
+INSERT INTO `usuario` (`ID_Usuario`, `Nome`, `CPF`, `Email`, `Nome_Usuario`, `Senha`, `Telefone`) VALUES 
+  (NULL, 'admin', '000.000.000-00', '', 'Admin', 'abacateabacate', '');
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
