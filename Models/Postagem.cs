@@ -35,37 +35,36 @@ namespace Models {
             Repositories.PostagemRepository.AddPostagem(this);
         }
 
-        /* public static void Sincronizar() {
-             Repositories.PostagemRepository.Sincronizar();
-         }
+        public static void Sincronizar() {
+            Repositories.PostagemRepository.Sincronizar();
+        }
+        public static Postagem? GetPostagem(int index) {
+            return Repositories.PostagemRepository.GetPostagem(index);
+        }
 
-         public static Postagem? GetPostagem(int index) {
-             return Repositories.PostagemRepository.GetPostagem(index);
-         }
+        public static List<Models.Postagem> ListarPostagens() {
+            return Repositories.PostagemRepository.ListarPostagens();
+        }
 
-         public static List<Models.Usuario> ListPostagens() {
-             return Repositories.PostagemRepository.ListPostagens();
-         }
+        public static void UpdatePostagem(int fk_code_problema, int fk_id_bairro, string logradouro, string observacao, Image foto) {
+            Models.Postagem postagem = Models.Postagem.GetPostagem(index);
+            if(postagem != null) {
 
-         public static void UpdatePostagem(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {
-             Models.Postagem postagem = Models.Postagem.GetPostagem(index);
-             if(usuario != null) {
-                 usuario.Nome = nome;
-                 usuario.Nome_Usuario = nome_usuario;
-                 usuario.Email = email;
-                 usuario.Cpf = cpf;
-                 usuario.Senha = senha;
-                 usuario.Telefone = telefone;
+                postagem.FK_Code_Problema = fk_code_problema;
+                postagem.FK_ID_Bairro = fk_id_bairro;
+                postagem.Logradouro = logradouro;
+                postagem.Observacao = observacao;
+                postagem.Foto = foto;
 
-                 Repositories.PostagemRepository.UpdatePostagem(index, usuario);
+                Repositories.PostagemRepository.UpdatePostagemPostagem(this);
+            }
+        }
+
+        public static void DeletePostagem(int index){
+            Models.Postagem postagem = Models.Postagem.GetPostagem(index);
+            if(usuario != null) {
+                Repositories.PostagemRepository.DeletePostagem(index);
              }
          }
-
-         public static void DeleteUsuario(int index){
-             Models.Usuario usuario = Models.Usuario.GetUsuario(index);
-             if(usuario != null) {
-                 Repositories.PostagemRepository.DeleteUsuario(index);
-             }
-         }*/
     }
 }
