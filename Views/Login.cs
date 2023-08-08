@@ -19,6 +19,8 @@ namespace Views {
 
         public Login() {
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/LogoResolville.png");
             Panel panel = new Panel();
@@ -213,7 +215,7 @@ namespace Views {
         }
 
         private void buttonLogar_MouseEnter(object sender, EventArgs e) {
-            buttonLogar.BackColor = Color.PaleGreen;
+            buttonLogar.BackColor = ColorTranslator.FromHtml("#6dbb4c");
         }
 
         private void buttonLogar_MouseLeave(object sender, EventArgs e) {
@@ -227,7 +229,7 @@ namespace Views {
         }
 
         private void labelNaoTemConta_MouseEnter(object sender, EventArgs e) {
-            labelNaoTemConta.ForeColor = Color.Blue;
+            labelNaoTemConta.ForeColor = ColorTranslator.FromHtml("#4963d8");
         }
 
         private void labelNaoTemConta_MouseLeave(object sender, EventArgs e) {

@@ -13,7 +13,7 @@ namespace Views {
         private Label labelBairroProblemaErro;
         private Label labelLogradouroProblemaErro;
         private Label labelDescricaoProblemaErro;
-        private Label labelFoto;
+        private PictureBox pictureBoxFoto;
         private Label labelOla;
         private Label labelNome;        
         private Label labelEscrevaRelato;
@@ -90,12 +90,11 @@ namespace Views {
             labelLinha2.Size = new System.Drawing.Size(450, 8);
             labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
 
-            labelFoto = new Label();
-            labelFoto.Text = "";
-            labelFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
-            labelFoto.Location = new System.Drawing.Point(700, 50);
-            labelFoto.Size = new System.Drawing.Size(80, 80);
-            labelFoto.BackgroundImageLayout = ImageLayout.Zoom;          
+            pictureBoxFoto = new PictureBox();
+            pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
+            pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
+            pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+            pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;          
 
             labelEscrevaRelato = new Label();
             labelEscrevaRelato.Text = "ESCREVA SEU RELATO DE PROBLEMA";
@@ -108,7 +107,14 @@ namespace Views {
             labelTipoProblema = new Label();
             labelTipoProblema.Text = "Selecione o tipo de problema";
             labelTipoProblema.Location = new System.Drawing.Point(725, 230);
-            labelTipoProblema.Size = new System.Drawing.Size(400, 20);
+            labelTipoProblema.Size = new System.Drawing.Size(200, 20);
+
+            labelTipoProblemaErro = new Label();
+            labelTipoProblemaErro.Text = "";
+            labelTipoProblemaErro.TextAlign = ContentAlignment.MiddleRight;
+            labelTipoProblemaErro.Location = new System.Drawing.Point(940, 230);
+            labelTipoProblemaErro.Size = new System.Drawing.Size(185, 20);
+            labelTipoProblemaErro.ForeColor = Color.Red;
 
             comboBoxTipoProblema = new ComboBox();
             comboBoxTipoProblema.Text = "Tipo de Problema";
@@ -120,7 +126,14 @@ namespace Views {
             labelBairroProblema = new Label();
             labelBairroProblema.Text = "Selecione o bairro do problema";
             labelBairroProblema.Location = new System.Drawing.Point(725, 290);
-            labelBairroProblema.Size = new System.Drawing.Size(400, 20);
+            labelBairroProblema.Size = new System.Drawing.Size(200, 20);
+
+            labelBairroProblemaErro = new Label();
+            labelBairroProblemaErro.Text = "";
+            labelBairroProblemaErro.TextAlign = ContentAlignment.MiddleRight;
+            labelBairroProblemaErro.Location = new System.Drawing.Point(940, 290);
+            labelBairroProblemaErro.Size = new System.Drawing.Size(185, 20);
+            labelBairroProblemaErro.ForeColor = Color.Red;
 
             comboBoxBairroProblema = new ComboBox();
             comboBoxBairroProblema.Text = "Bairro do Problema";
@@ -132,7 +145,14 @@ namespace Views {
             labelLogradouroProblema = new Label();
             labelLogradouroProblema.Text = "Escreva o logradouro (Rua) do problema";
             labelLogradouroProblema.Location = new System.Drawing.Point(725, 350);
-            labelLogradouroProblema.Size = new System.Drawing.Size(400, 20);
+            labelLogradouroProblema.Size = new System.Drawing.Size(220, 20);
+
+            labelLogradouroProblemaErro = new Label();
+            labelLogradouroProblemaErro.Text = "";
+            labelLogradouroProblemaErro.TextAlign = ContentAlignment.MiddleRight;
+            labelLogradouroProblemaErro.Location = new System.Drawing.Point(960, 350);
+            labelLogradouroProblemaErro.Size = new System.Drawing.Size(165, 20);
+            labelLogradouroProblemaErro.ForeColor = Color.Red;
 
             textBoxLogradouroProblema = new TextBox();
             textBoxLogradouroProblema.Name = "Logradouro";
@@ -140,12 +160,20 @@ namespace Views {
             textBoxLogradouroProblema.Size = new System.Drawing.Size(400, 100);
 
             labelDescricaoProblema = new Label();
-            labelDescricaoProblema.Text = "Escreva um ponto de referência e descrição para o problema";
+            labelDescricaoProblema.Text = "Escreva um ponto de referência e descrição";
             labelDescricaoProblema.Location = new System.Drawing.Point(725, 410);
-            labelDescricaoProblema.Size = new System.Drawing.Size(400, 20);
+            labelDescricaoProblema.Size = new System.Drawing.Size(250, 20);
+
+            labelDescricaoProblemaErro = new Label();
+            labelDescricaoProblemaErro.Text = "";
+            labelDescricaoProblemaErro.TextAlign = ContentAlignment.MiddleRight;
+            labelDescricaoProblemaErro.Location = new System.Drawing.Point(990, 410);
+            labelDescricaoProblemaErro.Size = new System.Drawing.Size(135, 20);
+            labelDescricaoProblemaErro.ForeColor = Color.Red;
 
             textBoxDescricaoProblema = new TextBox();
             textBoxDescricaoProblema.Multiline = true;
+            textBoxDescricaoProblema.ScrollBars = ScrollBars.Vertical;
             textBoxDescricaoProblema.Name = "Descricao";
             textBoxDescricaoProblema.Location = new System.Drawing.Point(725, 430);
             textBoxDescricaoProblema.Size = new System.Drawing.Size(400, 150);
@@ -190,7 +218,9 @@ namespace Views {
             buttonEnviarRelato.Size = new System.Drawing.Size(300, 30);
             buttonEnviarRelato.BackColor = ColorTranslator.FromHtml("#7ed957");
 
-            labelFoto.Click += labelFoto_Click;
+            textBoxDescricaoProblema.Enter += textBoxDescricaoProblema_Enter;
+            textBoxDescricaoProblema.Leave += textBoxDescricaoProblema_Leave;
+            pictureBoxFoto.Click += pictureBoxFoto_Click;
             textBoxDescricaoProblema.TextChanged += textBoxDescricaoProblema_TextChanged;
             buttonEnviarRelato.Click += buttonEnviarRelato_Click;
             buttonEnviarRelato.MouseEnter += buttonEnviarRelato_MouseEnter;
@@ -200,6 +230,8 @@ namespace Views {
             buttonFotoProblema.MouseEnter += buttonFotoProblema_MouseEnter;
             buttonFotoProblema.MouseLeave += buttonFotoProblema_MouseLeave;
 
+            textBoxDescricaoProblema.ShortcutsEnabled = false;
+
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
@@ -207,7 +239,7 @@ namespace Views {
             Controls.Add(labelNome);
             Controls.Add(labelLinha1);
             Controls.Add(labelLinha2); 
-            Controls.Add(labelFoto);           
+            Controls.Add(pictureBoxFoto);           
             Controls.Add(labelEscrevaRelato);
             Controls.Add(labelTipoProblemaErro);
             Controls.Add(labelBairroProblemaErro);
@@ -226,11 +258,18 @@ namespace Views {
             Controls.Add(buttonRelatar);
             Controls.Add(buttonFotoProblema);
             Controls.Add(buttonEnviarRelato);
-            Controls.Add(labelFundo);
-            
+            Controls.Add(labelFundo);            
         }
 
-        private void labelFoto_Click(object sender, EventArgs e) {
+        private void textBoxDescricaoProblema_Enter(object sender, EventArgs e) {
+            textBoxDescricaoProblema.Size = new Size(400, 150);
+        }
+
+        private void textBoxDescricaoProblema_Leave(object sender, EventArgs e) {
+            textBoxDescricaoProblema.Size = new Size(400, 150);
+        }
+
+        private void pictureBoxFoto_Click(object sender, EventArgs e) {
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.Show();
             this.Hide();
@@ -256,20 +295,14 @@ namespace Views {
             labelLogradouroProblemaErro.Text = "";
             labelDescricaoProblemaErro.Text = "";
 
-            if (string.IsNullOrEmpty(comboBoxTipoProblema.Text)) {
+            if (comboBoxTipoProblema.Text == "Tipo de Problema") {
                 labelTipoProblemaErro.Text = "Campo Obrigatório*";
                 errors.Add("TipoProblema Completo é obrigatório*");
-            } else if (comboBoxTipoProblema.Text.Length < 2 || comboBoxTipoProblema.Text.Length > 80) {
-                labelTipoProblemaErro.Text = "Sintaxe Incorreta*";
-                errors.Add("TipoProblema Completo deve ter entre 2 e 80 caracteres");
             }
 
-            if (string.IsNullOrEmpty(comboBoxBairroProblema.Text)) {
+            if (comboBoxBairroProblema.Text == "Bairro do Problema") {
                 labelBairroProblemaErro.Text = "Campo Obrigatório*";
                 errors.Add("Nome Completo é obrigatório*");
-            } else if (comboBoxBairroProblema.Text.Length < 2 || comboBoxBairroProblema.Text.Length > 80) {
-                labelBairroProblemaErro.Text = "Sintaxe Incorreta*";
-                errors.Add("Nome Completo deve ter entre 2 e 80 caracteres");
             }
 
             if (string.IsNullOrEmpty(textBoxLogradouroProblema.Text)) {
@@ -293,19 +326,15 @@ namespace Views {
             }
 
             comboBoxTipoProblema.Text = "";
-                comboBoxBairroProblema.Text = "";
-                textBoxLogradouroProblema.Text = "";
-                textBoxDescricaoProblema.Text = "";
+            comboBoxBairroProblema.Text = "";
+            textBoxLogradouroProblema.Text = "";
+            textBoxDescricaoProblema.Text = "";
         
-                MessageBox.Show(
-                    "Postagem realizada com sucesso!",
-                    "Mensagem do Sistema",
-                    MessageBoxButtons.OK
-                );
+            MessageBox.Show("Postagem realizada com sucesso!", "Mensagem do Sistema", MessageBoxButtons.OK);
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
-            buttonEnviarRelato.BackColor = Color.PaleGreen;
+            buttonEnviarRelato.BackColor = ColorTranslator.FromHtml("#6dbb4c");
         }
 
         private void buttonEnviarRelato_MouseLeave(object sender, EventArgs e) {
@@ -365,5 +394,7 @@ namespace Views {
                 comboBoxTipoProblema.Items.Add(problema.Problema_Nome);
             }
         }
+
     }
+
 }

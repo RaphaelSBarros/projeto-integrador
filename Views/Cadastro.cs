@@ -33,6 +33,8 @@ namespace Views {
         
         public Cadastro() {   
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/LogoResolville.png");
             Panel panel = new Panel();
@@ -51,11 +53,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            /*labelFundo = new Label();
+            labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();*/
+            labelFundo.SendToBack();
 
             labelNome = new Label();
             labelNome.Text = "Nome Completo (Nome e Sobrenome)";
@@ -413,8 +415,7 @@ namespace Views {
             cpf = inputCPF.Text;
             senha = inputSenha.Text;
             telefone = inputTelefone.Text;
-
-            
+          
             Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
 
             inputNome.Text = "";
@@ -483,7 +484,7 @@ namespace Views {
         }
 
         private void buttonCadastrar_MouseEnter(object sender, EventArgs e) {
-            buttonCadastrar.BackColor = Color.PaleGreen;
+            buttonCadastrar.BackColor = ColorTranslator.FromHtml("#6dbb4c");
         }
 
         private void buttonCadastrar_MouseLeave(object sender, EventArgs e) {
@@ -497,7 +498,7 @@ namespace Views {
         }
 
         private void labelJaTemConta_MouseEnter(object sender, EventArgs e) {
-            labelJaTemConta.ForeColor = Color.Blue;
+            labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#4963d8");
         }
 
         private void labelJaTemConta_MouseLeave(object sender, EventArgs e) {

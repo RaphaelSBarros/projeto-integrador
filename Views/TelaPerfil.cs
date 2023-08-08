@@ -20,6 +20,8 @@ namespace Views {
 
         public TelaPerfil() {
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
             Panel panel = new Panel();

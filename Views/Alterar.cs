@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Views {
 
-    public class Alterar : Form{
+    public class Alterar : Form {
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;  
@@ -28,10 +28,12 @@ namespace Views {
         private MaskedTextBox inputCPF;
         private Button buttonFotoUsuario;
         private Button buttonAlterar;
+        private Button buttonDeletar;
 
-        public Alterar() {
-            
-        this.WindowState = FormWindowState.Maximized;
+        public Alterar() {           
+            this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/LogoResolville.png");
             Panel panel = new Panel();
@@ -216,12 +218,6 @@ namespace Views {
             fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
             buttonFotoUsuario.Font = fonte;
 
-            /*labelExibeErro = new Label();
-            labelExibeErro.Text = "";
-            labelExibeErro.Location = new System.Drawing.Point(700, 720);
-            labelExibeErro.Size = new System.Drawing.Size(220, 20);
-            labelExibeErro.ForeColor = Color.Red;*/
-
             buttonAlterar = new Button();
             buttonAlterar.Location = new System.Drawing.Point(725, 640); 
             buttonAlterar.Name = "Alterar";
@@ -232,7 +228,15 @@ namespace Views {
             fonte = new Font("Garet", 10, FontStyle.Bold);
             buttonAlterar.Font = fonte;
 
-            
+            buttonDeletar = new Button();
+            buttonDeletar.Location = new System.Drawing.Point(725, 680); 
+            buttonDeletar.Name = "Deletar";
+            buttonDeletar.Size = new System.Drawing.Size(400, 30);
+            buttonDeletar.Text = "DELETAR CONTA";
+            buttonDeletar.BackColor = ColorTranslator.FromHtml("#ff5252");
+            buttonDeletar.ForeColor = Color.White;
+            fonte = new Font("Garet", 10, FontStyle.Bold);
+            buttonDeletar.Font = fonte;
 
             inputCPF.Click += inputCPF_Click;
             inputTelefone.Click += inputTelefone_Click;
@@ -242,6 +246,8 @@ namespace Views {
             buttonAlterar.Click += buttonAlterar_Click;
             buttonAlterar.MouseEnter += buttonAlterar_MouseEnter;
             buttonAlterar.MouseLeave += buttonAlterar_MouseLeave;
+            buttonDeletar.MouseEnter += buttonDeletar_MouseEnter;
+            buttonDeletar.MouseLeave += buttonDeletar_MouseLeave;
             
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
@@ -266,7 +272,8 @@ namespace Views {
             Controls.Add(inputCPF);
             Controls.Add(labelFotoUsuario);
             Controls.Add(buttonFotoUsuario);
-            Controls.Add(buttonAlterar);    
+            Controls.Add(buttonAlterar); 
+            Controls.Add(buttonDeletar);   
             Controls.Add(labelFundo);       
         }
 
@@ -477,11 +484,19 @@ namespace Views {
         }
 
         private void buttonAlterar_MouseEnter(object sender, EventArgs e) {
-            buttonAlterar.BackColor = Color.PaleGreen;
+            buttonAlterar.BackColor = ColorTranslator.FromHtml("#6dbb4c");
         }
 
         private void buttonAlterar_MouseLeave(object sender, EventArgs e) {
             buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
+        }
+
+        private void buttonDeletar_MouseEnter(object sender, EventArgs e) {
+            buttonDeletar.BackColor = ColorTranslator.FromHtml("#cd4141");
+        }
+
+        private void buttonDeletar_MouseLeave(object sender, EventArgs e) {
+            buttonDeletar.BackColor = Color.Red;
         }
 
     }

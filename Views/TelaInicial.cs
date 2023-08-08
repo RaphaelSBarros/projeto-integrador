@@ -9,7 +9,7 @@ namespace Views {
         private Label labelDivisao2;
         private Label labelLinha1;
         private Label labelLinha2;
-        private Label labelFoto;
+        private PictureBox pictureBoxFoto;
         private Label labelOla;
         private Label labelNome;
         private Button buttonInicio;
@@ -17,6 +17,8 @@ namespace Views {
 
         public TelaInicial() {
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
             Panel panel = new Panel();
@@ -35,11 +37,11 @@ namespace Views {
             labelDivisao2.Size = new System.Drawing.Size(10, 970);
             labelDivisao2.BackColor = Color.LightGray;
 
-            /*labelFundo = new Label();
+            labelFundo = new Label();
             labelFundo.Location = new System.Drawing.Point(650, 0);
             labelFundo.Size = new System.Drawing.Size(550, 970);
             labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();*/
+            labelFundo.SendToBack();
 
             labelLinha1 = new Label();
             labelLinha1.Text = "";
@@ -53,11 +55,11 @@ namespace Views {
             labelLinha2.Size = new System.Drawing.Size(450, 8);
             labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
 
-            labelFoto = new Label();
-            labelFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
-            labelFoto.Location = new System.Drawing.Point(700, 50);
-            labelFoto.Size = new System.Drawing.Size(80, 80);
-            labelFoto.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBoxFoto = new PictureBox();
+            pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
+            pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
+            pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+            pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
             labelOla = new Label();
             labelOla.Text = "Olá";
@@ -65,14 +67,6 @@ namespace Views {
             labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
             Font fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-
-            labelNome = new Label();
-            labelNome.Text = "";
-            labelNome.Location = new System.Drawing.Point(830, 80);
-            labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
             labelNome = new Label();
@@ -103,7 +97,7 @@ namespace Views {
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
-            labelFoto.Click += labelFoto_Click;
+            pictureBoxFoto.Click += pictureBoxFoto_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
             Controls.Add(panel);
@@ -113,13 +107,13 @@ namespace Views {
             Controls.Add(labelLinha2);
             Controls.Add(labelOla);
             Controls.Add(labelNome);
-            Controls.Add(labelFoto);
+            Controls.Add(pictureBoxFoto);
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);
             Controls.Add(labelFundo);
         }
 
-        private void labelFoto_Click(object sender, EventArgs e) {
+        private void pictureBoxFoto_Click(object sender, EventArgs e) {
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.Show();
             this.Hide();
