@@ -4,6 +4,7 @@ using System.Windows.Forms;
 namespace Views {
 
     public class Alterar : Form {
+        private Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;  
@@ -237,6 +238,13 @@ namespace Views {
             buttonDeletar.ForeColor = Color.White;
             fonte = new Font("Garet", 10, FontStyle.Bold);
             buttonDeletar.Font = fonte;
+
+            inputNome.Text = usuarioconectado.Nome;
+            inputNickname.Text = usuarioconectado.Nome_Usuario;
+            inputEmail.Text = usuarioconectado.Email;
+            inputCPF.Text = usuarioconectado.Cpf;
+            inputSenha.Text = "";
+            inputTelefone.Text = usuarioconectado.Telefone;
 
             inputCPF.Click += inputCPF_Click;
             inputTelefone.Click += inputTelefone_Click;

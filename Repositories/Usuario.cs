@@ -135,10 +135,10 @@ namespace Repositories {
         }
 
         // INFORMAÇÕES DO USUÁRIO CONECTADO //
-        public static bool VerificaLogin(string cpf, string senha){
+        public static bool VerificaLogin(string cpf, string senha){ // VERIFICAÇÃO de login de usuário e ARMAZENAR informações do usuário conectado.
             InitConexao();
 
-            string query = "SELECT ID_Usuario, Nome, Nome_Usuario, CPF, Senha FROM usuario WHERE CPF = @cpf AND Senha = @senha";
+            string query = "SELECT ID_Usuario, Nome, Nome_Usuario, Email, CPF, Telefone FROM usuario WHERE CPF = @cpf AND Senha = @senha";
             MySqlCommand command = new MySqlCommand(query, conexao);
             command.Parameters.AddWithValue("@cpf", cpf);
             command.Parameters.AddWithValue("@senha", senha);
@@ -152,6 +152,9 @@ namespace Repositories {
                     usuarioConectado.ID_Usuario = (int)reader["ID_Usuario"];
                     usuarioConectado.Nome = (string)reader["Nome"];
                     usuarioConectado.Nome_Usuario = (string)reader["Nome_Usuario"];
+                    usuarioConectado.Email = (string)reader["Email"];
+                    usuarioConectado.Cpf = (string)reader["CPF"];
+                    usuarioConectado.Telefone = (string)reader["Telefone"];
                 }
 
                 reader.Close();
@@ -164,8 +167,8 @@ namespace Repositories {
             return false;
         }
 
-        public static Models.Usuario ListarUsuarioConectado(){
-            return usuarioConectado;
+        public static Models.Usuario ListarUsuarioConectado(){ // LISTAR as informações do usuário conectado do BANCO DE DADOS.
+            return usuarioConectado; 
         }
     }
 }
