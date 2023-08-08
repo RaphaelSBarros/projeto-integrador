@@ -20,6 +20,8 @@ namespace Views {
 
         public TelaPerfil() {
             this.WindowState = FormWindowState.Maximized;
+            this.Icon = new Icon("Layout/Resolville.ico");
+            this.Text = "Resolville";
 
             Image image = Image.FromFile("Layout/IconeResolville.png");
             Panel panel = new Panel();
@@ -74,7 +76,7 @@ namespace Views {
             labelOla.Location = new System.Drawing.Point(790, 80);
             labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            Font fonte = new Font("Arial", 14, FontStyle.Bold);
+            Font fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
             labelNome = new Label();
@@ -82,7 +84,7 @@ namespace Views {
             labelNome.Location = new System.Drawing.Point(830, 80);
             labelNome.Size = new System.Drawing.Size(225, 25);
             labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
             labelOla.Font = fonte;
 
             labelSeusRelatos = new Label();
@@ -91,16 +93,16 @@ namespace Views {
             labelSeusRelatos.Size = new System.Drawing.Size(115, 30);
             labelSeusRelatos.ForeColor = Color.Gray;
             labelSeusRelatos.TextAlign = ContentAlignment.MiddleCenter;
-            fonte = new Font("Arial", 10, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 9, FontStyle.Bold);
             labelSeusRelatos.Font = fonte;
 
             buttonEditarPerfil = new Button();
-            buttonEditarPerfil.Text = "EDITAR PERFIL                                                             >";
+            buttonEditarPerfil.Text = "EDITAR PERFIL                                                >";
             buttonEditarPerfil.Location = new System.Drawing.Point(725, 200);
-            buttonEditarPerfil.Size = new System.Drawing.Size(400, 35);
+            buttonEditarPerfil.Size = new System.Drawing.Size(400, 30);
             buttonEditarPerfil.BackColor = Color.White;
             buttonEditarPerfil.ForeColor = Color.Gray;
-            fonte = new Font("Arial", 12, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 12, FontStyle.Bold);
             buttonEditarPerfil.Font = fonte;
             buttonEditarPerfil.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -110,7 +112,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = Color.White;
             buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("Garet", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -120,7 +122,7 @@ namespace Views {
             buttonRelatar.Size = new System.Drawing.Size(225, 50);
             buttonRelatar.BackColor = Color.White;
             buttonRelatar.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("Garet", 14, FontStyle.Bold);
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
