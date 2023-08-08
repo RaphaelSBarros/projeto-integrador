@@ -67,7 +67,7 @@ namespace Views {
             labelOla.Location = new System.Drawing.Point(790, 80);
             labelOla.Size = new System.Drawing.Size(41, 25);
             labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            Font fonte = new Font("Arial", 14, FontStyle.Bold);
+            Font fonte = new Font("IBM Plex Sans", 12, FontStyle.Bold);
             labelOla.Font = fonte;
 
             labelNome = new Label();
@@ -75,7 +75,7 @@ namespace Views {
             labelNome.Location = new System.Drawing.Point(830, 80);
             labelNome.Size = new System.Drawing.Size(225, 25);
             labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 12, FontStyle.Bold);
             labelOla.Font = fonte;           
 
             labelLinha1 = new Label();
@@ -97,16 +97,17 @@ namespace Views {
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;          
 
             labelEscrevaRelato = new Label();
-            labelEscrevaRelato.Text = "ESCREVA SEU RELATO DE PROBLEMA";
+            labelEscrevaRelato.Text = "     ESCREVA SEU RELATO DE PROBLEMA";
             labelEscrevaRelato.Location = new System.Drawing.Point(730, 185);
             labelEscrevaRelato.Size = new System.Drawing.Size(400, 25);
             labelEscrevaRelato.ForeColor = ColorTranslator.FromHtml("#7ed957");
-            fonte = new Font("Arial", 15, FontStyle.Bold);
+            fonte = new Font("IBM Plex Sans", 12, FontStyle.Bold);
             labelEscrevaRelato.Font = fonte;
 
             labelTipoProblema = new Label();
             labelTipoProblema.Text = "Selecione o tipo de problema";
             labelTipoProblema.Location = new System.Drawing.Point(725, 230);
+<<<<<<< HEAD
             labelTipoProblema.Size = new System.Drawing.Size(200, 20);
 
             labelTipoProblemaErro = new Label();
@@ -115,6 +116,13 @@ namespace Views {
             labelTipoProblemaErro.Location = new System.Drawing.Point(940, 230);
             labelTipoProblemaErro.Size = new System.Drawing.Size(185, 20);
             labelTipoProblemaErro.ForeColor = Color.Red;
+=======
+            labelTipoProblema.Size = new System.Drawing.Size(400, 20);
+            labelTipoProblema.ForeColor = ColorTranslator.FromHtml("#4B4B4B");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelTipoProblema.Font = fonte;
+
+>>>>>>> da8e62831770df913acdca669e9ed2e96a75bb1a
 
             comboBoxTipoProblema = new ComboBox();
             comboBoxTipoProblema.Text = "Tipo de Problema";
@@ -126,6 +134,7 @@ namespace Views {
             labelBairroProblema = new Label();
             labelBairroProblema.Text = "Selecione o bairro do problema";
             labelBairroProblema.Location = new System.Drawing.Point(725, 290);
+<<<<<<< HEAD
             labelBairroProblema.Size = new System.Drawing.Size(200, 20);
 
             labelBairroProblemaErro = new Label();
@@ -134,6 +143,13 @@ namespace Views {
             labelBairroProblemaErro.Location = new System.Drawing.Point(940, 290);
             labelBairroProblemaErro.Size = new System.Drawing.Size(185, 20);
             labelBairroProblemaErro.ForeColor = Color.Red;
+=======
+            labelBairroProblema.Size = new System.Drawing.Size(400, 20);
+            labelBairroProblema.ForeColor = ColorTranslator.FromHtml("#4B4B4B");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelBairroProblema.Font = fonte;
+
+>>>>>>> da8e62831770df913acdca669e9ed2e96a75bb1a
 
             comboBoxBairroProblema = new ComboBox();
             comboBoxBairroProblema.Text = "Bairro do Problema";
@@ -145,6 +161,7 @@ namespace Views {
             labelLogradouroProblema = new Label();
             labelLogradouroProblema.Text = "Escreva o logradouro (Rua) do problema";
             labelLogradouroProblema.Location = new System.Drawing.Point(725, 350);
+<<<<<<< HEAD
             labelLogradouroProblema.Size = new System.Drawing.Size(220, 20);
 
             labelLogradouroProblemaErro = new Label();
@@ -153,6 +170,13 @@ namespace Views {
             labelLogradouroProblemaErro.Location = new System.Drawing.Point(960, 350);
             labelLogradouroProblemaErro.Size = new System.Drawing.Size(165, 20);
             labelLogradouroProblemaErro.ForeColor = Color.Red;
+=======
+            labelLogradouroProblema.Size = new System.Drawing.Size(400, 20);
+            labelLogradouroProblema.ForeColor = ColorTranslator.FromHtml("#4B4B4B");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelLogradouroProblema.Font = fonte;
+
+>>>>>>> da8e62831770df913acdca669e9ed2e96a75bb1a
 
             textBoxLogradouroProblema = new TextBox();
             textBoxLogradouroProblema.Name = "Logradouro";
@@ -162,6 +186,7 @@ namespace Views {
             labelDescricaoProblema = new Label();
             labelDescricaoProblema.Text = "Escreva um ponto de referência e descrição";
             labelDescricaoProblema.Location = new System.Drawing.Point(725, 410);
+<<<<<<< HEAD
             labelDescricaoProblema.Size = new System.Drawing.Size(250, 20);
 
             labelDescricaoProblemaErro = new Label();
@@ -170,6 +195,13 @@ namespace Views {
             labelDescricaoProblemaErro.Location = new System.Drawing.Point(990, 410);
             labelDescricaoProblemaErro.Size = new System.Drawing.Size(135, 20);
             labelDescricaoProblemaErro.ForeColor = Color.Red;
+=======
+            labelDescricaoProblema.Size = new System.Drawing.Size(400, 20);
+            labelDescricaoProblema.ForeColor = ColorTranslator.FromHtml("#4B4B4B");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelDescricaoProblema.Font = fonte;
+
+>>>>>>> da8e62831770df913acdca669e9ed2e96a75bb1a
 
             textBoxDescricaoProblema = new TextBox();
             textBoxDescricaoProblema.Multiline = true;
@@ -183,6 +215,10 @@ namespace Views {
             labelFotoProblema.Text = "Anexe uma imagem do problema (opcional)";
             labelFotoProblema.Location = new System.Drawing.Point(725, 600);
             labelFotoProblema.Size = new System.Drawing.Size(400, 20);
+            labelFotoProblema.ForeColor = ColorTranslator.FromHtml("#4B4B4B");
+            fonte = new Font("IBM Plex Sans", 8, FontStyle.Bold);
+            labelFotoProblema.Font = fonte;
+
 
             buttonInicio = new Button();
             buttonInicio.Text = "INÍCIO";
@@ -190,7 +226,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = Color.White;
             buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("Garet", 14, FontStyle.Bold);
             buttonInicio.Font = fonte;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -200,7 +236,7 @@ namespace Views {
             buttonRelatar.Size = new System.Drawing.Size(225, 50);
             buttonRelatar.BackColor = ColorTranslator.FromHtml("#5271FF");
             buttonRelatar.ForeColor = Color.White;
-            fonte = new Font("Arial", 14, FontStyle.Bold);
+            fonte = new Font("Garet", 14, FontStyle.Bold);
             buttonRelatar.Font = fonte;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -217,6 +253,9 @@ namespace Views {
             buttonEnviarRelato.Location = new System.Drawing.Point(775, 750);
             buttonEnviarRelato.Size = new System.Drawing.Size(300, 30);
             buttonEnviarRelato.BackColor = ColorTranslator.FromHtml("#7ed957");
+            buttonEnviarRelato.ForeColor = Color.White;
+            fonte = new Font("Garet", 12, FontStyle.Bold);
+            buttonEnviarRelato.Font = fonte;
 
             textBoxDescricaoProblema.Enter += textBoxDescricaoProblema_Enter;
             textBoxDescricaoProblema.Leave += textBoxDescricaoProblema_Leave;
