@@ -29,6 +29,7 @@ namespace Views {
         private MaskedTextBox inputCPF;
         private Button buttonFotoUsuario;
         private Button buttonAlterar;
+        private Button buttonCancelar;
         private Button buttonDeletar;
 
         public Alterar() {           
@@ -222,12 +223,22 @@ namespace Views {
             buttonAlterar = new Button();
             buttonAlterar.Location = new System.Drawing.Point(725, 640); 
             buttonAlterar.Name = "Alterar";
-            buttonAlterar.Size = new System.Drawing.Size(400, 30);
+            buttonAlterar.Size = new System.Drawing.Size(190, 30);
             buttonAlterar.Text = "ALTERAR";
             buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
             buttonAlterar.ForeColor = Color.White;
             fonte = new Font("Garet", 10, FontStyle.Bold);
             buttonAlterar.Font = fonte;
+
+            buttonCancelar = new Button();
+            buttonCancelar.Location = new System.Drawing.Point(935, 640); 
+            buttonCancelar.Name = "Cancelar";
+            buttonCancelar.Size = new System.Drawing.Size(190, 30);
+            buttonCancelar.Text = "CANCELAR";
+            buttonCancelar.BackColor = ColorTranslator.FromHtml("#5271FF");
+            buttonCancelar.ForeColor = Color.White;
+            fonte = new Font("Garet", 10, FontStyle.Bold);
+            buttonCancelar.Font = fonte;
 
             buttonDeletar = new Button();
             buttonDeletar.Location = new System.Drawing.Point(725, 680); 
@@ -254,6 +265,9 @@ namespace Views {
             buttonAlterar.Click += buttonAlterar_Click;
             buttonAlterar.MouseEnter += buttonAlterar_MouseEnter;
             buttonAlterar.MouseLeave += buttonAlterar_MouseLeave;
+            buttonCancelar.Click += buttonCancelar_Click;
+            buttonCancelar.MouseEnter += buttonCancelar_MouseEnter;
+            buttonCancelar.MouseLeave += buttonCancelar_MouseLeave;
             buttonDeletar.MouseEnter += buttonDeletar_MouseEnter;
             buttonDeletar.MouseLeave += buttonDeletar_MouseLeave;
             
@@ -281,6 +295,7 @@ namespace Views {
             Controls.Add(labelFotoUsuario);
             Controls.Add(buttonFotoUsuario);
             Controls.Add(buttonAlterar); 
+            Controls.Add(buttonCancelar);
             Controls.Add(buttonDeletar);   
             Controls.Add(labelFundo);       
         }
@@ -497,6 +512,20 @@ namespace Views {
 
         private void buttonAlterar_MouseLeave(object sender, EventArgs e) {
             buttonAlterar.BackColor = ColorTranslator.FromHtml("#7ed957");
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e) {
+            TelaPerfil telaPerfil = new TelaPerfil();
+            telaPerfil.Show();
+            this.Hide();
+        }
+
+        private void buttonCancelar_MouseEnter(object sender, EventArgs e) {
+            buttonCancelar.BackColor = Color.Blue;
+        }
+
+        private void buttonCancelar_MouseLeave(object sender, EventArgs e) {
+            buttonCancelar.BackColor = ColorTranslator.FromHtml("#5271FF");
         }
 
         private void buttonDeletar_MouseEnter(object sender, EventArgs e) {

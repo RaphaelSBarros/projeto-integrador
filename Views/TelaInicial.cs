@@ -4,6 +4,7 @@ using System.Windows.Forms;
 namespace Views {
 
     public class TelaInicial : Form {
+        private Models.Postagem postagem;
         private Label labelFundo;
         private Label labelDivisao1;
         private Label labelDivisao2;
@@ -12,6 +13,7 @@ namespace Views {
         private PictureBox pictureBoxFoto;
         private Label labelOla;
         private Label labelNome;
+        private TextBox textPostagens;
         private Button buttonInicio;
         private Button buttonRelatar;        
 
@@ -28,6 +30,12 @@ namespace Views {
             panel.Size = new Size(80, 80);
             panel.BackgroundImage = image;
             panel.BackgroundImageLayout = ImageLayout.Zoom;
+
+            textPostagens = new TextBox();
+            textPostagens.Location = new System.Drawing.Point(700, 170);
+            textPostagens.Size = new System.Drawing.Size(450, 615);
+            textPostagens.Multiline = true;
+            textPostagens.ScrollBars = ScrollBars.Vertical;
 
             labelDivisao1 = new Label();
             labelDivisao1.Location = new System.Drawing.Point(650, 0);
@@ -103,6 +111,7 @@ namespace Views {
             buttonRelatar.Click += buttonRelatar_Click;
 
             Controls.Add(panel);
+            Controls.Add(textPostagens);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
             Controls.Add(labelLinha1);
@@ -114,6 +123,14 @@ namespace Views {
             Controls.Add(buttonRelatar);
             Controls.Add(labelFundo);
         }
+
+        /*private void postagem() {
+            private PictureBox pictureBoxFotoUsuario;
+            private Label labelNomeUsuario;
+            private Label labelData;
+            private Label labelTitulo;
+            private Label labelDescricao;          
+        }*/
 
         private void pictureBoxFoto_Click(object sender, EventArgs e) {
             TelaPerfil telaPerfil = new TelaPerfil();

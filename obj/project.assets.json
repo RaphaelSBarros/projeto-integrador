@@ -52,24 +52,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rapha\\.nuget\\packages\\": {}
+    "C:\\Users\\mathe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
+      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
       "projectName": "Resolville",
-      "projectPath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
-      "packagesPath": "C:\\Users\\Rapha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\obj\\",
+      "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rapha\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -112,8 +114,16 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
