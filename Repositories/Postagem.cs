@@ -26,39 +26,41 @@ namespace Repositories {
             conexao.Close();
         }
 
-        // public static List<Models.Usuario> Sincronizar(){ // SINCRONIZAR o banco de dados atual com o SOFTWARE.
-        //     InitConexao();
-        //     string query = "SELECT * FROM usuario";
-        //     MySqlCommand command = new MySqlCommand(query, conexao);
-        //     MySqlDataAdapter bdAdapter = new MySqlDataAdapter(command);
-        //     DataSet dbDataSet = new DataSet();
-        //     bdAdapter.Fill(dbDataSet, "usuario");
-        //     DataTable table = dbDataSet.Tables["usuario"];
+        public static List<Models.Postagem> Sincronizar(){ //SINCRONIZAR o banco de dados atual com o SOFTWARE.
+            InitConexao();
+            string query = "SELECT * FROM postagem";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            MySqlDataAdapter bdAdapter = new MySqlDataAdapter(command);
+            DataSet dbDataSet = new DataSet();
+            bdAdapter.Fill(dbDataSet, "postagem");
+            DataTable table = dbDataSet.Tables["postagem"];
 
-        //     foreach(DataRow row in table.Rows) {
-        //         int id_usuario = Convert.ToInt32(row["ID_Usuario"].ToString());
-        //         Models.Usuario usuario = new Models.Usuario();
-        //         usuario.ID_Usuario = id_usuario;
-        //         usuario.Nome = row["Nome"].ToString();
-        //         usuario.Nome_Usuario = row["Nome_Usuario"].ToString();
-        //         usuario.Email = row["Email"].ToString();
-        //         usuario.Cpf = row["CPF"].ToString();
-        //         usuario.Senha = row["Senha"].ToString();
-        //         usuario.Telefone = row["Telefone"].ToString();
-        //         usuarios.Add(usuario);
-        //     }
-        //     CloseConexao();
-        //     return usuarios;
-        // }
+            foreach(DataRow row in table.Rows) {
+                int code_postagem = Convert.ToInt32(row["Code_Postagem"].ToString());
+                Models.Postagem postagem = new Models.Postagem();
+                postagem.Code_Postagem = code_postagem;
+                postagem.ID_Status = row["ID_Status"].ToString();
+                postagem.ID_Usuario = row["ID_Usuario"].ToString();
+                postagem.ID_Bairro = row["ID_Bairro"].ToString();
+                postagem.Logradouro = row["Logradouro"].ToString();
+                postagem.Code_Problema = row["Code_Problema"].ToString();
+                postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
+                postagem.Foto = row["Foto"].ToString();
+                postagem.Observacao = row["Observacao"].ToString();
+                postagem.Data = row["Data"].ToString();
+                postagens.Add(postagem);
+            }
+            CloseConexao();
+            return postagens;
+        }
         
-        // // INFORMAÇÕES DO USUÁRIO //
-        // public static Models.Usuario? GetUsuario(int index){ // PUXAR informações do usuário a partir do INDEX recebido.
-        //     if(index < 0 || index >= usuarios.Count) {
-        //         return null;
-        //     } else {
-        //         return usuarios[index];
-        //     }
-        // }
+        public static Models.Postagem? GetPostagem(int index){ //PUXAR informações do usuário a partir do INDEX recebido.
+            if(index < 0 || index >= postagens.Count) {
+                return null;
+            } else {
+                return postagens[index];
+            }
+        }
 
         public static void AddPostagem(Models.Postagem postagem) { // ADICIONAR as informações do usuário no BANCO DE DADOS e na LISTA (cache).
             InitConexao();
@@ -87,61 +89,49 @@ namespace Repositories {
             CloseConexao();
         }
 
-        // public static List<Models.Usuario> ListarUsuarios() { // LISTAR as informações dos usuários do BANCO DE DADOS.
-        //     return usuarios;
-        // }
+        public static List<Models.Postagem> ListarPostagens() { //LISTAR as informações dos usuários do BANCO DE DADOS.
+            return postagens;
+        }
 
-        // public static void UpdateUsuario(int index, Models.Usuario usuario) { // ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
-        //     InitConexao();
-        //     string query = "UPDATE usuario SET Nome = @Nome, CPF = @CPF, Email = @Email, Nome_Usuario = @Nome_Usuario, Senha = @Senha, Telefone = @Telefone WHERE ID_Usuario = @ID_Usuario";
-        //     MySqlCommand command = new MySqlCommand(query, conexao);
+        public static void UpdatePostagem(int index, Models.Postagem postagem) { //ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
+            InitConexao();
+            string query = "UPDATE postagem SET Code_Problema = @FK_Code_Problema, ID_Bairro = @FK_ID_Bairro, Logradouro = @Logradouro, Observacao = @Observacao, Foto = @Foto WHERE Code_Postagem = @Code_Postagem";
+            MySqlCommand command = new MySqlCommand(query, conexao);
 
-        //     if(usuario != null) {
-        //         command.Parameters.AddWithValue("@ID_Usuario", usuario.ID_Usuario);
-        //         command.Parameters.AddWithValue("@Nome", usuario.Nome);
-        //         command.Parameters.AddWithValue("@Nome_Usuario", usuario.Nome_Usuario);
-        //         command.Parameters.AddWithValue("@CPF", usuario.Cpf);
-        //         command.Parameters.AddWithValue("@Email", usuario.Email);
-        //         command.Parameters.AddWithValue("@Senha", usuario.Senha);
-        //         command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-        //         int rowsAffected = command.ExecuteNonQuery();
+            if(postagem != null) {
+                command.Parameters.AddWithValue("@Code_Postagem", index);
+                command.Parameters.AddWithValue("@FK_Code_Problema", postagem.FK_Code_Problema);
+                command.Parameters.AddWithValue("@FK_ID_Bairro", postagem.FK_ID_Bairro);
+                command.Parameters.AddWithValue("@Logradouro", postagem.Logradouro);
+                command.Parameters.AddWithValue("@Observacao", postagem.Observacao);
+                command.Parameters.AddWithValue("@Foto", null);
+                int rowsAffected = command.ExecuteNonQuery();
             
-        //         if (rowsAffected > 0) {
-        //             usuarios[index] = usuario;
-        //         } else {
-        //             MessageBox.Show(rowsAffected.ToString());
-        //         }
-        //     } else {
-        //         MessageBox.Show("Usuário não foi encontrado");
-        //     }
-        //     CloseConexao();
-        // }
+                if (rowsAffected > 0) {
+                    postagem[index] = postagem;
+                } else {
+                    MessageBox.Show(rowsAffected.ToString());
+                }
+            } else {
+                MessageBox.Show("Postagem não encontrada");
+            }
+            CloseConexao();
+        }
 
-        // public static void DeleteUsuario(int index) { // DELETAR as informações do usuário no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
-        //     InitConexao();
-        //     string query = "DELETE FROM usuario WHERE ID_Usuario = @ID_Usuario";
-        //     MySqlCommand command = new MySqlCommand(query, conexao);
-        //     command.Parameters.AddWithValue("@ID_Usuario", usuarios[index].ID_Usuario);
-        //     int rowsAffected = command.ExecuteNonQuery();
+        public static void DeletePostagem(int index) { //DELETAR as informações da Postagem no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
+            InitConexao();
+            string query = "DELETE FROM postagem WHERE Code_Postagem = @Code_Postagem";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            command.Parameters.AddWithValue("@Code_Postagem", postagens[index].Code_Postagem);
+            int rowsAffected = command.ExecuteNonQuery();
 
-        //     if(rowsAffected > 0) {
-        //         usuarios.RemoveAt(index);
-        //     } else {
-        //         MessageBox.Show("Usuário não excluído.");
-        //     }
+            if(rowsAffected > 0) {
+                postagens.RemoveAt(index);
+            } else {
+                MessageBox.Show("Postagem não excluída.");
+            }
 
-        //     CloseConexao();
-        // }
-        // public static void VerificaLogin(string cpf, string senha){
-        //     InitConexao();
-        //     string query = "SELECT * FROM usuario WHERE CPF = @cpf AND Senha = @senha";
-        //     MySqlCommand command = new MySqlCommand(query, conexao);
-        //     command.Parameters.AddWithValue("@cpf", cpf);
-        //     command.Parameters.AddWithValue("@senha", senha);
-        //     MySqlDataReader dados = command.ExecuteReader();
-
-        //     bool result = dados.HasRows;
-        // }
+            CloseConexao();
+        }
     }
-    
 }

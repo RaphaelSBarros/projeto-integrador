@@ -8,26 +8,20 @@ namespace Controllers {
             new Models.Postagem(fk_id_usuario, fk_code_problema, fk_id_bairro, logradouro, observacao, foto);
         }
 
-        // public static List<Models.Usuario> ListarUsuarios() {
-        //     return Models.Usuario.ListarUsuarios();
-        // }
+        public static List<Models.Postagem> ListarPostagens() {
+            return Models.Postagem.ListarPostagens();
+        }
         
-        // public static Models.Usuario? GetUsuario(int index) {
-        //     return Models.Usuario.GetUsuario(index);
-        // }
+        public static Models.Postagem? GetPostagem(int index) {
+            return Models.Postagem.GetPostagem(index);
+        }
 
-        // public static void UpdateUsuario(int index, string nome, string nome_usuario, string email, string cpf, string senha, string telefone) {
-        //     Models.Usuario.UpdateUsuario(index, nome, nome_usuario, email, cpf, senha, telefone);
-        // }
+        public static void UpdatePostagem(int fk_code_problema, int fk_id_bairro, string logradouro, string observacao, Image foto) {
+            Models.Postagem.UpdatePostagem(fk_code_problema, fk_id_bairro, logradouro, observacao, foto);
+        }
 
-        // public static void DeleteUsuario(int index) {
-        //     Models.Usuario.DeleteUsuario(index);
-        // }
-
-        // public static void VerificaLogin(string cpf, string senha){
-        //     Models.Usuario.VerificaLogin(cpf, senha);
-        // }
-        
+        public static void DeletePostagem(int index) {
+            Models.Postagem.DeletePostagem(index);
+        }
     }
-    
 }
