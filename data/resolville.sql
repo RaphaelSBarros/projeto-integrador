@@ -225,6 +225,12 @@ INSERT INTO `problema` (`Problema`) VALUES
 --
 INSERT INTO `usuario` (`ID_Usuario`, `Nome`, `CPF`, `Email`, `Nome_Usuario`, `Senha`, `Telefone`) VALUES 
   (NULL, 'admin', '000.000.000-00', '', 'Admin', 'abacateabacate', '');
+
+--
+-- Índice de tabela `postagem`
+--
+ALTER TABLE `postagem` CHANGE `ID_Status` `ID_Status` INT(11) NOT NULL DEFAULT '1'; 
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -62,7 +62,7 @@ namespace Repositories {
 
         public static void AddPostagem(Models.Postagem postagem) { // ADICIONAR as informações do usuário no BANCO DE DADOS e na LISTA (cache).
             InitConexao();
-            string query = "INSERT INTO postagem (ID_Usuario, Code_Problema, ID_Bairro, Logradouro, Observacao, Foto) VALUES (@FK_ID_Usuario, @FK_Code_Problema, @FK_ID_Bairro, @Logradouro, @Observacao, @Foto)";
+            string query = "INSERT INTO postagem (ID_Usuario, Code_Problema, ID_Bairro, Logradouro, Observacao, Foto, Data) VALUES (@FK_ID_Usuario, @FK_Code_Problema, @FK_ID_Bairro, @Logradouro, @Observacao, @Foto, @Data)";
             MySqlCommand command = new MySqlCommand(query, conexao);
             if(postagem != null) {
                 command.Parameters.AddWithValue("@FK_ID_Usuario", postagem.FK_ID_Usuario);
@@ -71,18 +71,18 @@ namespace Repositories {
                 command.Parameters.AddWithValue("@Logradouro", postagem.Logradouro);
                 command.Parameters.AddWithValue("@Observacao", postagem.Observacao);
                 command.Parameters.AddWithValue("@Foto", null);
+                command.Parameters.AddWithValue("@Data", DateTime.Now.ToString("yyyy/MM/dd"));
                 
-
                 int rowsAffected = command.ExecuteNonQuery();
                 postagem.Code_Postagem = Convert.ToInt32(command.LastInsertedId);
 
                 if(rowsAffected > 0) {
                     postagens.Add(postagem);
                 } else {
-                    MessageBox.Show(" não foi Cadastrado!");
+                    MessageBox.Show("ERRO AO CADASTRAR POSTAGEM");
                 }
             } else {
-                MessageBox.Show(" não foi Cadastrado!");
+                MessageBox.Show("ERRO AO CADASTRAR POSTAGEM");
             }
             CloseConexao();
         }

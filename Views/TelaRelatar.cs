@@ -4,6 +4,7 @@ using System.Windows.Forms;
 namespace Views {
 
     public class TelaRelatar : Form {
+        private Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
         private Label labelFundo;
         private Label labelDivisao1;
         private Label labelDivisao2;
@@ -278,9 +279,9 @@ namespace Views {
         }
 
         private void buttonEnviarRelato_Click(object sender, EventArgs e) { // FAZER
-            // int fk_id_usuario, fk_code_problema, fk_id_bairro;
-            // string logradouro, outros_problemas, observacao;
-            // Image foto;
+            int fk_id_usuario, fk_code_problema, fk_id_bairro;
+            string logradouro, outros_problemas, observacao;
+            Image foto;
 
             // List<string> errors = new List<string>();
 
@@ -329,6 +330,34 @@ namespace Views {
             // textBoxDescricaoProblema.Text = "";
         
             // MessageBox.Show("Postagem realizada com sucesso!", "Mensagem do Sistema", MessageBoxButtons.OK);
+            if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
+                fk_id_usuario = usuarioconectado.ID_Usuario;
+                fk_code_problema = comboBoxTipoProblema.FindString(comboBoxTipoProblema.Text); // INDEX DO PROBLEMA
+                fk_id_bairro = comboBoxBairroProblema.FindString(comboBoxBairroProblema.Text); // INDEX DO BAIRRO
+                logradouro = textBoxLogradouroProblema.Text;
+                observacao = textBoxDescricaoProblema.Text;
+                foto = buttonFotoProblema.Image;
+
+                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema+1, fk_id_bairro+1, logradouro, observacao, foto);
+
+                comboBoxTipoProblema.Text = "";
+                comboBoxBairroProblema.Text = "";
+                textBoxLogradouroProblema.Text = "";
+                textBoxDescricaoProblema.Text = "";
+        
+                MessageBox.Show(
+                    "Postagem realizada com sucesso!",
+                    "Mensagem do Sistema",
+                    MessageBoxButtons.OK
+                );
+            }else{
+                MessageBox.Show(
+                    "ERRO: Preencha todos os campos necessários!",
+                    "Mensagem do Sistema",
+                    MessageBoxButtons.OK
+                );
+            }
+        
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
