@@ -257,7 +257,7 @@ namespace Views {
             inputCPF.Text = usuarioconectado.Cpf;
             inputSenha.Text = usuarioconectado.Senha;
             inputTelefone.Text = usuarioconectado.Telefone;
-            Image imagem = byteArrayToImage(usuarioconectado.Foto);
+            Image imagem = InfoInicial.ByteArrayToImage(usuarioconectado.Foto);
             buttonFotoUsuario.Image = imagem;
 
             inputCPF.Click += inputCPF_Click;
@@ -302,14 +302,7 @@ namespace Views {
             Controls.Add(buttonDeletar);   
             Controls.Add(labelFundo);       
         }
-
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
-
+        
         private void inputCPF_Click(object sender, EventArgs e) {
             string cpf = new string(inputCPF.Text.Where(Char.IsDigit).ToArray());
             inputCPF.SelectionStart = cpf.Length;
