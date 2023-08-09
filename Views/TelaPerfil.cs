@@ -14,6 +14,7 @@ namespace Views {
         private Label labelOla;
         private Label labelNome;
         private Label labelSeusRelatos;
+        private TextBox textPostagens;
         private Button buttonEditarPerfil;
         private Button buttonInicio;
         private Button buttonRelatar;
@@ -70,6 +71,12 @@ namespace Views {
             pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
             pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
+
+            textPostagens = new TextBox();
+            textPostagens.Location = new System.Drawing.Point(700, 295);
+            textPostagens.Size = new System.Drawing.Size(450, 495);
+            textPostagens.Multiline = true;
+            textPostagens.ScrollBars = ScrollBars.Vertical;
 
             labelOla = new Label();
             labelOla.Text = "Olá";
@@ -133,12 +140,13 @@ namespace Views {
             Controls.Add(panel);
             Controls.Add(labelDivisao1);
             Controls.Add(labelDivisao2);
-            Controls.Add(labelLinha1);
+            Controls.Add(labelLinha1);     
             Controls.Add(labelLinha2);           
             Controls.Add(labelOla);
             Controls.Add(labelNome);
             Controls.Add(pictureBoxFoto);
             Controls.Add(labelSeusRelatos);
+            Controls.Add(textPostagens);
             Controls.Add(buttonEditarPerfil);
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);

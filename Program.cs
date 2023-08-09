@@ -9,7 +9,11 @@ namespace Views {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Login());
+<<<<<<< HEAD
+            Application.Run(new TelaPerfil());
+=======
+            Application.Run(new TelaRelatar());
+>>>>>>> 3033a644a5a71ee157051c281ffd663a1d10acd9
         }
 
     }  

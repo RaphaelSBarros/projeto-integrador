@@ -356,7 +356,6 @@ namespace Views {
                     MessageBoxButtons.OK
                 );
             }
-        
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {

@@ -39,11 +39,11 @@ namespace Repositories {
                 int code_postagem = Convert.ToInt32(row["Code_Postagem"].ToString());
                 Models.Postagem postagem = new Models.Postagem();
                 postagem.Code_Postagem = code_postagem;
-                postagem.ID_Status = row["ID_Status"].ToString();
-                postagem.ID_Usuario = row["ID_Usuario"].ToString();
-                postagem.ID_Bairro = row["ID_Bairro"].ToString();
+                postagem.FK_ID_Status = row["ID_Status"].ToString();
+                postagem.FK_ID_Usuario = row["ID_Usuario"].ToString();
+                postagem.FK_ID_Bairro = row["ID_Bairro"].ToString();
                 postagem.Logradouro = row["Logradouro"].ToString();
-                postagem.Code_Problema = row["Code_Problema"].ToString();
+                postagem.FK_Code_Problema = row["Code_Problema"].ToString();
                 postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
                 postagem.Foto = row["Foto"].ToString();
                 postagem.Observacao = row["Observacao"].ToString();
