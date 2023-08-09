@@ -24,10 +24,8 @@ namespace Views {
             Panel flowLayoutPanel = new Panel();
             flowLayoutPanel.AutoScroll = true;
             flowLayoutPanel.Location = new System.Drawing.Point(700, 170);
-            flowLayoutPanel.Size = new System.Drawing.Size(450, 615);
-
-            int y = 170;
-
+            flowLayoutPanel.Size = new System.Drawing.Size(480, 615);
+            int y = 0;
             foreach(Models.Postagem postagem in postagens){
                 InfoInicial.AdicionarPostagem(flowLayoutPanel, postagem, y);
                 y += 220;
@@ -70,60 +68,6 @@ namespace Views {
             Controls.Add(textPostagens);
             Controls.Add(buttonRelatar);
         }
-
-        /*private void postagem() {
-            private PictureBox pictureBoxFotoUsuario;
-            private Label labelNomeUsuario;
-            private Label labelData;
-            private Label labelTitulo;
-            private Label labelDescricao;          
-        }*/
-
-        // private void cu()
-        // {
-        //     int y = 10; // posição y inicial
-        //     // foreach (Postagem postagem in postagens)
-        //     // {
-        //         // criar um novo PictureBox
-        //         PictureBox pictureBoxFotoUsuario = new PictureBox();
-        //         pictureBoxFotoUsuario.Location = new Point(10, y);
-        //         pictureBoxFotoUsuario.Size = new Size(50, 50);
-        //         // pictureBoxFotoUsuario.Image = postagem.Imagem;
-
-        //         // criar um novo Label para o nome do usuário
-        //         Label labelNomeUsuario = new Label();
-        //         labelNomeUsuario.Location = new Point(70, y);
-        //         labelNomeUsuario.Size = new Size(200, 20);
-        //         // labelNomeUsuario.Text = postagem.NomeUsuario;
-
-        //         // criar um novo Label para a data
-        //         Label labelData = new Label();
-        //         labelData.Location = new Point(70, y + 20);
-        //         labelData.Size = new Size(200, 20);
-        //         // labelData.Text = postagem.Data.ToString("dd/MM/yyyy");
-
-        //         // criar um novo Label para o título
-        //         Label labelTitulo = new Label();
-        //         labelTitulo.Location = new Point(10, y + 50);
-        //         labelTitulo.Size = new Size(260, 20);
-        //         labelTitulo.Font = new Font(labelTitulo.Font, FontStyle.Bold);
-        //         // labelTitulo.Text = postagem.Titulo;
-
-        //         // criar um novo Label para a descrição
-        //         Label labelDescricao = new Label();
-        //         labelDescricao.Location = new Point(10, y + 70);
-        //         labelDescricao.Size = new Size(260, 40);
-        //         // labelDescricao.Text = postagem.Descricao;
-
-        //         // adicionar os controles ao formulário ou painel
-        //         this.Controls.Add(pictureBoxFotoUsuario);
-        //         this.Controls.Add(labelNomeUsuario);
-        //         this.Controls.Add(labelData);
-        //         this.Controls.Add(labelTitulo);
-        //         this.Controls.Add(labelDescricao);
-
-        //         // y += 120; // incrementar a posição y para o próximo item
-        //     }
 
         private void pictureBoxFoto_Click(object sender, EventArgs e) {
             TelaPerfil telaPerfil = new TelaPerfil();

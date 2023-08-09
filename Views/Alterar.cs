@@ -5,6 +5,7 @@ using System.Drawing;
 namespace Views {
 
     public class Alterar : Form {
+        public Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
         private Label labelFundo; 
         private Label labelDivisao1;
         private Label labelDivisao2;  
@@ -33,8 +34,6 @@ namespace Views {
         private Button buttonDeletar;
 
         public Alterar() {           
-            Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
-
             this.WindowState = FormWindowState.Maximized;
             this.Icon = new Icon("Layout/Resolville.ico");
             this.Text = "Resolville";

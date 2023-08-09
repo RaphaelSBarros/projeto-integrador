@@ -16,6 +16,10 @@ namespace Controllers {
             return Models.Postagem.GetPostagem(index);
         }
 
+        public static List<Models.Postagem> GetPostagens(int index) {
+            return Models.Postagem.GetPostagens(index);
+        }
+
         public static void DeletePostagem(int index) {
             Models.Postagem.DeletePostagem(index);
         }

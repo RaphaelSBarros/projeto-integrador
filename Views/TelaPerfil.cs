@@ -19,13 +19,25 @@ namespace Views {
         private Button buttonInicio;
         private Button buttonRelatar;
 
-        public TelaPerfil() {
+        public TelaPerfil() { 
             Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
+            List<Models.Postagem> postagens = Controllers.PostagemController.GetPostagens(usuarioconectado.ID_Usuario);
 
             this.Icon = new Icon("Layout/Resolville.ico");
             this.Text = "Resolville";
             this.WindowState = FormWindowState.Maximized;
             InfoInicial.AdicionarTelaBasica(this);
+
+            Panel flowLayoutPanel = new Panel();
+            flowLayoutPanel.AutoScroll = true;
+            flowLayoutPanel.Location = new System.Drawing.Point(700, 295);
+            flowLayoutPanel.Size = new System.Drawing.Size(480, 495);
+            int y = 0;
+
+            foreach(Models.Postagem postagem in postagens){
+                InfoInicial.AdicionarPostagem(flowLayoutPanel, postagem, y);
+                y += 220;
+            }
 
             labelLinha3 = new Label();
             labelLinha3.Text = "";
@@ -45,16 +57,10 @@ namespace Views {
             }
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
-            textPostagens = new TextBox();
-            textPostagens.Location = new System.Drawing.Point(700, 295);
-            textPostagens.Size = new System.Drawing.Size(450, 495);
-            textPostagens.Multiline = true;
-            textPostagens.ScrollBars = ScrollBars.Vertical;
-
             labelSeusRelatos = new Label();
             labelSeusRelatos.Text = "SEUS RELATOS";
-            labelSeusRelatos.Location = new System.Drawing.Point(870, 262);
-            labelSeusRelatos.Size = new System.Drawing.Size(115, 30);
+            labelSeusRelatos.Location = new System.Drawing.Point(850, 262);
+            labelSeusRelatos.Size = new System.Drawing.Size(170, 30);
             labelSeusRelatos.ForeColor = Color.Gray;
             labelSeusRelatos.TextAlign = ContentAlignment.MiddleCenter;
             labelSeusRelatos.Font = InfoInicial.fonteTexto2;
@@ -90,6 +96,7 @@ namespace Views {
             buttonInicio.Click += buttonInicio_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
+            Controls.Add(flowLayoutPanel);
             Controls.Add(pictureBoxFoto);
             Controls.Add(labelSeusRelatos);
             Controls.Add(textPostagens);

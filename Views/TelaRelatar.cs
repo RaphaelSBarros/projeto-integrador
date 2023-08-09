@@ -111,6 +111,7 @@ namespace Views {
             textBoxDescricaoProblema.Name = "Descricao";
             textBoxDescricaoProblema.Location = new System.Drawing.Point(725, 430);
             textBoxDescricaoProblema.Size = new System.Drawing.Size(400, 150);
+            textBoxDescricaoProblema.AutoSize = false;
             textBoxDescricaoProblema.MaxLength = 576;
 
             labelFotoProblema = new Label();
@@ -119,7 +120,6 @@ namespace Views {
             labelFotoProblema.Size = new System.Drawing.Size(400, 20);
             labelFotoProblema.ForeColor = ColorTranslator.FromHtml("#4B4B4B");
             labelFotoProblema.Font = InfoInicial.fontTexto2Small;
-
 
             buttonInicio = new Button();
             buttonInicio.Text = "INÍCIO";

@@ -68,26 +68,26 @@ namespace Views {
             Models.Bairro bairro = Controllers.BairroController.GetBairro(postagem.FK_ID_Bairro);
 
             Label labelfundo = new Label();
-            labelfundo.Location = new System.Drawing.Point(700, y);
+            labelfundo.Location = new System.Drawing.Point(0, y);
             labelfundo.Size = new System.Drawing.Size(450, 210);
             labelfundo.BackColor = Color.LightGray;
             labelfundo.BorderStyle = BorderStyle.FixedSingle;
 
             Label labelfundo2 = new Label();
-            labelfundo2.Location = new System.Drawing.Point(1100, y);
+            labelfundo2.Location = new System.Drawing.Point(400, y);
             labelfundo2.Size = new System.Drawing.Size(50, 210);
             labelfundo2.BackColor = Color.LightGray;
             labelfundo2.BorderStyle = BorderStyle.FixedSingle;
 
             Button like = new Button();
-            like.Location = new System.Drawing.Point(1100, y + 10);
+            like.Location = new System.Drawing.Point(400, y + 10);
             like.Size = new System.Drawing.Size(35, 35);
             like.BackColor = Color.Transparent;
             like.BackgroundImage = Image.FromFile("Layout/Like.png");
             like.BackgroundImageLayout = ImageLayout.Stretch;
 
             PictureBox pictureBoxFoto = new PictureBox();
-            pictureBoxFoto.Location = new System.Drawing.Point(720, y + 20);
+            pictureBoxFoto.Location = new System.Drawing.Point(20, y + 20);
             pictureBoxFoto.Size = new System.Drawing.Size(30, 30);
 
             if(usuario.Foto == null){
@@ -97,7 +97,7 @@ namespace Views {
             }
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
-            int labelNome_UsuarioX = 755;
+            int labelNome_UsuarioX = 55;
             Label labelNome_Usuario = new Label();
             labelNome_Usuario.Text = usuario.Nome_Usuario;
             labelNome_Usuario.Location = new System.Drawing.Point(labelNome_UsuarioX, y + 25);
@@ -124,27 +124,29 @@ namespace Views {
 
             Label labelTitulo = new Label();
             labelTitulo.Text = "TITULO";
-            labelTitulo.Location = new System.Drawing.Point(720, y + 60);
+            labelTitulo.Location = new System.Drawing.Point(20, y + 60);
             labelTitulo.Size = new System.Drawing.Size(360, 20);
             labelTitulo.BackColor = Color.LightGray;
             labelTitulo.BorderStyle = BorderStyle.FixedSingle;
             labelTitulo.Font = InfoInicial.fonteTexto2;
 
-            Label labelDescricaoProblema = new Label();
-            labelDescricaoProblema.Text = "DESCRICAO";
-            labelDescricaoProblema.Location = new System.Drawing.Point(720, y + 85);
-            labelDescricaoProblema.Size = new System.Drawing.Size(360, 20);
-            labelDescricaoProblema.BackColor = Color.LightGray;
-            labelDescricaoProblema.BorderStyle = BorderStyle.FixedSingle;
-            labelDescricaoProblema.Font = InfoInicial.fonteTexto2Normal;
-            
+            TextBox textBoxDescricaoProblema = new TextBox();
+            textBoxDescricaoProblema.Text = postagem.Observacao;
+            textBoxDescricaoProblema.Location = new System.Drawing.Point(20, y + 85);
+            textBoxDescricaoProblema.Size = new System.Drawing.Size(360, 100);
+            textBoxDescricaoProblema.BackColor = Color.LightGray;
+            textBoxDescricaoProblema.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDescricaoProblema.Font = InfoInicial.fonteTexto2Normal;
+            textBoxDescricaoProblema.Multiline = true;
+            textBoxDescricaoProblema.ReadOnly = true;
+
             form.Controls.Add(like);
             form.Controls.Add(labelStatus);
             form.Controls.Add(labelData);
             form.Controls.Add(labelNome_Usuario);
             form.Controls.Add(pictureBoxFoto);
             form.Controls.Add(labelTitulo);
-            form.Controls.Add(labelDescricaoProblema);
+            form.Controls.Add(textBoxDescricaoProblema);
             form.Controls.Add(labelfundo2);
             form.Controls.Add(labelfundo);
         }

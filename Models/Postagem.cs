@@ -51,5 +51,9 @@ namespace Models {
             Models.Postagem postagem = Models.Postagem.GetPostagem(index);
             Repositories.PostagemRepository.DeletePostagem(index);
          }
+
+        public static List<Models.Postagem> GetPostagens(int index) {
+            return Repositories.PostagemRepository.GetPostagens(index);
+        }
     }
 }

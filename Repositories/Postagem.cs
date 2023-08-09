@@ -120,5 +120,48 @@ namespace Repositories {
 
             CloseConexao();
         }
+
+        public static List<Models.Postagem> GetPostagens(int index){
+            InitConexao();
+            
+            List<Models.Postagem> postagensUsuarioConectado = new List<Models.Postagem>();
+            string query = "SELECT * FROM postagem WHERE ID_Usuario = @index";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            command.Parameters.AddWithValue("@index", index);
+
+            MySqlDataAdapter bdAdapter = new MySqlDataAdapter(command);
+            DataSet dbDataSet = new DataSet();
+            bdAdapter.Fill(dbDataSet, "postagem");
+            DataTable table = dbDataSet.Tables["postagem"];
+            MySqlDataReader reader = command.ExecuteReader();
+
+            foreach(DataRow row in table.Rows) {
+                reader.Read();
+                
+                int code_postagem = (int)reader["Code_Postagem"];
+                int id_status = (int)reader["ID_Status"];
+                int id_usuario = (int)reader["ID_Usuario"];
+                int id_bairro = (int)reader["ID_Bairro"];
+                int code_problema = (int)reader["Code_Problema"];
+                byte[] foto = (byte[])reader["Foto"];
+
+                Models.Postagem postagem = new Models.Postagem();
+
+                postagem.Code_Postagem = code_postagem;
+                postagem.FK_ID_Status = Convert.ToInt32(row["ID_Status"]);
+                postagem.FK_ID_Usuario = Convert.ToInt32(row["ID_Usuario"]);
+                postagem.FK_ID_Bairro = Convert.ToInt32(row["ID_Bairro"]);
+                postagem.Logradouro = row["Logradouro"].ToString();
+                postagem.FK_Code_Problema = Convert.ToInt32(row["Code_Problema"]);
+                postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
+                postagem.Foto = (byte[])row["Foto"];
+                postagem.Observacao = row["Observacao"].ToString();
+                postagem.Data = row["Data"].ToString();
+                postagensUsuarioConectado.Add(postagem);
+            }
+            reader.Close();
+            CloseConexao();
+            return postagensUsuarioConectado;
+        }
     }
 }
