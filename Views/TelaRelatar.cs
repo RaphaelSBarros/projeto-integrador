@@ -328,8 +328,7 @@ namespace Views {
             // comboBoxBairroProblema.Text = "";
             // textBoxLogradouroProblema.Text = "";
             // textBoxDescricaoProblema.Text = "";
-        
-            // MessageBox.Show("Postagem realizada com sucesso!", "Mensagem do Sistema", MessageBoxButtons.OK);
+
             if(comboBoxTipoProblema.Text != "" && comboBoxBairroProblema.Text != "" && textBoxDescricaoProblema.Text != ""){
                 fk_id_usuario = usuarioconectado.ID_Usuario;
                 fk_code_problema = comboBoxTipoProblema.FindString(comboBoxTipoProblema.Text); // INDEX DO PROBLEMA
@@ -338,7 +337,7 @@ namespace Views {
                 observacao = textBoxDescricaoProblema.Text;
                 foto = buttonFotoProblema.Image;
 
-                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema+1, fk_id_bairro+1, logradouro, observacao, foto);
+                Controllers.PostagemController.AddPostagem(fk_id_usuario, fk_code_problema+1, fk_id_bairro+1, logradouro, observacao, ImageToByteArray(foto));
 
                 comboBoxTipoProblema.Text = "";
                 comboBoxBairroProblema.Text = "";
@@ -357,7 +356,6 @@ namespace Views {
                     MessageBoxButtons.OK
                 );
             }
-        
         }
 
         private void buttonEnviarRelato_MouseEnter(object sender, EventArgs e) {
@@ -422,6 +420,13 @@ namespace Views {
             }
         }
 
+        public byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                image.Save(memoryStream, image.RawFormat);
+                return memoryStream.ToArray();
+            }
+        }
     }
-
 }

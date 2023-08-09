@@ -52,24 +52,70 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Rapha\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\mathe\\.nuget\\packages\\": {}
+>>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
+>>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
       "projectName": "Resolville",
       "projectPath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
       "packagesPath": "C:\\Users\\Rapha\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+      "projectName": "Resolville",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
+      "projectName": "Resolville",
+      "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\",
+>>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
+>>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Rapha\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+<<<<<<< HEAD
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
+<<<<<<< HEAD
+=======
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< HEAD
+        "C:\\Program Files\\dotnet\\library-packs": {},
+=======
+>>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
+>>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -115,5 +161,21 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
+<<<<<<< HEAD
   }
+=======
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
+    }
+  ]
+>>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
 }

@@ -68,7 +68,13 @@ namespace Views {
             pictureBoxFoto = new PictureBox();
             pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
             pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
-            pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+
+            if(usuarioconectado.Foto == null){
+                pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+            }else{
+                pictureBoxFoto.Image = ByteArrayToImage(usuarioconectado.Foto);
+            }
+
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
             labelOla = new Label();
@@ -144,6 +150,12 @@ namespace Views {
             this.Hide();
         }
 
+        public Image ByteArrayToImage(byte[]? byteArray){
+            using (MemoryStream memoryStream = new MemoryStream(byteArray))
+            {
+                Image image = Image.FromStream(memoryStream);
+                return image;
+            }
+        }
     }
-
 }
