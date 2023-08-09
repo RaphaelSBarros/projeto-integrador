@@ -418,7 +418,7 @@ namespace Views {
             telefone = inputTelefone.Text;
             foto = buttonFotoUsuario.Image;
           
-            Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone, ImageToByteArray(foto));
+            Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone, InfoInicial.ImageToByteArray(foto));
 
             inputNome.Text = "";
             inputNickname.Text = "";
@@ -505,15 +505,6 @@ namespace Views {
 
         private void labelJaTemConta_MouseLeave(object sender, EventArgs e) {
             labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
-        }
-
-        public byte[] ImageToByteArray(Image image)
-        {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                image.Save(memoryStream, image.RawFormat);
-                return memoryStream.ToArray();
-            }
         }
     }
 }

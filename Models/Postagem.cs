@@ -17,6 +17,7 @@ namespace Models {
         public int FK_ID_Bairro { get; set; }
         public int FK_ID_Status { get; set; }
 
+        public Postagem(){}
         public Postagem(
             int fk_id_usuario,
             int fk_code_problema,
@@ -46,25 +47,9 @@ namespace Models {
             return Repositories.PostagemRepository.ListarPostagens();
         }
 
-        public static void UpdatePostagem(int fk_code_problema, int fk_id_bairro, string logradouro, string observacao, Image foto) {
-            Models.Postagem postagem = Models.Postagem.GetPostagem(index);
-            if(postagem != null) {
-
-                postagem.FK_Code_Problema = fk_code_problema;
-                postagem.FK_ID_Bairro = fk_id_bairro;
-                postagem.Logradouro = logradouro;
-                postagem.Observacao = observacao;
-                postagem.Foto = foto;
-
-                Repositories.PostagemRepository.UpdatePostagemPostagem(this);
-            }
-        }
-
         public static void DeletePostagem(int index){
             Models.Postagem postagem = Models.Postagem.GetPostagem(index);
-            if(usuario != null) {
-                Repositories.PostagemRepository.DeletePostagem(index);
-             }
+            Repositories.PostagemRepository.DeletePostagem(index);
          }
     }
 }

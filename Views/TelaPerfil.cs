@@ -20,44 +20,12 @@ namespace Views {
         private Button buttonRelatar;
 
         public TelaPerfil() {
-            this.WindowState = FormWindowState.Maximized;
+            Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
+
             this.Icon = new Icon("Layout/Resolville.ico");
             this.Text = "Resolville";
-
-            Image image = Image.FromFile("Layout/IconeResolville.png");
-            Panel panel = new Panel();
-            panel.Location = new System.Drawing.Point(1070, 50);
-            panel.Size = new Size(80, 80);
-            panel.BackgroundImage = image;
-            panel.BackgroundImageLayout = ImageLayout.Zoom;
-
-            labelDivisao1 = new Label();
-            labelDivisao1.Location = new System.Drawing.Point(650, 0);
-            labelDivisao1.Size = new System.Drawing.Size(10, 970);
-            labelDivisao1.BackColor = Color.LightGray;
-
-            labelDivisao2 = new Label();
-            labelDivisao2.Location = new System.Drawing.Point(1190, 0);
-            labelDivisao2.Size = new System.Drawing.Size(10, 970);
-            labelDivisao2.BackColor = Color.LightGray;
-
-            labelFundo = new Label();
-            labelFundo.Location = new System.Drawing.Point(650, 0);
-            labelFundo.Size = new System.Drawing.Size(550, 970);
-            labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
-
-            labelLinha1 = new Label();
-            labelLinha1.Text = "";
-            labelLinha1.Location = new System.Drawing.Point(700, 150);
-            labelLinha1.Size = new System.Drawing.Size(450, 8);
-            labelLinha1.BackColor = ColorTranslator.FromHtml("#5271FF");
-
-            labelLinha2 = new Label();
-            labelLinha2.Text = "";
-            labelLinha2.Location = new System.Drawing.Point(700, 800);
-            labelLinha2.Size = new System.Drawing.Size(450, 8);
-            labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
+            this.WindowState = FormWindowState.Maximized;
+            InfoInicial.AdicionarTelaBasica(this);
 
             labelLinha3 = new Label();
             labelLinha3.Text = "";
@@ -69,7 +37,12 @@ namespace Views {
             pictureBoxFoto = new PictureBox();
             pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
             pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
-            pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+
+            if(usuarioconectado.Foto == null){
+                pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
+            }else{
+                pictureBoxFoto.Image = InfoInicial.ByteArrayToImage(usuarioconectado.Foto);
+            }
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
             textPostagens = new TextBox();
@@ -78,30 +51,13 @@ namespace Views {
             textPostagens.Multiline = true;
             textPostagens.ScrollBars = ScrollBars.Vertical;
 
-            labelOla = new Label();
-            labelOla.Text = "Olá";
-            labelOla.Location = new System.Drawing.Point(790, 80);
-            labelOla.Size = new System.Drawing.Size(41, 25);
-            labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            Font fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-
-            labelNome = new Label();
-            labelNome.Text = "";
-            labelNome.Location = new System.Drawing.Point(830, 80);
-            labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-
             labelSeusRelatos = new Label();
             labelSeusRelatos.Text = "SEUS RELATOS";
             labelSeusRelatos.Location = new System.Drawing.Point(870, 262);
             labelSeusRelatos.Size = new System.Drawing.Size(115, 30);
             labelSeusRelatos.ForeColor = Color.Gray;
             labelSeusRelatos.TextAlign = ContentAlignment.MiddleCenter;
-            fonte = new Font("IBM Plex Sans", 9, FontStyle.Bold);
-            labelSeusRelatos.Font = fonte;
+            labelSeusRelatos.Font = InfoInicial.fonteTexto2;
 
             buttonEditarPerfil = new Button();
             buttonEditarPerfil.Text = "EDITAR PERFIL                                                >";
@@ -109,8 +65,7 @@ namespace Views {
             buttonEditarPerfil.Size = new System.Drawing.Size(400, 30);
             buttonEditarPerfil.BackColor = Color.White;
             buttonEditarPerfil.ForeColor = Color.Gray;
-            fonte = new Font("IBM Plex Sans", 12, FontStyle.Bold);
-            buttonEditarPerfil.Font = fonte;
+            buttonEditarPerfil.Font = InfoInicial.fonteTexto2;
             buttonEditarPerfil.TextAlign = ContentAlignment.MiddleCenter;
 
             buttonInicio = new Button();
@@ -119,8 +74,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = Color.White;
             buttonInicio.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Garet", 14, FontStyle.Bold);
-            buttonInicio.Font = fonte;
+            buttonInicio.Font = InfoInicial.fonteTitulo;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
             buttonRelatar = new Button();
@@ -129,21 +83,13 @@ namespace Views {
             buttonRelatar.Size = new System.Drawing.Size(225, 50);
             buttonRelatar.BackColor = Color.White;
             buttonRelatar.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Garet", 14, FontStyle.Bold);
-            buttonRelatar.Font = fonte;
+            buttonRelatar.Font = InfoInicial.fonteTitulo;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
             buttonEditarPerfil.Click += buttonEditarPerfil_Click;
             buttonInicio.Click += buttonInicio_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
-            Controls.Add(panel);
-            Controls.Add(labelDivisao1);
-            Controls.Add(labelDivisao2);
-            Controls.Add(labelLinha1);     
-            Controls.Add(labelLinha2);           
-            Controls.Add(labelOla);
-            Controls.Add(labelNome);
             Controls.Add(pictureBoxFoto);
             Controls.Add(labelSeusRelatos);
             Controls.Add(textPostagens);
@@ -171,7 +117,5 @@ namespace Views {
             telaRelatar.Show();
             this.Hide();
         }
-
     }
-
 }

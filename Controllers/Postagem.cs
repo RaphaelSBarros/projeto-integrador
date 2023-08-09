@@ -16,10 +16,6 @@ namespace Controllers {
             return Models.Postagem.GetPostagem(index);
         }
 
-        public static void UpdatePostagem(int fk_code_problema, int fk_id_bairro, string logradouro, string observacao, Image foto) {
-            Models.Postagem.UpdatePostagem(fk_code_problema, fk_id_bairro, logradouro, observacao, foto);
-        }
-
         public static void DeletePostagem(int index) {
             Models.Postagem.DeletePostagem(index);
         }

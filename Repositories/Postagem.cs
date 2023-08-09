@@ -34,18 +34,18 @@ namespace Repositories {
             DataSet dbDataSet = new DataSet();
             bdAdapter.Fill(dbDataSet, "postagem");
             DataTable table = dbDataSet.Tables["postagem"];
-
+    
             foreach(DataRow row in table.Rows) {
                 int code_postagem = Convert.ToInt32(row["Code_Postagem"].ToString());
                 Models.Postagem postagem = new Models.Postagem();
                 postagem.Code_Postagem = code_postagem;
-                postagem.FK_ID_Status = row["ID_Status"].ToString();
-                postagem.FK_ID_Usuario = row["ID_Usuario"].ToString();
-                postagem.FK_ID_Bairro = row["ID_Bairro"].ToString();
+                postagem.FK_ID_Status = Convert.ToInt32(row["ID_Status"]);
+                postagem.FK_ID_Usuario = Convert.ToInt32(row["ID_Usuario"]);
+                postagem.FK_ID_Bairro = Convert.ToInt32(row["ID_Bairro"]);
                 postagem.Logradouro = row["Logradouro"].ToString();
-                postagem.FK_Code_Problema = row["Code_Problema"].ToString();
+                postagem.FK_Code_Problema = Convert.ToInt32(row["Code_Problema"]);
                 postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
-                postagem.Foto = row["Foto"].ToString();
+                postagem.Foto = (byte[])row["Foto"];
                 postagem.Observacao = row["Observacao"].ToString();
                 postagem.Data = row["Data"].ToString();
                 postagens.Add(postagem);
@@ -91,31 +91,6 @@ namespace Repositories {
 
         public static List<Models.Postagem> ListarPostagens() { //LISTAR as informações dos usuários do BANCO DE DADOS.
             return postagens;
-        }
-
-        public static void UpdatePostagem(int index, Models.Postagem postagem) { //ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
-            InitConexao();
-            string query = "UPDATE postagem SET Code_Problema = @FK_Code_Problema, ID_Bairro = @FK_ID_Bairro, Logradouro = @Logradouro, Observacao = @Observacao, Foto = @Foto WHERE Code_Postagem = @Code_Postagem";
-            MySqlCommand command = new MySqlCommand(query, conexao);
-
-            if(postagem != null) {
-                command.Parameters.AddWithValue("@Code_Postagem", index);
-                command.Parameters.AddWithValue("@FK_Code_Problema", postagem.FK_Code_Problema);
-                command.Parameters.AddWithValue("@FK_ID_Bairro", postagem.FK_ID_Bairro);
-                command.Parameters.AddWithValue("@Logradouro", postagem.Logradouro);
-                command.Parameters.AddWithValue("@Observacao", postagem.Observacao);
-                command.Parameters.AddWithValue("@Foto", null);
-                int rowsAffected = command.ExecuteNonQuery();
-            
-                if (rowsAffected > 0) {
-                    postagem[index] = postagem;
-                } else {
-                    MessageBox.Show(rowsAffected.ToString());
-                }
-            } else {
-                MessageBox.Show("Postagem não encontrada");
-            }
-            CloseConexao();
         }
 
         public static void DeletePostagem(int index) { //DELETAR as informações da Postagem no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.

@@ -5,93 +5,35 @@ namespace Views {
 
     public class TelaInicial : Form {
         private Models.Postagem postagem;
-        private Label labelFundo;
-        private Label labelDivisao1;
-        private Label labelDivisao2;
-        private Label labelLinha1;
-        private Label labelLinha2;
         private PictureBox pictureBoxFoto;
-        private Label labelOla;
-        private Label labelNome;
         private TextBox textPostagens;
         private Button buttonInicio;
         private Button buttonRelatar;        
 
         public TelaInicial() {
             Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
-            
-            this.WindowState = FormWindowState.Maximized;
+
             this.Icon = new Icon("Layout/Resolville.ico");
             this.Text = "Resolville";
+            this.WindowState = FormWindowState.Maximized;
+            
+            InfoInicial.AdicionarTelaBasica(this);
 
-            Image image = Image.FromFile("Layout/IconeResolville.png");
-            Panel panel = new Panel();
-            panel.Location = new System.Drawing.Point(1070, 50);
-            panel.Size = new Size(80, 80);
-            panel.BackgroundImage = image;
-            panel.BackgroundImageLayout = ImageLayout.Zoom;
-
-            textPostagens = new TextBox();
+            textPostagens = new TextBox(); // aqui
             textPostagens.Location = new System.Drawing.Point(700, 170);
             textPostagens.Size = new System.Drawing.Size(450, 615);
             textPostagens.Multiline = true;
             textPostagens.ScrollBars = ScrollBars.Vertical;
 
-            labelDivisao1 = new Label();
-            labelDivisao1.Location = new System.Drawing.Point(650, 0);
-            labelDivisao1.Size = new System.Drawing.Size(10, 970);
-            labelDivisao1.BackColor = Color.LightGray;
-
-            labelDivisao2 = new Label();
-            labelDivisao2.Location = new System.Drawing.Point(1190, 0);
-            labelDivisao2.Size = new System.Drawing.Size(10, 970);
-            labelDivisao2.BackColor = Color.LightGray;
-
-            labelFundo = new Label();
-            labelFundo.Location = new System.Drawing.Point(650, 0);
-            labelFundo.Size = new System.Drawing.Size(550, 970);
-            labelFundo.BackColor = Color.LightGray;
-            labelFundo.SendToBack();
-
-            labelLinha1 = new Label();
-            labelLinha1.Text = "";
-            labelLinha1.Location = new System.Drawing.Point(700, 150);
-            labelLinha1.Size = new System.Drawing.Size(450, 8);
-            labelLinha1.BackColor = ColorTranslator.FromHtml("#5271FF");
-
-            labelLinha2 = new Label();
-            labelLinha2.Text = "";
-            labelLinha2.Location = new System.Drawing.Point(700, 800);
-            labelLinha2.Size = new System.Drawing.Size(450, 8);
-            labelLinha2.BackColor = ColorTranslator.FromHtml("#5271FF");
-
-            pictureBoxFoto = new PictureBox();
+            PictureBox pictureBoxFoto = new PictureBox();
             pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
             pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
-
             if(usuarioconectado.Foto == null){
                 pictureBoxFoto.Image = Image.FromFile("Layout/FotoUsuario.png");
             }else{
-                pictureBoxFoto.Image = ByteArrayToImage(usuarioconectado.Foto);
+                pictureBoxFoto.Image = InfoInicial.ByteArrayToImage(usuarioconectado.Foto);
             }
-
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
-
-            labelOla = new Label();
-            labelOla.Text = "Olá " + usuarioconectado.Nome_Usuario + "!";
-            labelOla.Location = new System.Drawing.Point(790, 80);
-            labelOla.Size = new System.Drawing.Size(225, 25);
-            labelOla.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            Font fonte = new Font("IBM Plex Sans", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
-           
-            labelNome = new Label();
-            labelNome.Text = "";
-            labelNome.Location = new System.Drawing.Point(830, 80);
-            labelNome.Size = new System.Drawing.Size(225, 25);
-            labelNome.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Arial", 14, FontStyle.Bold);
-            labelOla.Font = fonte;
 
             buttonInicio = new Button();
             buttonInicio.Text = "INÍCIO";
@@ -99,8 +41,7 @@ namespace Views {
             buttonInicio.Size = new System.Drawing.Size(225, 50);
             buttonInicio.BackColor = ColorTranslator.FromHtml("#5271FF");
             buttonInicio.ForeColor = Color.White;
-            fonte = new Font("Garet", 14, FontStyle.Bold);
-            buttonInicio.Font = fonte;
+            buttonInicio.Font = InfoInicial.fonteTitulo;
             buttonInicio.TextAlign = ContentAlignment.MiddleCenter;
 
             buttonRelatar = new Button();
@@ -109,25 +50,16 @@ namespace Views {
             buttonRelatar.Size = new System.Drawing.Size(225, 50);
             buttonRelatar.BackColor = Color.White;
             buttonRelatar.ForeColor = ColorTranslator.FromHtml("#5271FF");
-            fonte = new Font("Garet", 14, FontStyle.Bold);
-            buttonRelatar.Font = fonte;
+            buttonRelatar.Font = InfoInicial.fonteTitulo;
             buttonRelatar.TextAlign = ContentAlignment.MiddleCenter;
 
             pictureBoxFoto.Click += pictureBoxFoto_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
-            Controls.Add(panel);
             Controls.Add(textPostagens);
-            Controls.Add(labelDivisao1);
-            Controls.Add(labelDivisao2);
-            Controls.Add(labelLinha1);
-            Controls.Add(labelLinha2);
-            Controls.Add(labelOla);
-            Controls.Add(labelNome);
             Controls.Add(pictureBoxFoto);
             Controls.Add(buttonInicio);
             Controls.Add(buttonRelatar);
-            Controls.Add(labelFundo);
         }
 
         /*private void postagem() {
@@ -137,6 +69,52 @@ namespace Views {
             private Label labelTitulo;
             private Label labelDescricao;          
         }*/
+
+        // private void cu()
+        // {
+        //     int y = 10; // posição y inicial
+        //     // foreach (Postagem postagem in postagens)
+        //     // {
+        //         // criar um novo PictureBox
+        //         PictureBox pictureBoxFotoUsuario = new PictureBox();
+        //         pictureBoxFotoUsuario.Location = new Point(10, y);
+        //         pictureBoxFotoUsuario.Size = new Size(50, 50);
+        //         // pictureBoxFotoUsuario.Image = postagem.Imagem;
+
+        //         // criar um novo Label para o nome do usuário
+        //         Label labelNomeUsuario = new Label();
+        //         labelNomeUsuario.Location = new Point(70, y);
+        //         labelNomeUsuario.Size = new Size(200, 20);
+        //         // labelNomeUsuario.Text = postagem.NomeUsuario;
+
+        //         // criar um novo Label para a data
+        //         Label labelData = new Label();
+        //         labelData.Location = new Point(70, y + 20);
+        //         labelData.Size = new Size(200, 20);
+        //         // labelData.Text = postagem.Data.ToString("dd/MM/yyyy");
+
+        //         // criar um novo Label para o título
+        //         Label labelTitulo = new Label();
+        //         labelTitulo.Location = new Point(10, y + 50);
+        //         labelTitulo.Size = new Size(260, 20);
+        //         labelTitulo.Font = new Font(labelTitulo.Font, FontStyle.Bold);
+        //         // labelTitulo.Text = postagem.Titulo;
+
+        //         // criar um novo Label para a descrição
+        //         Label labelDescricao = new Label();
+        //         labelDescricao.Location = new Point(10, y + 70);
+        //         labelDescricao.Size = new Size(260, 40);
+        //         // labelDescricao.Text = postagem.Descricao;
+
+        //         // adicionar os controles ao formulário ou painel
+        //         this.Controls.Add(pictureBoxFotoUsuario);
+        //         this.Controls.Add(labelNomeUsuario);
+        //         this.Controls.Add(labelData);
+        //         this.Controls.Add(labelTitulo);
+        //         this.Controls.Add(labelDescricao);
+
+        //         // y += 120; // incrementar a posição y para o próximo item
+        //     }
 
         private void pictureBoxFoto_Click(object sender, EventArgs e) {
             TelaPerfil telaPerfil = new TelaPerfil();
@@ -148,14 +126,6 @@ namespace Views {
             TelaRelatar telaRelatar = new TelaRelatar();
             telaRelatar.Show();
             this.Hide();
-        }
-
-        public Image ByteArrayToImage(byte[]? byteArray){
-            using (MemoryStream memoryStream = new MemoryStream(byteArray))
-            {
-                Image image = Image.FromStream(memoryStream);
-                return image;
-            }
         }
     }
 }

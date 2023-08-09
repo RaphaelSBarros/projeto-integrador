@@ -14,12 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Resolville
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Usuario\Desktop\GITHUB\projeto-integrador\
-=======
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\mathe\OneDrive\Documentos\Resolville\projeto-integrador\
-=======
-build_property.ProjectDir = C:\Users\Usuario\Desktop\GITHUB\projeto-integrador\
->>>>>>> 3033a644a5a71ee157051c281ffd663a1d10acd9
->>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
