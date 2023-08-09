@@ -36,16 +36,25 @@ namespace Repositories {
             DataTable table = dbDataSet.Tables["postagem"];
 
             foreach(DataRow row in table.Rows) {
+
                 int code_postagem = Convert.ToInt32(row["Code_Postagem"].ToString());
+                int id_status = Convert.ToInt32(row["ID_Status"].ToString());
+                int id_usuario = Convert.ToInt32(row["ID_Usuario"].ToString());
+                int id_bairro = Convert.ToInt32(row["ID_Bairro"].ToString());
+                int code_problema = Convert.ToInt32(row["Code_Problema"].ToString());
+                Image foto = Image.FromFile(row["Foto"].ToString());
+
                 Models.Postagem postagem = new Models.Postagem();
+
                 postagem.Code_Postagem = code_postagem;
-                postagem.FK_ID_Status = row["ID_Status"].ToString();
-                postagem.FK_ID_Usuario = row["ID_Usuario"].ToString();
-                postagem.FK_ID_Bairro = row["ID_Bairro"].ToString();
+                postagem.FK_ID_Status = id_status;
+                postagem.FK_ID_Usuario = id_usuario;
+                postagem.FK_ID_Bairro = id_bairro;
+                postagem.FK_Code_Problema = code_problema;
+
                 postagem.Logradouro = row["Logradouro"].ToString();
-                postagem.FK_Code_Problema = row["Code_Problema"].ToString();
                 postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
-                postagem.Foto = row["Foto"].ToString();
+                postagem.Foto = foto;
                 postagem.Observacao = row["Observacao"].ToString();
                 postagem.Data = row["Data"].ToString();
                 postagens.Add(postagem);
@@ -108,7 +117,7 @@ namespace Repositories {
                 int rowsAffected = command.ExecuteNonQuery();
             
                 if (rowsAffected > 0) {
-                    postagem[index] = postagem;
+                    postagens[index] = postagem;
                 } else {
                     MessageBox.Show(rowsAffected.ToString());
                 }

@@ -46,7 +46,7 @@ namespace Models {
             return Repositories.PostagemRepository.ListarPostagens();
         }
 
-        public static void UpdatePostagem(int fk_code_problema, int fk_id_bairro, string logradouro, string observacao, Image foto) {
+        public static void UpdatePostagem(int index, int fk_code_problema, int fk_id_bairro, string logradouro, string observacao, Image foto) {
             Models.Postagem postagem = Models.Postagem.GetPostagem(index);
             if(postagem != null) {
 
@@ -56,13 +56,13 @@ namespace Models {
                 postagem.Observacao = observacao;
                 postagem.Foto = foto;
 
-                Repositories.PostagemRepository.UpdatePostagemPostagem(this);
+                Repositories.PostagemRepository.UpdatePostagem(index, this);
             }
         }
 
         public static void DeletePostagem(int index){
             Models.Postagem postagem = Models.Postagem.GetPostagem(index);
-            if(usuario != null) {
+            if(postagem != null) {
                 Repositories.PostagemRepository.DeletePostagem(index);
              }
          }
