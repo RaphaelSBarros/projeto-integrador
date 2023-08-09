@@ -199,6 +199,7 @@ namespace Views {
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(935, 510); 
             inputCPF.Name = "CPF";
+            inputCPF.Enabled = false;
             inputCPF.Size = new System.Drawing.Size(215, 20);
             inputCPF.MaxLength = 14;
             inputCPF.Mask = "000,000,000-00";
