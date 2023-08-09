@@ -58,11 +58,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\Resolville.csproj",
       "projectName": "Resolville",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\Resolville.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -123,13 +123,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -6,12 +6,14 @@ namespace Views {
     public class TelaInicial : Form {
         private Models.Postagem postagem;
         private PictureBox pictureBoxFoto;
-        private TextBox textPostagens;
+        private ListBox textPostagens;
         private Button buttonInicio;
         private Button buttonRelatar;        
 
         public TelaInicial() {
+            Controllers.PostagemController.Sincronizar();
             Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
+            List<Models.Postagem> postagens = Controllers.PostagemController.ListarPostagens();
 
             this.Icon = new Icon("Layout/Resolville.ico");
             this.Text = "Resolville";
@@ -19,12 +21,18 @@ namespace Views {
             
             InfoInicial.AdicionarTelaBasica(this);
 
-            textPostagens = new TextBox(); // aqui
-            textPostagens.Location = new System.Drawing.Point(700, 170);
-            textPostagens.Size = new System.Drawing.Size(450, 615);
-            textPostagens.Multiline = true;
-            textPostagens.ScrollBars = ScrollBars.Vertical;
+            Panel flowLayoutPanel = new Panel();
+            flowLayoutPanel.AutoScroll = true;
+            flowLayoutPanel.Location = new System.Drawing.Point(700, 170);
+            flowLayoutPanel.Size = new System.Drawing.Size(450, 615);
 
+            int y = 170;
+
+            foreach(Models.Postagem postagem in postagens){
+                InfoInicial.AdicionarPostagem(flowLayoutPanel, postagem, y);
+                y += 220;
+            }
+            
             PictureBox pictureBoxFoto = new PictureBox();
             pictureBoxFoto.Location = new System.Drawing.Point(700, 50);
             pictureBoxFoto.Size = new System.Drawing.Size(80, 80);
@@ -56,9 +64,10 @@ namespace Views {
             pictureBoxFoto.Click += pictureBoxFoto_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
-            Controls.Add(textPostagens);
+            Controls.Add(flowLayoutPanel);
             Controls.Add(pictureBoxFoto);
             Controls.Add(buttonInicio);
+            Controls.Add(textPostagens);
             Controls.Add(buttonRelatar);
         }
 

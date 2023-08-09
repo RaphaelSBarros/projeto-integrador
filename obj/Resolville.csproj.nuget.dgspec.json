@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\Resolville.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\Resolville.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\Resolville.csproj",
         "projectName": "Resolville",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\Resolville.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador - Copia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -28,6 +28,7 @@ namespace Repositories {
         }
 
         public static List<Models.Usuario> Sincronizar(){ // SINCRONIZAR o banco de dados atual com o SOFTWARE.
+            usuarios.Clear();
             InitConexao();
             string query = "SELECT * FROM usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
@@ -54,10 +55,37 @@ namespace Repositories {
         
         // INFORMAÇÕES DO USUÁRIO //
         public static Models.Usuario? GetUsuario(int index){ // PUXAR informações do usuário a partir do INDEX recebido.
-            if(index < 0 || index >= usuarios.Count) {
+            InitConexao();
+
+            string query = "SELECT ID_Usuario, Nome, Nome_Usuario, Email, CPF, Telefone, Foto FROM usuario WHERE ID_Usuario = @index";
+            MySqlCommand command = new MySqlCommand(query, conexao);
+            command.Parameters.AddWithValue("@index", index);
+
+            MySqlDataReader reader = command.ExecuteReader();
+            bool result = reader.HasRows;
+
+            if(result){
+                Models.Usuario? usuario = new Models.Usuario();
+
+                while (reader.Read())
+                {
+                    usuario.ID_Usuario = (int)reader["ID_Usuario"];
+                    usuario.Nome = (string)reader["Nome"];
+                    usuario.Nome_Usuario = (string)reader["Nome_Usuario"];
+                    usuario.Email = (string)reader["Email"];
+                    usuario.Cpf = (string)reader["CPF"];
+                    usuario.Telefone = (string)reader["Telefone"]; 
+                    usuario.Foto = reader["Foto"] as byte[] ?? null;
+                }
+
+                reader.Close();
+                CloseConexao();
+                return usuario;
+
+            }else{
+                reader.Close();
+                CloseConexao();
                 return null;
-            } else {
-                return usuarios[index];
             }
         }
 

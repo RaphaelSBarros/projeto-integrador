@@ -11,5 +11,9 @@ namespace Models {
         public static List<Models.Bairro> ListarBairros() {
             return Repositories.BairroRepository.ListarBairros();
         }
+
+        public static Bairro? GetBairro(int index) {
+            return Repositories.BairroRepository.GetBairro(index);
+        }
     }
 }

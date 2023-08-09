@@ -10,5 +10,9 @@ namespace Controllers {
         public static List<Models.Tipo_Problema> ListarProblemas() {
             return Models.Tipo_Problema.ListarProblemas();
         }
+
+        public static Models.Tipo_Problema? GetTipo_Problema(int index) {
+            return Models.Tipo_Problema.GetTipo_Problema(index);
+        }
     }
 }

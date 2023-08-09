@@ -12,5 +12,9 @@ namespace Models {
         public static List<Models.Tipo_Problema> ListarProblemas() {
             return Repositories.Tipo_ProblemaRepository.ListarProblemas();
         }
+
+        public static Tipo_Problema? GetTipo_Problema(int index) {
+            return Repositories.Tipo_ProblemaRepository.GetTipo_Problema(index);
+        }
     }
 }

@@ -19,5 +19,9 @@ namespace Controllers {
         public static void DeletePostagem(int index) {
             Models.Postagem.DeletePostagem(index);
         }
+
+        public static void Sincronizar(){
+            Models.Postagem.Sincronizar();
+        }
     }
 }

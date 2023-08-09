@@ -27,6 +27,7 @@ namespace Repositories {
         }
 
         public static List<Models.Postagem> Sincronizar(){ //SINCRONIZAR o banco de dados atual com o SOFTWARE.
+            postagens.Clear();
             InitConexao();
             string query = "SELECT * FROM postagem";
             MySqlCommand command = new MySqlCommand(query, conexao);
@@ -34,15 +35,17 @@ namespace Repositories {
             DataSet dbDataSet = new DataSet();
             bdAdapter.Fill(dbDataSet, "postagem");
             DataTable table = dbDataSet.Tables["postagem"];
-    
-            foreach(DataRow row in table.Rows) {
+            MySqlDataReader reader = command.ExecuteReader();
 
-                int code_postagem = Convert.ToInt32(row["Code_Postagem"].ToString());
-                int id_status = Convert.ToInt32(row["ID_Status"].ToString());
-                int id_usuario = Convert.ToInt32(row["ID_Usuario"].ToString());
-                int id_bairro = Convert.ToInt32(row["ID_Bairro"].ToString());
-                int code_problema = Convert.ToInt32(row["Code_Problema"].ToString());
-                Image foto = Image.FromFile(row["Foto"].ToString());
+            foreach(DataRow row in table.Rows) {
+                reader.Read();
+                
+                int code_postagem = (int)reader["Code_Postagem"];
+                int id_status = (int)reader["ID_Status"];
+                int id_usuario = (int)reader["ID_Usuario"];
+                int id_bairro = (int)reader["ID_Bairro"];
+                int code_problema = (int)reader["Code_Problema"];
+                byte[] foto = (byte[])reader["Foto"];
 
                 Models.Postagem postagem = new Models.Postagem();
 
@@ -58,6 +61,7 @@ namespace Repositories {
                 postagem.Data = row["Data"].ToString();
                 postagens.Add(postagem);
             }
+            reader.Close();
             CloseConexao();
             return postagens;
         }
