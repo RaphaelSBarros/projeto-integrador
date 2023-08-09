@@ -37,18 +37,8 @@ namespace Models {
             return Repositories.UsuarioRepository.ListarUsuarios();
         }
 
-        public static void UpdateUsuario(int index, string nome, string nome_usuario,string cpf, string email, string senha, string telefone) {
-            Models.Usuario usuario = Models.Usuario.GetUsuario(index);
-            if(usuario != null) {
-                usuario.Nome = nome;
-                usuario.Nome_Usuario = nome_usuario;
-                usuario.Email = email;
-                usuario.Cpf = cpf;
-                usuario.Senha = senha;
-                usuario.Telefone = telefone;
-
-                Repositories.UsuarioRepository.UpdateUsuario(index, usuario);
-            }
+        public static void UpdateUsuario(int index, Models.Usuario upUsuario) {
+            Repositories.UsuarioRepository.UpdateUsuario(index, upUsuario);
         }
 
         public static void DeleteUsuario(int index){

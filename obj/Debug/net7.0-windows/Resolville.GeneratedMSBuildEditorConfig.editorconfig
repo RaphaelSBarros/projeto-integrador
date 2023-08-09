@@ -14,4 +14,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Resolville
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Usuario\Desktop\GITHUB\projeto-integrador - Copia\
+=======
+build_property.ProjectDir = C:\Users\Rapha\OneDrive\Área de Trabalho\Git\projeto-integrador\
+>>>>>>> 4696aedd6539562dc22d93e41abb6afaf6660fbb

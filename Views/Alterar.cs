@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Views {
 
@@ -199,6 +200,7 @@ namespace Views {
             inputCPF = new MaskedTextBox();
             inputCPF.Location = new System.Drawing.Point(935, 510); 
             inputCPF.Name = "CPF";
+            inputCPF.Enabled = false;
             inputCPF.Size = new System.Drawing.Size(215, 20);
             inputCPF.MaxLength = 14;
             inputCPF.Mask = "000,000,000-00";
@@ -255,8 +257,10 @@ namespace Views {
             inputNickname.Text = usuarioconectado.Nome_Usuario;
             inputEmail.Text = usuarioconectado.Email;
             inputCPF.Text = usuarioconectado.Cpf;
-            inputSenha.Text = "";
+            inputSenha.Text = usuarioconectado.Senha;
             inputTelefone.Text = usuarioconectado.Telefone;
+            Image imagem = InfoInicial.ByteArrayToImage(usuarioconectado.Foto);
+            buttonFotoUsuario.Image = imagem;
 
             inputCPF.Click += inputCPF_Click;
             inputTelefone.Click += inputTelefone_Click;
@@ -300,7 +304,7 @@ namespace Views {
             Controls.Add(buttonDeletar);   
             Controls.Add(labelFundo);       
         }
-
+        
         private void inputCPF_Click(object sender, EventArgs e) {
             string cpf = new string(inputCPF.Text.Where(Char.IsDigit).ToArray());
             inputCPF.SelectionStart = cpf.Length;
@@ -372,6 +376,7 @@ namespace Views {
 
         private void buttonAlterar_Click(object sender, EventArgs e) {
             string nome, nome_Usuario, email, cpf, senha, telefone;
+            byte[] foto;
             List<string> errors = new List<string>();
 
             labelNomeErro.Text = "";
@@ -433,23 +438,20 @@ namespace Views {
                 return;
             }
 
+            int index = Convert.ToInt32(usuarioconectado.ID_Usuario);
             nome = inputNome.Text;
             nome_Usuario = inputNickname.Text;
             email = inputEmail.Text;
             cpf = inputCPF.Text;
             senha = inputSenha.Text;
             telefone = inputTelefone.Text;
-            
-            // Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
+            foto = InfoInicial.ImageToByteArray(buttonFotoUsuario.Image);
 
-            inputNome.Text = "";
-            inputNickname.Text = "";
-            inputEmail.Text = "";
-            inputCPF.Text = "";
-            inputSenha.Text = "";
-            inputTelefone.Text = "";
+            Models.Usuario upUsuario = new Models.Usuario(nome, nome_Usuario, email, cpf, senha, telefone, foto);
+          
+            Controllers.UsuarioController.UpdateUsuario(index, upUsuario);
 
-            MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show("Cadastro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
 
             Login login = new Login();
             login.Show();
@@ -535,6 +537,9 @@ namespace Views {
 
         private void buttonDeletar_MouseLeave(object sender, EventArgs e) {
             buttonDeletar.BackColor = Color.Red;
+        }
+        private void buttonDeletar_Click(object sender, EventArgs e){
+            Controllers.UsuarioController.DeleteUsuario(usuarioconectado.ID_Usuario);
         }
 
     }

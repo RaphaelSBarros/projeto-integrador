@@ -120,29 +120,33 @@ namespace Repositories {
             return usuarios;
         }
 
-        public static void UpdateUsuario(int index, Models.Usuario usuario) { // ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
+        public static void UpdateUsuario(int index, Models.Usuario usuario) { // ADICIONAR as informações do usuário no BANCO DE DADOS e na LISTA (cache).
             InitConexao();
-            string query = "UPDATE usuario SET Nome = @Nome, CPF = @CPF, Email = @Email, Nome_Usuario = @Nome_Usuario, Senha = @Senha, Telefone = @Telefone, Foto = @Foto WHERE ID_Usuario = @ID_Usuario";
+            string query = "UPDATE `usuario` SET `Nome` = @Nome, `Email` = @Email, `Nome_Usuario` = @Nome_Usuario, `Senha` = @Senha, `Telefone` = @Telefone, `Foto` = @Foto  WHERE `usuario`.`ID_Usuario` = @ID_Usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
-
             if(usuario != null) {
-                command.Parameters.AddWithValue("@ID_Usuario", usuario.ID_Usuario);
+                command.Parameters.AddWithValue("@ID_Usuario", index);
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@Nome_Usuario", usuario.Nome_Usuario);
-                command.Parameters.AddWithValue("@CPF", usuario.Cpf);
                 command.Parameters.AddWithValue("@Email", usuario.Email);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
                 command.Parameters.AddWithValue("@Foto", usuario.Foto);
+
                 int rowsAffected = command.ExecuteNonQuery();
-            
-                if (rowsAffected > 0) {
-                    usuarios[index] = usuario;
+
+                if(rowsAffected > 0) {
+                    int indexof = usuarios.FindIndex(u => u.Cpf == usuario.Cpf);
+                    if(indexof != -1){
+                        usuarios[indexof] = usuario;
+                    }else{
+                        MessageBox.Show("Usuário não foi alterado!");
+                    }
                 } else {
-                    MessageBox.Show(rowsAffected.ToString());
+                    MessageBox.Show("Usuário não foi alterado!");
                 }
             } else {
-                MessageBox.Show("Usuário não foi encontrado");
+                MessageBox.Show("Usuário não foi alterado!");
             }
             CloseConexao();
         }
