@@ -436,7 +436,7 @@ namespace Views {
                 return;
             }
 
-            int index = usuarioconectado.ID_Usuario;
+            int index = Convert.ToInt32(usuarioconectado.ID_Usuario);
             nome = inputNome.Text;
             nome_Usuario = inputNickname.Text;
             email = inputEmail.Text;
