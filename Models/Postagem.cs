@@ -7,7 +7,7 @@ namespace Models {
         public int Code_Postagem { get; set; }
         public string Logradouro { get; set; }
         public string Outros_Problemas { get; set; }
-        public byte[] Foto { get; set; }
+        public byte[]? Foto { get; set; }
         public string Observacao { get; set; }
         public string Data { get; set; }
 
@@ -24,7 +24,7 @@ namespace Models {
             int fk_id_bairro,
             string logradouro, 
             string observacao, 
-            byte[] foto
+            byte[]? foto
         ){
             FK_ID_Usuario = fk_id_usuario;
             FK_Code_Problema = fk_code_problema;

@@ -52,83 +52,32 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Usuario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Rapha\\.nuget\\packages\\": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\mathe\\.nuget\\packages\\": {}
->>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
->>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
->>>>>>> bd4a43c5bc4a4919f29b230ed25c257a98216bcf
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
-      "projectName": "Resolville",
-      "projectPath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
-      "packagesPath": "C:\\Users\\Rapha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\obj\\",
-=======
-<<<<<<< HEAD
->>>>>>> bd4a43c5bc4a4919f29b230ed25c257a98216bcf
       "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
       "projectName": "Resolville",
       "projectPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\",
-<<<<<<< HEAD
-=======
-=======
-      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
-      "projectName": "Resolville",
-      "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\Resolville.csproj",
-      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\Resolville\\projeto-integrador\\obj\\",
->>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
->>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
->>>>>>> bd4a43c5bc4a4919f29b230ed25c257a98216bcf
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        "C:\\Users\\Rapha\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-<<<<<<< HEAD
->>>>>>> bd4a43c5bc4a4919f29b230ed25c257a98216bcf
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
-<<<<<<< HEAD
-=======
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 436525b42f27ed86ec7933bec4e4aac4a1c1295b
->>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
->>>>>>> bd4a43c5bc4a4919f29b230ed25c257a98216bcf
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -171,12 +120,9 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
-<<<<<<< HEAD
-  }
-=======
   },
   "logs": [
     {
@@ -186,5 +132,4 @@
       "message": "Problema ao ler o arquivo de cache C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
->>>>>>> 376b3764f51e29a11b3d801dba76f1f257c37c91
 }

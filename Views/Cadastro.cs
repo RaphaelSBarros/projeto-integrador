@@ -104,7 +104,7 @@ namespace Views {
             inputNickname.Location = new System.Drawing.Point(700, 330); 
             inputNickname.Name = "Nickname";
             inputNickname.Size = new System.Drawing.Size(450, 20);
-            inputNickname.MaxLength = 20;
+            inputNickname.MaxLength = 12;
 
             labelEmail = new Label();
             labelEmail.Text = "Email";
@@ -369,9 +369,9 @@ namespace Views {
             if (string.IsNullOrEmpty(inputNickname.Text)) {
                 labelNicknameErro.Text = "Campo Obrigatório*";
                 errors.Add("Nome do Usuário* é obrigatório*");
-            } else if (inputNickname.Text.Length < 2 || inputNickname.Text.Length > 20) {
+            } else if (inputNickname.Text.Length < 2 || inputNickname.Text.Length > 12) {
                 labelNicknameErro.Text = "Sintaxe Incorreta*";
-                errors.Add("Nome do Usuário* deve ter entre 2 e 20 caracteres");
+                errors.Add("Nome do Usuário* deve ter entre 2 e 12 caracteres");
             }
 
             if (string.IsNullOrEmpty(inputEmail.Text)) {
