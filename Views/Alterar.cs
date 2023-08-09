@@ -536,6 +536,9 @@ namespace Views {
         private void buttonDeletar_MouseLeave(object sender, EventArgs e) {
             buttonDeletar.BackColor = Color.Red;
         }
+        private void buttonDeletar_Click(object sender, EventArgs e){
+            Controllers.UsuarioController.DeleteUsuario(usuarioconectado.ID_Usuario);
+        }
 
     }
 
