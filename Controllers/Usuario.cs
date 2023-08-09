@@ -16,8 +16,8 @@ namespace Controllers {
             return Models.Usuario.GetUsuario(index);
         }
 
-        public static void UpdateUsuario(int index, string nome, string nome_usuario, string email, string cpf, string senha, string telefone) {
-            Models.Usuario.UpdateUsuario(index, nome, nome_usuario, email, cpf, senha, telefone);
+        public static void UpdateUsuario(int index, Models.Usuario upUsuario) {
+            Models.Usuario.UpdateUsuario(index, upUsuario);
         }
 
         public static void DeleteUsuario(int index) {

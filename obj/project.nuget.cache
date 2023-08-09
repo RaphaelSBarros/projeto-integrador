@@ -1,17 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LGrQnvrIYztIU25IpdoJ7f1MbPGGEeWOyOXlbJ4t4BOJ918CmmtdMJysp5DzcMZEmMEnAg9bm4tki01gTZy3cw==",
+  "dgSpecHash": "eZjy64bD6dk15jqH0yXDFGx6Wi2gCJjeOkAD5yzrp0EK+sb0dsAJaEmBx8e7X/EYzd732V0soLfYUAiq8UJkXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\Resolville.csproj",
+  "projectFilePath": "C:\\Users\\Rapha\\OneDrive\\Área de Trabalho\\Git\\projeto-integrador\\Resolville.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
+    "C:\\Users\\Rapha\\.nuget\\packages\\mysqlconnector\\2.2.7\\mysqlconnector.2.2.7.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\Usuario\\Desktop\\GITHUB\\projeto-integrador\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

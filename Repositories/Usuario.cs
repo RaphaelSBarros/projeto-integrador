@@ -98,7 +98,7 @@ namespace Repositories {
             MySqlCommand command = new MySqlCommand(query, conexao);
 
             if(usuario != null) {
-                command.Parameters.AddWithValue("@ID_Usuario", usuario.ID_Usuario);
+                command.Parameters.AddWithValue("@ID_Usuario", index);
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
                 command.Parameters.AddWithValue("@Nome_Usuario", usuario.Nome_Usuario);
                 command.Parameters.AddWithValue("@CPF", usuario.Cpf);

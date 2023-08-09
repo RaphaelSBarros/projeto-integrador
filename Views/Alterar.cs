@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Views {
 
@@ -254,8 +255,10 @@ namespace Views {
             inputNickname.Text = usuarioconectado.Nome_Usuario;
             inputEmail.Text = usuarioconectado.Email;
             inputCPF.Text = usuarioconectado.Cpf;
-            inputSenha.Text = "";
+            inputSenha.Text = usuarioconectado.Senha;
             inputTelefone.Text = usuarioconectado.Telefone;
+            Image imagem = byteArrayToImage(usuarioconectado.Foto);
+            buttonFotoUsuario.Image = imagem;
 
             inputCPF.Click += inputCPF_Click;
             inputTelefone.Click += inputTelefone_Click;
@@ -298,6 +301,13 @@ namespace Views {
             Controls.Add(buttonCancelar);
             Controls.Add(buttonDeletar);   
             Controls.Add(labelFundo);       
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
         private void inputCPF_Click(object sender, EventArgs e) {
@@ -371,6 +381,7 @@ namespace Views {
 
         private void buttonAlterar_Click(object sender, EventArgs e) {
             string nome, nome_Usuario, email, cpf, senha, telefone;
+            byte[] foto;
             List<string> errors = new List<string>();
 
             labelNomeErro.Text = "";
@@ -432,21 +443,18 @@ namespace Views {
                 return;
             }
 
+            int index = usuarioconectado.ID_Usuario;
             nome = inputNome.Text;
             nome_Usuario = inputNickname.Text;
             email = inputEmail.Text;
             cpf = inputCPF.Text;
             senha = inputSenha.Text;
             telefone = inputTelefone.Text;
-            
-            // Controllers.UsuarioController.UpdateUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
+            foto = InfoInicial.ImageToByteArray(buttonFotoUsuario.Image);
 
-            inputNome.Text = "";
-            inputNickname.Text = "";
-            inputEmail.Text = "";
-            inputCPF.Text = "";
-            inputSenha.Text = "";
-            inputTelefone.Text = "";
+            Models.Usuario upUsuario = new Models.Usuario(nome, nome_Usuario, email, cpf, senha, telefone, foto);
+          
+            Controllers.UsuarioController.UpdateUsuario(index, upUsuario);
 
             MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
 
