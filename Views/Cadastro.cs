@@ -348,6 +348,7 @@ namespace Views {
 
         private void buttonCadastrar_Click(object sender, EventArgs e) {
             string nome, nome_Usuario, email, cpf, senha, telefone;
+            Image foto;
             List<string> errors = new List<string>();
 
             labelNomeErro.Text = "";
@@ -415,8 +416,9 @@ namespace Views {
             cpf = inputCPF.Text;
             senha = inputSenha.Text;
             telefone = inputTelefone.Text;
+            foto = buttonFotoUsuario.Image;
           
-            Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone);
+            Controllers.UsuarioController.AddUsuario(nome, nome_Usuario, email, cpf, senha, telefone, ImageToByteArray(foto));
 
             inputNome.Text = "";
             inputNickname.Text = "";
@@ -504,7 +506,14 @@ namespace Views {
         private void labelJaTemConta_MouseLeave(object sender, EventArgs e) {
             labelJaTemConta.ForeColor = ColorTranslator.FromHtml("#5271FF");
         }
-       
-    }
 
+        public byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                image.Save(memoryStream, image.RawFormat);
+                return memoryStream.ToArray();
+            }
+        }
+    }
 }

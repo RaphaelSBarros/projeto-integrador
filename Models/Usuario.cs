@@ -9,16 +9,18 @@ namespace Models {
         public string Cpf { get; set; }
         public string Telefone { get; set; }
         public string Senha { get; set; }
+        public byte[]? Foto { get; set; }
 
         public Usuario() {}
 
-        public Usuario(string nome, string nome_usuario, string email, string cpf, string senha, string telefone) {
+        public Usuario(string nome, string nome_usuario, string email, string cpf, string senha, string telefone, byte[]? foto) {
             Nome = nome;
             Nome_Usuario = nome_usuario;
             Email = email;
             Cpf = cpf;
             Senha = senha;
             Telefone = telefone;
+            Foto = foto;
 
             Repositories.UsuarioRepository.AddUsuario(this);
         }

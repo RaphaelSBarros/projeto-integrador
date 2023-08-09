@@ -63,7 +63,7 @@ namespace Repositories {
 
         public static void AddUsuario(Models.Usuario usuario) { // ADICIONAR as informações do usuário no BANCO DE DADOS e na LISTA (cache).
             InitConexao();
-            string query = "INSERT INTO usuario (Nome, CPF, Email, Nome_Usuario, Senha, Telefone) VALUES (@Nome, @CPF, @Email, @Nome_Usuario, @Senha, @Telefone)";
+            string query = "INSERT INTO usuario (Nome, CPF, Email, Nome_Usuario, Senha, Telefone, Foto) VALUES (@Nome, @CPF, @Email, @Nome_Usuario, @Senha, @Telefone, @Foto)";
             MySqlCommand command = new MySqlCommand(query, conexao);
             if(usuario != null) {
                 command.Parameters.AddWithValue("@Nome", usuario.Nome);
@@ -72,7 +72,7 @@ namespace Repositories {
                 command.Parameters.AddWithValue("@Email", usuario.Email);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-
+                command.Parameters.AddWithValue("@Foto", usuario.Foto);
 
                 int rowsAffected = command.ExecuteNonQuery();
                 usuario.ID_Usuario = Convert.ToInt32(command.LastInsertedId);
@@ -94,7 +94,7 @@ namespace Repositories {
 
         public static void UpdateUsuario(int index, Models.Usuario usuario) { // ATUALIZAR as informações dos usuários no BANCO DE DADOS e na LISTA (cache) a partir do INDEX recebido.
             InitConexao();
-            string query = "UPDATE usuario SET Nome = @Nome, CPF = @CPF, Email = @Email, Nome_Usuario = @Nome_Usuario, Senha = @Senha, Telefone = @Telefone WHERE ID_Usuario = @ID_Usuario";
+            string query = "UPDATE usuario SET Nome = @Nome, CPF = @CPF, Email = @Email, Nome_Usuario = @Nome_Usuario, Senha = @Senha, Telefone = @Telefone, Foto = @Foto WHERE ID_Usuario = @ID_Usuario";
             MySqlCommand command = new MySqlCommand(query, conexao);
 
             if(usuario != null) {
@@ -105,6 +105,7 @@ namespace Repositories {
                 command.Parameters.AddWithValue("@Email", usuario.Email);
                 command.Parameters.AddWithValue("@Senha", usuario.Senha);
                 command.Parameters.AddWithValue("@Telefone", usuario.Telefone);
+                command.Parameters.AddWithValue("@Foto", usuario.Foto);
                 int rowsAffected = command.ExecuteNonQuery();
             
                 if (rowsAffected > 0) {
@@ -138,7 +139,7 @@ namespace Repositories {
         public static bool VerificaLogin(string cpf, string senha){ // VERIFICAÇÃO de login de usuário e ARMAZENAR informações do usuário conectado.
             InitConexao();
 
-            string query = "SELECT ID_Usuario, Nome, Nome_Usuario, Email, CPF, Telefone FROM usuario WHERE CPF = @cpf AND Senha = @senha";
+            string query = "SELECT ID_Usuario, Nome, Nome_Usuario, Email, CPF, Telefone, Foto FROM usuario WHERE CPF = @cpf AND Senha = @senha";
             MySqlCommand command = new MySqlCommand(query, conexao);
             command.Parameters.AddWithValue("@cpf", cpf);
             command.Parameters.AddWithValue("@senha", senha);
@@ -154,7 +155,8 @@ namespace Repositories {
                     usuarioConectado.Nome_Usuario = (string)reader["Nome_Usuario"];
                     usuarioConectado.Email = (string)reader["Email"];
                     usuarioConectado.Cpf = (string)reader["CPF"];
-                    usuarioConectado.Telefone = (string)reader["Telefone"];
+                    usuarioConectado.Telefone = (string)reader["Telefone"]; 
+                    usuarioConectado.Foto = reader["Foto"] as byte[] ?? null;
                 }
 
                 reader.Close();

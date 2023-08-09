@@ -46,7 +46,7 @@ CREATE TABLE `postagem` (
   `Logradouro` varchar(100) NOT NULL,
   `Code_Problema` int(100) NOT NULL,
   `Outros_Problemas` varchar(100) NOT NULL,
-  `Foto` blob NULL,
+  `Foto` longblob NULL,
   `Observacao` varchar(100) NOT NULL,
   `Data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -86,7 +86,8 @@ CREATE TABLE `usuario` (
   `Email` varchar(100) NOT NULL,
   `Nome_Usuario` varchar(100) NOT NULL,
   `Senha` varchar(100) NOT NULL,
-  `Telefone` varchar(25) NOT NULL
+  `Telefone` varchar(25) NOT NULL,
+  `Foto` longblob NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

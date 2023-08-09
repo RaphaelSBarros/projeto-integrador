@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Controllers {
     public static class UsuarioController {
 
-        public static void AddUsuario(string nome, string nome_usuario, string email, string cpf, string senha, string telefone) {
-            new Models.Usuario(nome, nome_usuario, email, cpf, senha, telefone);
+        public static void AddUsuario(string nome, string nome_usuario, string email, string cpf, string senha, string telefone, byte[]? foto) {
+            new Models.Usuario(nome, nome_usuario, email, cpf, senha, telefone, foto);
         }
 
         public static List<Models.Usuario> ListarUsuarios() {

@@ -72,7 +72,7 @@ namespace Repositories {
                 command.Parameters.AddWithValue("@FK_ID_Bairro", postagem.FK_ID_Bairro);
                 command.Parameters.AddWithValue("@Logradouro", postagem.Logradouro);
                 command.Parameters.AddWithValue("@Observacao", postagem.Observacao);
-                command.Parameters.AddWithValue("@Foto", null);
+                command.Parameters.AddWithValue("@Foto", postagem.Foto);
                 command.Parameters.AddWithValue("@Data", DateTime.Now.ToString("yyyy/MM/dd"));
                 
                 int rowsAffected = command.ExecuteNonQuery();
