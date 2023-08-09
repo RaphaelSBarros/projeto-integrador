@@ -36,8 +36,16 @@ namespace Repositories {
             DataTable table = dbDataSet.Tables["postagem"];
     
             foreach(DataRow row in table.Rows) {
+
                 int code_postagem = Convert.ToInt32(row["Code_Postagem"].ToString());
+                int id_status = Convert.ToInt32(row["ID_Status"].ToString());
+                int id_usuario = Convert.ToInt32(row["ID_Usuario"].ToString());
+                int id_bairro = Convert.ToInt32(row["ID_Bairro"].ToString());
+                int code_problema = Convert.ToInt32(row["Code_Problema"].ToString());
+                Image foto = Image.FromFile(row["Foto"].ToString());
+
                 Models.Postagem postagem = new Models.Postagem();
+
                 postagem.Code_Postagem = code_postagem;
                 postagem.FK_ID_Status = Convert.ToInt32(row["ID_Status"]);
                 postagem.FK_ID_Usuario = Convert.ToInt32(row["ID_Usuario"]);
