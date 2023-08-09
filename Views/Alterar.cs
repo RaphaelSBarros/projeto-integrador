@@ -456,7 +456,7 @@ namespace Views {
           
             Controllers.UsuarioController.UpdateUsuario(index, upUsuario);
 
-            MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show("Cadastro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
 
             Login login = new Login();
             login.Show();
