@@ -28,14 +28,14 @@ namespace Views {
             this.WindowState = FormWindowState.Maximized;
             InfoInicial.AdicionarTelaBasica(this);
 
-            Panel flowLayoutPanel = new Panel();
-            flowLayoutPanel.AutoScroll = true;
-            flowLayoutPanel.Location = new System.Drawing.Point(700, 295);
-            flowLayoutPanel.Size = new System.Drawing.Size(480, 495);
+            Panel panel = new Panel();
+            panel.AutoScroll = true;
+            panel.Location = new System.Drawing.Point(700, 295);
+            panel.Size = new System.Drawing.Size(480, 495);
             int y = 0;
 
             foreach(Models.Postagem postagem in postagens){
-                InfoInicial.AdicionarPostagem(flowLayoutPanel, postagem, y);
+                InfoInicial.AdicionarPostagem(panel, postagem, y);
                 y += 220;
             }
 
@@ -96,7 +96,7 @@ namespace Views {
             buttonInicio.Click += buttonInicio_Click;
             buttonRelatar.Click += buttonRelatar_Click;
 
-            Controls.Add(flowLayoutPanel);
+            Controls.Add(panel);
             Controls.Add(pictureBoxFoto);
             Controls.Add(labelSeusRelatos);
             Controls.Add(textPostagens);

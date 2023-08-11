@@ -45,7 +45,6 @@ CREATE TABLE `postagem` (
   `ID_Bairro` int(11) NOT NULL,
   `Logradouro` varchar(100) NOT NULL,
   `Code_Problema` int(100) NOT NULL,
-  `Outros_Problemas` varchar(100) NOT NULL,
   `Foto` longblob NULL,
   `Observacao` varchar(100) NOT NULL,
   `Data` date NOT NULL
@@ -225,7 +224,7 @@ INSERT INTO `problema` (`Problema`) VALUES
 -- ADICIONAR VALORES PARA USUÁRIO ADMINISTRADOR
 --
 INSERT INTO `usuario` (`ID_Usuario`, `Nome`, `CPF`, `Email`, `Nome_Usuario`, `Senha`, `Telefone`) VALUES 
-  (NULL, 'admin', '000.000.000-00', '', 'Admin', 'abacateabacate', '');
+  (NULL, 'admin', '000.000.000-00', 'adm@gmail.com', 'Admin', 'senha', '(99) 99999-9999');
 
 --
 -- Índice de tabela `postagem`

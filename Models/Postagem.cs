@@ -6,7 +6,6 @@ namespace Models {
     public class Postagem {
         public int Code_Postagem { get; set; }
         public string Logradouro { get; set; }
-        public string Outros_Problemas { get; set; }
         public byte[]? Foto { get; set; }
         public string Observacao { get; set; }
         public string Data { get; set; }

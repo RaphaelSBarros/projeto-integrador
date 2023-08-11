@@ -55,7 +55,6 @@ namespace Repositories {
                 postagem.FK_ID_Bairro = Convert.ToInt32(row["ID_Bairro"]);
                 postagem.Logradouro = row["Logradouro"].ToString();
                 postagem.FK_Code_Problema = Convert.ToInt32(row["Code_Problema"]);
-                postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
                 postagem.Foto = (byte[])row["Foto"];
                 postagem.Observacao = row["Observacao"].ToString();
                 postagem.Data = row["Data"].ToString();
@@ -153,7 +152,6 @@ namespace Repositories {
                 postagem.FK_ID_Bairro = Convert.ToInt32(row["ID_Bairro"]);
                 postagem.Logradouro = row["Logradouro"].ToString();
                 postagem.FK_Code_Problema = Convert.ToInt32(row["Code_Problema"]);
-                postagem.Outros_Problemas = row["Outros_Problemas"].ToString();
                 postagem.Foto = (byte[])row["Foto"];
                 postagem.Observacao = row["Observacao"].ToString();
                 postagem.Data = row["Data"].ToString();

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 namespace Views {
 
     public class InfoInicial{
+        public static Models.Usuario usuarioconectado = Controllers.UsuarioController.ListarUsuarioConectado();
         public static Font fonteTitulo = new Font("Garet", 14, FontStyle.Bold);
         public static Font fonteTexto = new Font("Arial", 14, FontStyle.Bold);
         public static Font fonteTexto2 = new Font("IBM Plex Sans", 12, FontStyle.Bold);
@@ -62,7 +63,7 @@ namespace Views {
             form.Controls.Add(labelLinha2);
             form.Controls.Add(labelOla);
         }
-        public static void AdicionarPostagem(Panel form, Models.Postagem postagem, int y){
+        public static void AdicionarPostagem(Panel panel, Models.Postagem postagem, int y){
             Models.Usuario usuario = Controllers.UsuarioController.GetUsuario(postagem.FK_ID_Usuario);
             Models.Tipo_Problema tipo_problema = Controllers.Tipo_ProblemaController.GetTipo_Problema(postagem.FK_Code_Problema);
             Models.Bairro bairro = Controllers.BairroController.GetBairro(postagem.FK_ID_Bairro);
@@ -80,12 +81,33 @@ namespace Views {
             labelfundo2.BorderStyle = BorderStyle.FixedSingle;
 
             Button like = new Button();
-            like.Location = new System.Drawing.Point(400, y + 10);
+            like.Location = new System.Drawing.Point(408, y + 10);
             like.Size = new System.Drawing.Size(35, 35);
             like.BackColor = Color.Transparent;
             like.BackgroundImage = Image.FromFile("Layout/Like.png");
             like.BackgroundImageLayout = ImageLayout.Stretch;
+            like.TabStop = false;
 
+            Button dislike = new Button();
+            dislike.Location = new System.Drawing.Point(408, y + 80);
+            dislike.Size = new System.Drawing.Size(35, 35);
+            dislike.BackColor = Color.Transparent;
+            dislike.BackgroundImage = Image.FromFile("Layout/Like.png");
+            dislike.BackgroundImageLayout = ImageLayout.Stretch;
+
+            dislike.FlatAppearance.BorderSize = 0;
+            dislike.FlatStyle = FlatStyle.Flat;
+
+            if(usuarioconectado.ID_Usuario == postagem.FK_ID_Usuario){
+                Button deletar = new Button();
+                deletar.Location = new System.Drawing.Point(408, y + 165);
+                deletar.Size = new System.Drawing.Size(35, 35);
+                deletar.BackColor = Color.Transparent;
+                deletar.BackgroundImage = Image.FromFile("Layout/Like.png");
+                deletar.BackgroundImageLayout = ImageLayout.Stretch;
+                panel.Controls.Add(deletar);
+            }
+            
             PictureBox pictureBoxFoto = new PictureBox();
             pictureBoxFoto.Location = new System.Drawing.Point(20, y + 20);
             pictureBoxFoto.Size = new System.Drawing.Size(30, 30);
@@ -97,10 +119,9 @@ namespace Views {
             }
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
 
-            int labelNome_UsuarioX = 55;
             Label labelNome_Usuario = new Label();
             labelNome_Usuario.Text = usuario.Nome_Usuario;
-            labelNome_Usuario.Location = new System.Drawing.Point(labelNome_UsuarioX, y + 25);
+            labelNome_Usuario.Location = new System.Drawing.Point(55, y + 25);
             labelNome_Usuario.Size = new System.Drawing.Size(130, 20);
             labelNome_Usuario.BackColor = Color.LightGray;
             labelNome_Usuario.BorderStyle = BorderStyle.FixedSingle;
@@ -108,7 +129,7 @@ namespace Views {
 
             Label labelData = new Label();
             labelData.Text = "•" + postagem.Data;
-            labelData.Location = new System.Drawing.Point(labelNome_UsuarioX + 120, y + 25);
+            labelData.Location = new System.Drawing.Point(175, y + 25);
             labelData.Size = new System.Drawing.Size(130, 20);
             labelData.BackColor = Color.LightGray;
             labelData.BorderStyle = BorderStyle.FixedSingle;
@@ -116,14 +137,14 @@ namespace Views {
 
             Label labelStatus = new Label();
             labelStatus.Text = "STATUS";
-            labelStatus.Location = new System.Drawing.Point(labelNome_UsuarioX + 212, y + 25);
+            labelStatus.Location = new System.Drawing.Point(267, y + 25);
             labelStatus.Size = new System.Drawing.Size(125, 20);
             labelStatus.BackColor = Color.LightGray;
             labelStatus.BorderStyle = BorderStyle.FixedSingle;
             labelStatus.Font = InfoInicial.fonteTexto2Normal;
 
             Label labelTitulo = new Label();
-            labelTitulo.Text = "TITULO";
+            labelTitulo.Text = tipo_problema.Problema_Nome + ", " + postagem.Logradouro;
             labelTitulo.Location = new System.Drawing.Point(20, y + 60);
             labelTitulo.Size = new System.Drawing.Size(360, 20);
             labelTitulo.BackColor = Color.LightGray;
@@ -140,15 +161,16 @@ namespace Views {
             textBoxDescricaoProblema.Multiline = true;
             textBoxDescricaoProblema.ReadOnly = true;
 
-            form.Controls.Add(like);
-            form.Controls.Add(labelStatus);
-            form.Controls.Add(labelData);
-            form.Controls.Add(labelNome_Usuario);
-            form.Controls.Add(pictureBoxFoto);
-            form.Controls.Add(labelTitulo);
-            form.Controls.Add(textBoxDescricaoProblema);
-            form.Controls.Add(labelfundo2);
-            form.Controls.Add(labelfundo);
+            panel.Controls.Add(dislike);
+            panel.Controls.Add(like);
+            panel.Controls.Add(labelStatus);
+            panel.Controls.Add(labelData);
+            panel.Controls.Add(labelNome_Usuario);
+            panel.Controls.Add(pictureBoxFoto);
+            panel.Controls.Add(labelTitulo);
+            panel.Controls.Add(textBoxDescricaoProblema);
+            panel.Controls.Add(labelfundo2);
+            panel.Controls.Add(labelfundo);
         }
         public static Image ByteArrayToImage(byte[]? byteArray){
             using (MemoryStream memoryStream = new MemoryStream(byteArray))
